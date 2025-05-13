@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'foods.apps.FoodsConfig',
     'posts.apps.PostsConfig',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

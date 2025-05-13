@@ -5,6 +5,8 @@ while following a FODMAP-friendly diet. Users can sign up, log their food
 reactions, blog about recipes and meals, and interact with other members of the
 community.
 
+This project is a combination of personal need, clean design and modern tools.
+
 ## Status
 
 🚧 In active development!
@@ -21,7 +23,7 @@ community.
 
 ## Tech Stack
 
--    **Frontend**: React, TailwindCSS (via ShadCN/UI)
+-    **Frontend**: React (vite.js), TailwindCSS (via ShadCN/UI)
 -    **Backend**: Django, Django REST Framework
 -    **Database**: PostgreSQL
 -    **Authentication**: JWT (simplejwt)
