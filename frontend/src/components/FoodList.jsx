@@ -8,7 +8,7 @@ const FoodList = () => {
 
 	// initial data fetch
 	useEffect(() => {
-		axios.get("http://127.0.0.1:8000/api/foods")
+		axios.get("http://127.0.0.1:8000/api/foods/")
 			.then((res) => {
 				setFoods(() => res.data);
 				console.log("foods complete");
@@ -17,7 +17,7 @@ const FoodList = () => {
 				console.log(`Error with FoodList useEffect: ${error}`);
 			});
 
-		axios.get("http://127.0.0.1:8000/api/posts")
+		axios.get("http://127.0.0.1:8000/api/posts/")
 			.then((res) => {
 				setPosts(() => res.data);
 				console.log("users complete");
@@ -28,7 +28,7 @@ const FoodList = () => {
 				);
 			});
 
-		axios.get("http://127.0.0.1:8000/api/users")
+		axios.get("http://127.0.0.1:8000/api/users/")
 			.then((res) => {
 				setUsers(() => res.data);
 				console.log("posts complete");
