@@ -27,7 +27,7 @@ This project is a combination of personal need, clean design and modern tools.
 -    **Frontend**: React (vite.js), TailwindCSS (via ShadCN/UI)
 -    **Backend**: Django, Django REST Framework
 -    **Database**: PostgreSQL
--    **Authentication**: JWT (simplejwt)
+-    **Authentication**: JWT (simplejwt + HttpOnly cookies)
 -    **AI/ML (Planned)**: OpenAI or Hugging Face models for personalized search
      and suggestions
 
