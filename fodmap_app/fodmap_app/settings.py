@@ -69,9 +69,12 @@ REST_FRAMEWORK = {
 }
 
 
-# Allow all origins for development
-# TODO: remove before pushing to production
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
+
+# TODO: update before pushing to production
+CORS_ALLOWED_ORIGINS = [ "http://localhost:5173"]
+
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'fodmap_app.urls'
 

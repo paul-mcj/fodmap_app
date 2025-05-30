@@ -7,7 +7,7 @@ const RegisterForm = () => {
 	const [bio, setBio] = useState("");
 	const [profileImage, setProfileImage] = useState(undefined);
 
-	const handleSubmit = async (e) => {
+	const handleRegistration = async (e) => {
 		e.preventDefault();
 		try {
 			const res = await axios.post(
@@ -29,7 +29,7 @@ const RegisterForm = () => {
 	return (
 		<>
 			<p>Register as a new user:</p>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleRegistration}>
 				<input
 					value={username}
 					onChange={(e) => setUsername(e.target.value)}

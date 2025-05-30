@@ -1,15 +1,23 @@
 from .models import CustomUser
 from rest_framework import generics, status
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.views import APIView
 from rest_framework_simplejwt.views import TokenObtainPairView
-# from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework.views import APIView
 from .serializers import CustomUserSerializer, RegisterUserSerializer
 
 # GET user records
 class CustomUserListAPIView(generics.ListAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
+
+# GET authenticated single user
+class CurrentUserView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, req):
+        serializer = CustomUserSerializer(req.user)
+        return Response(serializer.data)
 
 # POST new user
 class RegisterNewUserView(APIView):
@@ -31,24 +39,25 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 
         # Get tokens from serializer
         tokens = serializer.validated_data
-        access = tokens.get('access')
-        refresh = tokens.get('refresh')
+        access_token = tokens.get('access')
+        refresh_token = tokens.get('refresh')
 
         # Create response and set tokens as HttpOnly cookies
         response = Response({'message': 'Login successful'}, status=status.HTTP_200_OK)
         response.set_cookie(
-            key='access',
-            value=access,
+            key="access",
+            value=access_token,
             httponly=True,
-            secure=False,  # TODO: True in production (requires HTTPS)
-            samesite='Lax'
+            samesite="None",
+            secure=True,
         )
+
         response.set_cookie(
-            key='refresh',
-            value=refresh,
+            key="refresh",
+            value=refresh_token,
             httponly=True,
-            secure=False,  # TODO: True in production (requires HTTPS)
-            samesite='Lax'
+            samesite="None",
+            secure=True,
         )
 
         return response
