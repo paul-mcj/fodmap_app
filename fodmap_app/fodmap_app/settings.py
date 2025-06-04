@@ -62,19 +62,35 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#     ),
+# }
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
+        'users.auth.CookieJWTAuthentication',
+    )
 }
 
 
-CORS_ALLOW_ALL_ORIGINS = False
-
-# TODO: update before pushing to production
-CORS_ALLOWED_ORIGINS = [ "http://localhost:5173"]
-
 CORS_ALLOW_CREDENTIALS = True
+
+# TODO: Replace with https deployed site
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:5173",  
+]
+
+# TODO: Replace with https deployed site
+CSRF_TRUSTED_ORIGINS = [
+     "http://127.0.0.1:5173",
+]
+
+SESSION_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SAMESITE = 'None'
+CSRF_COOKIE_SECURE = False
 
 ROOT_URLCONF = 'fodmap_app.urls'
 

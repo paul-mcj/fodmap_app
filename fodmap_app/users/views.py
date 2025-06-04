@@ -48,16 +48,16 @@ class CustomTokenObtainPairView(TokenObtainPairView):
             key="access",
             value=access_token,
             httponly=True,
-            samesite="None",
-            secure=True,
+            samesite="Lax",
+            secure=False, #TODO: change to True before deploying
         )
 
         response.set_cookie(
             key="refresh",
             value=refresh_token,
             httponly=True,
-            samesite="None",
-            secure=True,
+            samesite="Lax",
+            secure=False, #TODO: change to True before deploying
         )
 
         return response

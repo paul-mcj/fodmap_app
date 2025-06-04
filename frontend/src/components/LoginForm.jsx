@@ -13,7 +13,7 @@ const LoginForm = () => {
 
 		try {
 			await axios.post(
-				"http://127.0.0.1:8000/api/users/login/",
+				"http://127.0.0.1:8000/api/users/token/",
 				{
 					username,
 					password
@@ -23,7 +23,7 @@ const LoginForm = () => {
 
 			// if login is successful fetch the user info
 			const res = await axios.get(
-				"http://localhost:8000/api/users/me/",
+				"http://127.0.0.1:8000/api/users/me/",
 				{
 					withCredentials: true
 				}
