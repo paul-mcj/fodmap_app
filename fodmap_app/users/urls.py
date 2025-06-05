@@ -2,13 +2,13 @@ from django.urls import path
 from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
-from .views import CustomUserListAPIView, RegisterNewUserView, CustomTokenObtainPairView, CurrentUserView
+from .views import CustomUserListAPIView, RegisterNewUserView, CustomTokenObtainPairView, CurrentUserView, LogoutView
 
 urlpatterns = [
     path('', CustomUserListAPIView.as_view(), name='user-list'),
     path('register/', RegisterNewUserView.as_view(), name='register'),
-    # path('login/', CustomTokenObtainPairView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
     path('me/', CurrentUserView.as_view(), name='me'),
-    path('token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'), #issues access and refresh tokens as cookies
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

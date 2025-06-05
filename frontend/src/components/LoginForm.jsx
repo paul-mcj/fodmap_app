@@ -29,14 +29,19 @@ const LoginForm = () => {
 				}
 			);
 
-			console.log("Login successful!!");
-
 			const user = res.data;
+
+			console.log(user);
+
+			console.log("Login successful!!");
 
 			// navigate to user homepage, and just display their name and bio for testing:
 			navigate("/dashboard", { state: { user } });
 		} catch (err) {
-			console.error(err);
+			console.error(
+				"Login failed:",
+				err?.response?.data?.detail || err.message
+			);
 			console.log("login failed!!");
 		}
 	};

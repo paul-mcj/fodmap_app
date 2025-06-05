@@ -17,6 +17,7 @@ const FoodList = () => {
 				console.log(`Error with FoodList useEffect: ${error}`);
 			});
 
+		// TODO: eventually limit homepage feed "/api/posts?limit=5"
 		axios.get("http://127.0.0.1:8000/api/posts/")
 			.then((res) => {
 				setPosts(() => res.data);

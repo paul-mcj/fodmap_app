@@ -61,3 +61,14 @@ class CustomTokenObtainPairView(TokenObtainPairView):
         )
 
         return response
+    
+# POST logout current user
+class LogoutView(APIView):
+    def post(self, req):
+        response = Response({"message": "Logged out successfully"}, status=status.HTTP_200_OK)
+
+        # clear httpOnly cookies
+        response.delete_cookie("access")
+        response.delete_cookie("refresh")
+
+        return response

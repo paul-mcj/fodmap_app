@@ -22,7 +22,10 @@ const RegisterForm = () => {
 			console.log(res.data); // “User created successfully”
 			// Optionally, redirect to login or auto-login
 		} catch (err) {
-			console.error(err.response.data);
+			console.error(
+				"Login failed:",
+				err?.response?.data?.detail || err.message
+			);
 		}
 	};
 
