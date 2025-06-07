@@ -1,16 +1,12 @@
-import { Link } from "react-router-dom";
 import FoodList from "../components/FoodList";
+import Navbar from "../components/Navbar";
 
 function HomePage() {
 	return (
 		<div>
+			<Navbar />
 			<h2>Home Page</h2>
 			<FoodList />
-
-			<nav>
-				<Link to="/login">Login</Link> |{" "}
-				<Link to="/register">Signup</Link>
-			</nav>
 		</div>
 	);
 }

@@ -1,21 +1,39 @@
-import axios from "axios";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../utils/api_req";
+import { useEffect } from "react";
+import { getUser } from "../utils/api_req";
+import Navbar from "../components/Navbar";
+import { useState } from "react";
 
 function Dashboard() {
-	const { state } = useLocation();
+	// const { state } = useLocation();
 	const navigate = useNavigate();
-	const user = state?.user;
+	const [user, setUser] = useState({});
+
+	useEffect(() => {
+		// verify user is authenticated to view dashboard, otherwise the browser might load a cached version of the page even if user logged out and cookies were cleared
+		const verifyUser = async () => {
+			try {
+				const userInfo = await getUser();
+				setUser(() => userInfo.data);
+			} catch (err) {
+				console.error(
+					"Verification failed:",
+					err?.response?.data?.detail || err.message
+				);
+				navigate("/login"); // force to login page if auth fails
+			}
+		};
+		verifyUser();
+	}, []);
 
 	const handleLogout = async (e) => {
 		e.preventDefault();
 		try {
-			await axios.post(
-				"http://127.0.0.1:8000/api/users/logout/",
-				{},
-				{ withCredentials: true }
-			);
+			await logout();
 
-			// Clear local app state and navigate home
+			// TODO: Clear local app state (if its put into context API or useState later)
+			// navigate home
 			navigate("/");
 		} catch (err) {
 			console.error(
@@ -29,6 +47,7 @@ function Dashboard() {
 
 	return (
 		<div>
+			<Navbar />
 			<h1>Welcome, {user.username}!</h1>
 			<p>Bio: {user.bio || "No bio yet."}</p>
 			<button

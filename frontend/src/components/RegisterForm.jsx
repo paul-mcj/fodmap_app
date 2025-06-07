@@ -1,5 +1,6 @@
-import axios from "axios";
 import { useState } from "react";
+import { register, getUser, login } from "../utils/api_req";
+import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
 	const [username, setUsername] = useState("");
@@ -7,20 +8,23 @@ const RegisterForm = () => {
 	const [bio, setBio] = useState("");
 	const [profileImage, setProfileImage] = useState(undefined);
 
+	const navigate = useNavigate();
+
 	const handleRegistration = async (e) => {
 		e.preventDefault();
 		try {
-			const res = await axios.post(
-				"http://127.0.0.1:8000/api/users/register/",
-				{
-					username,
-					password,
-					bio,
-					profileImage
-				}
-			);
-			console.log(res.data); // “User created successfully”
-			// Optionally, redirect to login or auto-login
+			await register({ username, password, bio, profileImage });
+			console.log("user created successfully");
+
+			// login new user
+			await login({ username, password });
+
+			// fetch their info
+			const res = await getUser();
+			const user = res.data;
+
+			// navigate to user dashboard
+			navigate("/dashboard", { state: { user } });
 		} catch (err) {
 			console.error(
 				"Login failed:",

@@ -18,7 +18,8 @@ This project is a combination of personal need, clean design and modern tools.
 -    ✅ Blog posts and community sharing
 -    ✅ Commenting on recipes and experiences
 -    ✅ AI-powered assistant for food and recipe suggestions (WIP)
--    ✅ Clean, responsive frontend using React
+-    ✅ Clean, responsive frontend using React (combination of API abstraction
+     and component reuse)
 -    ✅ Backend powered by Django & Django REST Framework
 -    ✅ Abstract Base Model for Shared Fields displays clean DRY concept code
 

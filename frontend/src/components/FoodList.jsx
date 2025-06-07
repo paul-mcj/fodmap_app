@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { fetchFoods, fetchPosts, fetchUsers } from "../utils/api_req";
 
 const FoodList = () => {
 	const [foods, setFoods] = useState([]);
@@ -8,7 +8,7 @@ const FoodList = () => {
 
 	// initial data fetch
 	useEffect(() => {
-		axios.get("http://127.0.0.1:8000/api/foods/")
+		fetchFoods()
 			.then((res) => {
 				setFoods(() => res.data);
 				console.log("foods complete");
@@ -18,7 +18,7 @@ const FoodList = () => {
 			});
 
 		// TODO: eventually limit homepage feed "/api/posts?limit=5"
-		axios.get("http://127.0.0.1:8000/api/posts/")
+		fetchPosts()
 			.then((res) => {
 				setPosts(() => res.data);
 				console.log("users complete");
@@ -29,7 +29,7 @@ const FoodList = () => {
 				);
 			});
 
-		axios.get("http://127.0.0.1:8000/api/users/")
+		fetchUsers()
 			.then((res) => {
 				setUsers(() => res.data);
 				console.log("posts complete");

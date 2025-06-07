@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { login, getUser } from "../utils/api_req";
 
 const LoginForm = () => {
 	const [username, setUsername] = useState("");
@@ -12,30 +12,15 @@ const LoginForm = () => {
 		e.preventDefault();
 
 		try {
-			await axios.post(
-				"http://127.0.0.1:8000/api/users/token/",
-				{
-					username,
-					password
-				},
-				{ withCredentials: true } // crucial so that cookies (like access/refresh tokens) are set on the browser.
-			);
+			await login({ username, password });
 
 			// if login is successful fetch the user info
-			const res = await axios.get(
-				"http://127.0.0.1:8000/api/users/me/",
-				{
-					withCredentials: true
-				}
-			);
-
+			const res = await getUser();
 			const user = res.data;
-
 			console.log(user);
-
 			console.log("Login successful!!");
 
-			// navigate to user homepage, and just display their name and bio for testing:
+			// navigate to user dashboard
 			navigate("/dashboard", { state: { user } });
 		} catch (err) {
 			console.error(
