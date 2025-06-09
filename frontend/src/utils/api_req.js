@@ -16,6 +16,7 @@ export const fetchFoods = () => API.get("foods/");
 
 // Posts
 export const fetchPosts = () => API.get("posts/");
+export const getUserPosts = () => API.get("posts/user/");
 
 // Users
 export const getUser = () => API.get("users/me/");
