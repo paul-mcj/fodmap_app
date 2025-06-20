@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchFoods, fetchPosts, fetchUsers } from "../utils/api_req";
+import { formatPostDate } from "../utils/format";
 
 const FoodList = () => {
 	const [foods, setFoods] = useState([]);
@@ -71,7 +72,7 @@ const FoodList = () => {
 					{posts.map((post) => (
 						<li key={post.id}>
 							<div>{post.body}</div>
-							<div>{post.created_at}</div>
+							<div>{formatPostDate(post.created_at)}</div>
 							<div>{post.author}</div>
 						</li>
 					))}

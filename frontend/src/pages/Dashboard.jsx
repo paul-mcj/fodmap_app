@@ -3,6 +3,7 @@ import { logout, getUserPosts } from "../utils/api_req";
 import { useEffect, useState } from "react";
 import { getUser } from "../utils/api_req";
 import Navbar from "../components/Navbar";
+import { formatPostDate } from "../utils/format";
 
 function Dashboard() {
 	// const { state } = useLocation();
@@ -72,8 +73,7 @@ function Dashboard() {
 			{posts.map((post) => (
 				<li key={post.id}>
 					<div>{post.body}</div>
-					<div>{post.created_at}</div>
-					<div>{post.author}</div>
+					<div>{formatPostDate(post.created_at)}</div>
 				</li>
 			))}
 		</div>
