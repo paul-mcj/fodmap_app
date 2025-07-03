@@ -12,6 +12,7 @@ const LoginForm = () => {
 		e.preventDefault();
 
 		try {
+			// FIXME: should work for either username or email as long as either matches the password it should authenticate
 			await login({ username, password });
 
 			// if login is successful fetch the user info
@@ -33,12 +34,15 @@ const LoginForm = () => {
 
 	return (
 		<>
-			<p>Already a user? Login here:</p>
+			<p>
+				Already a user? Login here (you can use your username or
+				email):
+			</p>
 			<form onSubmit={handleLogin}>
 				<input
 					value={username}
 					onChange={(e) => setUsername(e.target.value)}
-					placeholder="Username"
+					placeholder="Username or Email"
 				/>
 				<input
 					value={password}

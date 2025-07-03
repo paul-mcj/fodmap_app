@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
 	const [username, setUsername] = useState("");
+	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [bio, setBio] = useState("");
 	const [profileImage, setProfileImage] = useState(undefined);
@@ -13,7 +14,7 @@ const RegisterForm = () => {
 	const handleRegistration = async (e) => {
 		e.preventDefault();
 		try {
-			await register({ username, password, bio, profileImage });
+			await register({ username, email, password, bio, profileImage });
 			console.log("user created successfully");
 
 			// login new user
@@ -41,6 +42,12 @@ const RegisterForm = () => {
 					value={username}
 					onChange={(e) => setUsername(e.target.value)}
 					placeholder="Username"
+				/>
+				<input
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+					placeholder="Email"
+					type="email"
 				/>
 				<input
 					value={password}

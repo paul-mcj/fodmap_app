@@ -61,6 +61,7 @@ const FoodList = () => {
 					{users.map((user) => (
 						<li key={user.id}>
 							<div>{user.username}</div>
+							<div>{user.email}</div>
 							<div>{user.bio}</div>
 							<div>{user.profile_image}</div>
 						</li>

@@ -23,10 +23,9 @@ const Navbar = () => {
 
 	return (
 		<nav>
-			<Link to="/">Home</Link>
+			<Link to="/">Home</Link>{" "}
 			{isAuthenticated && <Link to="/dashboard">Dashboard</Link>}
-			<Link to="/login">Login</Link>
-			<Link to="/register">Signup</Link>
+			<Link to="/login">Login</Link> <Link to="/register">Signup</Link>
 		</nav>
 	);
 };

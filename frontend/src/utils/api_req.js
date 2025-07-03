@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const API = axios.create({
 	baseURL: "http://127.0.0.1:8000/api/",
@@ -21,3 +22,7 @@ export const getUserPosts = () => API.get("posts/user/");
 // Users
 export const getUser = () => API.get("users/me/");
 export const fetchUsers = () => API.get("users/");
+
+// Journal Entries
+export const getUserJournalEntries = () => API.get("journals/me/");
+export const postNewJournalEntry = (data) => API.post("journals/new/", data);

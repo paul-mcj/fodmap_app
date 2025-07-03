@@ -1,15 +1,21 @@
 import { useNavigate } from "react-router-dom";
-import { logout, getUserPosts } from "../utils/api_req";
+import {
+	logout,
+	getUserPosts,
+	getUser,
+	getUserJournalEntries
+} from "../utils/api_req";
 import { useEffect, useState } from "react";
-import { getUser } from "../utils/api_req";
 import Navbar from "../components/Navbar";
 import { formatPostDate } from "../utils/format";
+import JournalEntryForm from "../components/JournalEntryForm";
 
 function Dashboard() {
 	// const { state } = useLocation();
 	const navigate = useNavigate();
 	const [user, setUser] = useState({});
 	const [posts, setPosts] = useState([]);
+	const [journalEntries, setJournalEntries] = useState([]);
 
 	useEffect(() => {
 		// verify user is authenticated to view dashboard, otherwise the browser might load a cached version of the page even if user logged out and cookies were cleared
@@ -36,8 +42,19 @@ function Dashboard() {
 			}
 		};
 
+		const fetchJournalEntries = async () => {
+			try {
+				const res = await getUserJournalEntries();
+				setJournalEntries(() => res.data);
+				console.log(journalEntries);
+			} catch (err) {
+				console.error("Fetching user journal entries failed:", err);
+			}
+		};
+
 		verifyUser();
 		fetchPosts();
+		fetchJournalEntries();
 	}, []);
 
 	const handleLogout = async (e) => {
@@ -76,6 +93,20 @@ function Dashboard() {
 					<div>{formatPostDate(post.created_at)}</div>
 				</li>
 			))}
+			<h2>Journal Entries</h2>
+			{journalEntries ?? journalEntries.length <= 0 ? (
+				<p>No current entries! make one!</p>
+			) : (
+				<ul>
+					{journalEntries.map((entry) => (
+						<li key={entry.id}>
+							<div>{entry.body}</div>
+							<div>{formatPostDate(entry.created_at)}</div>
+						</li>
+					))}
+				</ul>
+			)}
+			<JournalEntryForm />
 		</div>
 	);
 }

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
     'foods.apps.FoodsConfig',
+    'journals.apps.JournalsConfig',
     'posts.apps.PostsConfig',
 
     'rest_framework',
@@ -87,9 +88,10 @@ CSRF_TRUSTED_ORIGINS = [
      "http://127.0.0.1:5173",
 ]
 
-SESSION_COOKIE_SAMESITE = 'None'
+# TODO: When you deploy to production with HTTPS, set 'Lax' to 'None' and False to True !!
+SESSION_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SAMESITE = 'None'
+CSRF_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_SECURE = False
 
 ROOT_URLCONF = 'fodmap_app.urls'
