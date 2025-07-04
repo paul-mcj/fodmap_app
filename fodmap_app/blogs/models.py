@@ -8,17 +8,15 @@ class Blog(models.Model):
         ('recipe', 'Recipe'),
     )
 
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='blogs')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='blogs_authored')
     title = models.CharField(unique=True, max_length=100, blank=False, validators=[MinLengthValidator(1)])
     description = models.TextField(blank=False, validators=[MinLengthValidator(3)]) # Optional intro or summary
     type = models.CharField(max_length=10, choices=BLOG_TYPES)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-
-
     # Food tags for recipes
-    foods = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name='blogs')
+    foods = models.ManyToManyField('foods.Food', related_name='blogs_tagged')
 
     def __str__(self):
         return self.title

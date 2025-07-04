@@ -3,12 +3,14 @@ import {
 	logout,
 	getUserPosts,
 	getUser,
-	getUserJournalEntries
+	getUserJournalEntries,
+	getUserBlogs
 } from "../utils/api_req";
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { formatPostDate } from "../utils/format";
 import JournalEntryForm from "../components/JournalEntryForm";
+import BlogForm from "@/components/BlogForm";
 
 function Dashboard() {
 	// const { state } = useLocation();
@@ -16,6 +18,7 @@ function Dashboard() {
 	const [user, setUser] = useState({});
 	const [posts, setPosts] = useState([]);
 	const [journalEntries, setJournalEntries] = useState([]);
+	const [userBlogs, setUserBlogs] = useState([]);
 
 	const fetchJournalEntries = async () => {
 		try {
@@ -24,6 +27,16 @@ function Dashboard() {
 			console.log(journalEntries);
 		} catch (err) {
 			console.error("Fetching user journal entries failed:", err);
+		}
+	};
+
+	const fetchUserBlogs = async () => {
+		try {
+			const res = await getUserBlogs();
+			setUserBlogs(() => res.data);
+			console.log(userBlogs);
+		} catch (err) {
+			console.error("Fetching user blogs failed:", err);
 		}
 	};
 
@@ -55,6 +68,7 @@ function Dashboard() {
 		verifyUser();
 		fetchPosts();
 		fetchJournalEntries();
+		fetchUserBlogs();
 	}, []);
 
 	const handleLogout = async (e) => {
@@ -107,7 +121,8 @@ function Dashboard() {
 				</ul>
 			)}
 
-			<JournalEntryForm onNewEntry={fetchJournalEntries} />
+			<JournalEntryForm onNewJournalEntry={fetchJournalEntries} />
+			<BlogForm onCreateNewBlog={fetchUserBlogs} />
 		</div>
 	);
 }

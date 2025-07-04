@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { postNewJournalEntry } from "../utils/api_req";
 
-const JournalEntryForm = ({ onNewEntry }) => {
+const JournalEntryForm = ({ onNewJournalEntry }) => {
 	const [entry, setEntry] = useState("");
 
 	const handleCreateEntry = async (e) => {
@@ -11,7 +11,7 @@ const JournalEntryForm = ({ onNewEntry }) => {
 			await postNewJournalEntry(entry);
 			console.log("new journal entry successful!!");
 			setEntry(""); // reset state
-			onNewEntry(); // refresh parent component
+			onNewJournalEntry(); // refresh parent component
 		} catch (err) {
 			console.error(
 				"ERROR posting:",

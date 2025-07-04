@@ -14,6 +14,12 @@ export const register = (info) => API.post("users/register/", info);
 export const fetchFoods = () => API.get("foods/");
 // export const addFood = (foodData) => API.post("foods/", foodData); #TODO: CRUD functions like this for all project apps
 
+// Blogs
+export const fetchBlogs = () => API.get("blogs/");
+export const getUserBlogs = () => API.get("blogs/my/");
+export const postNewUserBlog = (content) => API.post("blogs/my/", content);
+// TODO: CRUD update and delete!
+
 // Posts
 export const fetchPosts = () => API.get("posts/");
 export const getUserPosts = () => API.get("posts/user/");
