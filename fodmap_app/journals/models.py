@@ -4,8 +4,8 @@ from django.db import models
 
 # Users cannot edit or delete journal posts, only initially create and read -- this is a permanent log only accessible to validated users.
 class JournalEntry(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='journals')
-    body = models.TextField(blank=False, validators=[MinLengthValidator(10)])
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='journal_entries')
+    body = models.TextField(blank=False, validators=[MinLengthValidator(3)])
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

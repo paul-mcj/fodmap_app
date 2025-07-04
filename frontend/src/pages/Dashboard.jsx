@@ -17,6 +17,16 @@ function Dashboard() {
 	const [posts, setPosts] = useState([]);
 	const [journalEntries, setJournalEntries] = useState([]);
 
+	const fetchJournalEntries = async () => {
+		try {
+			const res = await getUserJournalEntries();
+			setJournalEntries(() => res.data);
+			console.log(journalEntries);
+		} catch (err) {
+			console.error("Fetching user journal entries failed:", err);
+		}
+	};
+
 	useEffect(() => {
 		// verify user is authenticated to view dashboard, otherwise the browser might load a cached version of the page even if user logged out and cookies were cleared
 		const verifyUser = async () => {
@@ -39,16 +49,6 @@ function Dashboard() {
 				console.log(posts);
 			} catch (err) {
 				console.error("Fetching user posts failed:", err);
-			}
-		};
-
-		const fetchJournalEntries = async () => {
-			try {
-				const res = await getUserJournalEntries();
-				setJournalEntries(() => res.data);
-				console.log(journalEntries);
-			} catch (err) {
-				console.error("Fetching user journal entries failed:", err);
 			}
 		};
 
@@ -94,8 +94,8 @@ function Dashboard() {
 				</li>
 			))}
 			<h2>Journal Entries</h2>
-			{journalEntries ?? journalEntries.length <= 0 ? (
-				<p>No current entries! make one!</p>
+			{journalEntries.length === 0 ? (
+				<p>No current entries! Make one!</p>
 			) : (
 				<ul>
 					{journalEntries.map((entry) => (
@@ -106,7 +106,8 @@ function Dashboard() {
 					))}
 				</ul>
 			)}
-			<JournalEntryForm />
+
+			<JournalEntryForm onNewEntry={fetchJournalEntries} />
 		</div>
 	);
 }

@@ -4,4 +4,5 @@ from .models import JournalEntry
 class JournalSerializer(serializers.ModelSerializer):
     class Meta:
         model = JournalEntry
-        fields = "__all__"
+        fields = ['id', 'body', 'created_at']
+        read_only_fields = ['id', 'created_at']
