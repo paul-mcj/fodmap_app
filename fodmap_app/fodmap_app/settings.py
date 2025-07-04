@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'foods.apps.FoodsConfig',
     'journals.apps.JournalsConfig',
     'posts.apps.PostsConfig',
+    'blogs.apps.BlogsConfig',
 
     'rest_framework',
     'corsheaders',
