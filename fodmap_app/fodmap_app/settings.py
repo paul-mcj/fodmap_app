@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'home.apps.HomeConfig',
     'users.apps.UsersConfig',
     'foods.apps.FoodsConfig',
     'journals.apps.JournalsConfig',
@@ -76,7 +75,6 @@ REST_FRAMEWORK = {
     )
 }
 
-
 CORS_ALLOW_CREDENTIALS = True
 
 # TODO: Replace with https deployed site
@@ -94,6 +92,8 @@ SESSION_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 14  # 14 days in seconds
+SESSION_SAVE_EVERY_REQUEST = True
 
 ROOT_URLCONF = 'fodmap_app.urls'
 
