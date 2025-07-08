@@ -1,16 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import {
-	logout,
-	getUserPosts,
-	getUser,
-	getUserJournalEntries,
-	getUserBlogs
+	privateGetUserPosts,
+	privateGetUserData,
+	privateGetUserJournalEntries,
+	privateGetUserBlogs
 } from "../utils/api_req";
 import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import { formatPostDate } from "../utils/format";
 import JournalEntryForm from "../components/JournalEntryForm";
 import BlogForm from "@/components/BlogForm";
+import LogoutButton from "@/components/ui/LogoutButton";
 
 function Dashboard() {
 	// const { state } = useLocation();
@@ -22,7 +21,7 @@ function Dashboard() {
 
 	const fetchJournalEntries = async () => {
 		try {
-			const res = await getUserJournalEntries();
+			const res = await privateGetUserJournalEntries();
 			setJournalEntries(() => res.data);
 			console.log(journalEntries);
 		} catch (err) {
@@ -32,7 +31,7 @@ function Dashboard() {
 
 	const fetchUserBlogs = async () => {
 		try {
-			const res = await getUserBlogs();
+			const res = await privateGetUserBlogs();
 			setUserBlogs(() => res.data);
 			console.log(userBlogs);
 		} catch (err) {
@@ -44,7 +43,7 @@ function Dashboard() {
 		// verify user is authenticated to view dashboard, otherwise the browser might load a cached version of the page even if user logged out and cookies were cleared
 		const verifyUser = async () => {
 			try {
-				const res = await getUser();
+				const res = await privateGetUserData();
 				setUser(() => res.data);
 			} catch (err) {
 				console.error(
@@ -57,7 +56,7 @@ function Dashboard() {
 
 		const fetchPosts = async () => {
 			try {
-				const res = await getUserPosts();
+				const res = await privateGetUserPosts();
 				setPosts(() => res.data);
 				console.log(posts);
 			} catch (err) {
@@ -71,34 +70,14 @@ function Dashboard() {
 		fetchUserBlogs();
 	}, []);
 
-	const handleLogout = async (e) => {
-		e.preventDefault();
-		try {
-			await logout();
-
-			// TODO: Clear local app state (if its put into context API or useState later)
-			// navigate home
-			navigate("/");
-		} catch (err) {
-			console.error(
-				"Login failed:",
-				err?.response?.data?.detail || err.message
-			);
-		}
-	};
-
 	if (!user) return <p>Loading...</p>; // or redirect if needed
 
 	return (
 		<div>
-			<Navbar />
 			<h1>Welcome, {user.username}!</h1>
 			<p>Bio: {user.bio || "No bio yet."}</p>
-			<button
-				type="submit"
-				onClick={handleLogout}>
-				Log Out
-			</button>
+			<LogoutButton />
+
 			<h2>Recent Posts</h2>
 			{/* show users posts in chronological order of last edited  */}
 			{posts.map((post) => (

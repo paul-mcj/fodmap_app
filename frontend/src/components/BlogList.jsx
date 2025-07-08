@@ -1,4 +1,4 @@
-import { fetchBlogs } from "../utils/api_req";
+import { publicGetAllBlogs } from "../utils/api_req";
 import { useState, useEffect } from "react";
 import { formatPostDate } from "../utils/format";
 
@@ -7,7 +7,7 @@ const BlogList = () => {
 
 	// initial data fetch
 	useEffect(() => {
-		fetchBlogs()
+		publicGetAllBlogs()
 			.then((res) => {
 				console.log(res.data);
 				setBlogs(() => res.data);

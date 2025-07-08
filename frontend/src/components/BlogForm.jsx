@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { postNewUserBlog, fetchFoods } from "../utils/api_req";
-import { Button } from "@/components/ui/button";
+import { privatePostNewBlog, publicGetAllFoods } from "../utils/api_req";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
 	Form,
@@ -11,7 +10,7 @@ import {
 	FormLabel,
 	FormMessage
 } from "@/components/ui/form";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 
 const initBlog = { title: "", description: "", type: "discussion", foods: [] };
 
@@ -31,7 +30,7 @@ const BlogForm = ({ onCreateNewBlog }) => {
 	const [appWideFoods, setAppWideFoods] = useState([]);
 
 	useEffect(() => {
-		fetchFoods()
+		publicGetAllFoods()
 			.then((res) => {
 				setAppWideFoods(() => res.data);
 				console.log("app wide foods complete");
@@ -55,7 +54,7 @@ const BlogForm = ({ onCreateNewBlog }) => {
 
 		try {
 			console.log(newBlogDetails);
-			await postNewUserBlog(newBlogDetails);
+			await privatePostNewBlog(newBlogDetails);
 			console.log("new blog has been successfully added!!");
 
 			// reset state

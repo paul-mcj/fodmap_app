@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { postNewJournalEntry } from "../utils/api_req";
+import { privatePostUserJournalEntry } from "../utils/api_req";
 
 const JournalEntryForm = ({ onNewJournalEntry }) => {
 	const [entry, setEntry] = useState("");
@@ -8,7 +8,7 @@ const JournalEntryForm = ({ onNewJournalEntry }) => {
 		e.preventDefault();
 
 		try {
-			await postNewJournalEntry(entry);
+			await privatePostUserJournalEntry(entry);
 			console.log("new journal entry successful!!");
 			setEntry(""); // reset state
 			onNewJournalEntry(); // refresh parent component

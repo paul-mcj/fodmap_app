@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { fetchFoods, fetchPosts, fetchUsers } from "../utils/api_req";
+import {
+	publicGetAllFoods,
+	publicGetAllPosts,
+	publicGetAllUsers
+} from "../utils/api_req";
 import { formatPostDate } from "../utils/format";
 
 const FoodList = () => {
@@ -9,7 +13,7 @@ const FoodList = () => {
 
 	// initial data fetch
 	useEffect(() => {
-		fetchFoods()
+		publicGetAllFoods()
 			.then((res) => {
 				setFoods(() => res.data);
 				console.log("foods complete");
@@ -19,7 +23,7 @@ const FoodList = () => {
 			});
 
 		// TODO: eventually limit homepage feed "/api/posts?limit=5"
-		fetchPosts()
+		publicGetAllPosts()
 			.then((res) => {
 				setPosts(() => res.data);
 				console.log("users complete");
@@ -30,7 +34,7 @@ const FoodList = () => {
 				);
 			});
 
-		fetchUsers()
+		publicGetAllUsers()
 			.then((res) => {
 				setUsers(() => res.data);
 				console.log("posts complete");
