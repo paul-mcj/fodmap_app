@@ -1,6 +1,6 @@
 import { publicGetAllBlogs } from "../utils/api_req";
 import { useState, useEffect } from "react";
-import { formatPostDate } from "../utils/format";
+import CardTemplate from "./CardTemplate";
 
 const BlogList = () => {
 	const [blogs, setBlogs] = useState([]);
@@ -26,16 +26,14 @@ const BlogList = () => {
 				<ul>
 					{blogs.map((blog) => (
 						<li key={blog.id}>
-							<div>{blog.author}</div>
-							<div>{blog.title}</div>
-							<div>{blog.description}</div>
-							<div>{blog.type}</div>
-							<ul>
-								{blog.foods.map((food) => (
-									<li key={food.id}>{food.name}</li>
-								))}
-							</ul>
-							<div>{formatPostDate(blog.created_at)}</div>
+							<CardTemplate
+								author={blog.author}
+								title={blog.title}
+								description={blog.description}
+								type={blog.type}
+								foods={blog.foods}
+								created_at={blog.created_at}
+							/>
 						</li>
 					))}
 				</ul>

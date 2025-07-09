@@ -47,10 +47,9 @@ const LoginPage = () => {
 		<div className={cn("flex flex-col gap-6")}>
 			<Card>
 				<CardHeader>
-					<CardTitle>Login to your account</CardTitle>
+					<CardTitle>Welcome Back!</CardTitle>
 					<CardDescription>
-						Enter your username or email below to login to
-						your account
+						Login to your account with your username or email
 					</CardDescription>
 				</CardHeader>
 				<CardContent>

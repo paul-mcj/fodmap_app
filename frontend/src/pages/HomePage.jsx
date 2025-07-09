@@ -4,7 +4,7 @@ import BlogList from "../components/BlogList";
 function HomePage() {
 	return (
 		<>
-			<h2>Home Page</h2>
+			<h2>Welcome Home</h2>
 			<FoodList />
 			<BlogList />
 		</>

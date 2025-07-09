@@ -10,9 +10,9 @@ import Dashboard from "./pages/Dashboard";
 function App() {
 	return (
 		<>
-			<h1>Welcome to FODMAP React!</h1>
 			<Router>
 				<Navbar />
+				<h1>FODMAP Community</h1>
 				<PageTemplate>
 					<Routes>
 						<Route

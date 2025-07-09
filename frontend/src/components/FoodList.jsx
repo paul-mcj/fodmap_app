@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import {
 	publicGetAllFoods,
-	publicGetAllPosts,
-	publicGetAllUsers
+	publicGetAllPosts
+	// publicGetAllUsers
 } from "../utils/api_req";
 import { formatPostDate } from "../utils/format";
 
 const FoodList = () => {
 	const [foods, setFoods] = useState([]);
-	const [users, setUsers] = useState([]);
+	// const [users, setUsers] = useState([]);
 	const [posts, setPosts] = useState([]);
 
 	// initial data fetch
@@ -34,16 +34,16 @@ const FoodList = () => {
 				);
 			});
 
-		publicGetAllUsers()
-			.then((res) => {
-				setUsers(() => res.data);
-				console.log("posts complete");
-			})
-			.catch((error) => {
-				console.log(
-					`Error with FoodList useEffect (posts api call): ${error}`
-				);
-			});
+		// publicGetAllUsers()
+		// 	.then((res) => {
+		// 		setUsers(() => res.data);
+		// 		console.log("posts complete");
+		// 	})
+		// 	.catch((error) => {
+		// 		console.log(
+		// 			`Error with FoodList useEffect (posts api call): ${error}`
+		// 		);
+		// 	});
 	}, []);
 
 	return (
@@ -60,7 +60,7 @@ const FoodList = () => {
 					))}
 				</ul>
 			</div>
-			<div>
+			{/* <div>
 				<ul>
 					{users.map((user) => (
 						<li key={user.id}>
@@ -71,7 +71,7 @@ const FoodList = () => {
 						</li>
 					))}
 				</ul>
-			</div>
+			</div> */}
 			<div>
 				<ul>
 					{posts.map((post) => (

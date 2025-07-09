@@ -36,11 +36,21 @@ const Navbar = () => {
 	return (
 		<NavigationMenu>
 			<NavigationMenuList>
-				<NavigationMenuItem>
-					<NavigationMenuLink asChild>
-						<Link to="/">Home</Link>
-					</NavigationMenuLink>
-				</NavigationMenuItem>
+				{!isAuthenticated && (
+					<NavigationMenuItem>
+						<NavigationMenuLink asChild>
+							<Link to="/">Home</Link>
+						</NavigationMenuLink>
+					</NavigationMenuItem>
+				)}
+				{/* {isAuthenticated && ( */}
+				{/* // <NavigationMenuItem>
+					// 	<NavigationMenuLink asChild>
+					// 		<Link to="/">Home</Link>
+					// 	</NavigationMenuLink>
+					// </NavigationMenuItem> */}
+				{/* )} */}
+
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Blogs</NavigationMenuTrigger>
 					<NavigationMenuContent>
