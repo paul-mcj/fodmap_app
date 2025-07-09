@@ -9,10 +9,11 @@ class FoodSerializer(serializers.ModelSerializer):
 
 class BlogSerializer(serializers.ModelSerializer):
     author = serializers.StringRelatedField()  # show username instead of id
-    foods = serializers.PrimaryKeyRelatedField(
-    many=True,
-    queryset=Food.objects.all()
-)
+    foods = FoodSerializer(many=True, read_only=True)  # <-- serialize as nested Food objects
+    # foods = serializers.PrimaryKeyRelatedField(
+    # many=True,
+    # queryset=Food.objects.all()
+# )
     class Meta:
         model = Blog
         fields = ['id', 'author', 'title', 'description', 'type', 'foods', 'created_at', 'updated_at']
