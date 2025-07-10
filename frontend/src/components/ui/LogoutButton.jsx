@@ -1,18 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import { privateLogout } from "@/utils/api_req";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/context/AuthContext";
 
 const LogoutButton = () => {
 	const navigate = useNavigate();
+	const { setIsAuthenticated, setUser } = useAuth();
 
 	const handleLogout = async (e) => {
 		e.preventDefault();
 		try {
 			await privateLogout();
-
-			// TODO: Clear local app state (if its put into context API or useState later)
-			// navigate home
-			navigate("/");
+			// update global state
+			setIsAuthenticated(() => false);
+			setUser(() => null);
+			navigate("/"); // navigate home
 		} catch (err) {
 			console.error(
 				"Login failed:",

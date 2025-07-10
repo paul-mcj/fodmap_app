@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { privateGetUserData } from "../utils/api_req";
 import {
 	NavigationMenu,
 	NavigationMenuContent,
@@ -12,93 +10,19 @@ import {
 	NavigationMenuViewport
 } from "@/components/ui/navigation-menu";
 import LogoutButton from "./ui/LogoutButton";
+import { useAuth } from "@/context/AuthContext";
 
 const Navbar = () => {
-	const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-	useEffect(() => {
-		// verify user is authenticated to view dashboard, otherwise the browser might load a cached version of the page even if user logged out and cookies were cleared
-		const verifyUser = async () => {
-			try {
-				(await privateGetUserData()) &&
-					setIsAuthenticated(() => true);
-			} catch (err) {
-				setIsAuthenticated(() => false);
-				console.error(
-					"Verification failed:",
-					err?.response?.data?.detail || err.message
-				);
-			}
-		};
-		verifyUser();
-	}, []);
+	const { isAuthenticated } = useAuth();
 
 	return (
 		<NavigationMenu>
 			<NavigationMenuList>
-				{!isAuthenticated && (
-					<NavigationMenuItem>
-						<NavigationMenuLink asChild>
-							<Link to="/">Home</Link>
-						</NavigationMenuLink>
-					</NavigationMenuItem>
-				)}
-				{/* {isAuthenticated && ( */}
-				{/* // <NavigationMenuItem>
-					// 	<NavigationMenuLink asChild>
-					// 		<Link to="/">Home</Link>
-					// 	</NavigationMenuLink>
-					// </NavigationMenuItem> */}
-				{/* )} */}
-
 				<NavigationMenuItem>
-					<NavigationMenuTrigger>Blogs</NavigationMenuTrigger>
-					<NavigationMenuContent>
-						<ul className="grid w-[300px] gap-4">
-							<li>
-								<NavigationMenuLink asChild>
-									<Link to="/discussions">
-										<div className="font-medium">
-											Discussions
-										</div>
-										<div className="text-muted-foreground">
-											Participate in
-											discussions with other
-											members of the FODMAP
-											community
-										</div>
-									</Link>
-								</NavigationMenuLink>
-								<NavigationMenuLink asChild>
-									<Link to="/recipes">
-										<div className="font-medium">
-											Recipes
-										</div>
-										<div className="text-muted-foreground">
-											View FODMAP recipes
-											created by other users in
-											the community
-										</div>
-									</Link>
-								</NavigationMenuLink>
-							</li>
-						</ul>
-					</NavigationMenuContent>
+					<NavigationMenuLink asChild>
+						<Link to="/">Home</Link>
+					</NavigationMenuLink>
 				</NavigationMenuItem>
-				{!isAuthenticated && (
-					<>
-						<NavigationMenuItem>
-							<NavigationMenuLink asChild>
-								<Link to="/login">Login</Link>
-							</NavigationMenuLink>
-						</NavigationMenuItem>
-						<NavigationMenuItem>
-							<NavigationMenuLink asChild>
-								<Link to="/register">Signup</Link>
-							</NavigationMenuLink>
-						</NavigationMenuItem>
-					</>
-				)}
 				{isAuthenticated && (
 					<NavigationMenuItem>
 						<NavigationMenuTrigger>
@@ -147,6 +71,54 @@ const Navbar = () => {
 							</ul>
 						</NavigationMenuContent>
 					</NavigationMenuItem>
+				)}
+				<NavigationMenuItem>
+					<NavigationMenuTrigger>Blogs</NavigationMenuTrigger>
+					<NavigationMenuContent>
+						<ul className="grid w-[300px] gap-4">
+							<li>
+								<NavigationMenuLink asChild>
+									<Link to="/discussions">
+										<div className="font-medium">
+											Discussions
+										</div>
+										<div className="text-muted-foreground">
+											Participate in
+											discussions with other
+											members of the FODMAP
+											community
+										</div>
+									</Link>
+								</NavigationMenuLink>
+								<NavigationMenuLink asChild>
+									<Link to="/recipes">
+										<div className="font-medium">
+											Recipes
+										</div>
+										<div className="text-muted-foreground">
+											View FODMAP recipes
+											created by other users in
+											the community
+										</div>
+									</Link>
+								</NavigationMenuLink>
+							</li>
+						</ul>
+					</NavigationMenuContent>
+				</NavigationMenuItem>
+				{!isAuthenticated && (
+					<>
+						<NavigationMenuItem>
+							<NavigationMenuLink asChild>
+								<Link to="/login">Login</Link>
+							</NavigationMenuLink>
+						</NavigationMenuItem>
+						<NavigationMenuItem>
+							<NavigationMenuLink asChild>
+								<Link to="/register">Signup</Link>
+							</NavigationMenuLink>
+						</NavigationMenuItem>
+					</>
 				)}
 			</NavigationMenuList>
 		</NavigationMenu>

@@ -1,26 +1,26 @@
 import { useEffect, useState } from "react";
 import {
-	publicGetAllFoods,
+	// publicGetAllFoods,
 	publicGetAllPosts
 	// publicGetAllUsers
 } from "../utils/api_req";
 import { formatPostDate } from "../utils/format";
 
 const FoodList = () => {
-	const [foods, setFoods] = useState([]);
+	// const [foods, setFoods] = useState([]);
 	// const [users, setUsers] = useState([]);
 	const [posts, setPosts] = useState([]);
 
 	// initial data fetch
 	useEffect(() => {
-		publicGetAllFoods()
-			.then((res) => {
-				setFoods(() => res.data);
-				console.log("foods complete");
-			})
-			.catch((error) => {
-				console.log(`Error with FoodList useEffect: ${error}`);
-			});
+		// publicGetAllFoods()
+		// 	.then((res) => {
+		// 		setFoods(() => res.data);
+		// 		console.log("foods complete");
+		// 	})
+		// 	.catch((error) => {
+		// 		console.log(`Error with FoodList useEffect: ${error}`);
+		// 	});
 
 		// TODO: eventually limit homepage feed "/api/posts?limit=5"
 		publicGetAllPosts()
@@ -49,7 +49,7 @@ const FoodList = () => {
 	return (
 		<>
 			<h2>FoodList component</h2>
-			<div>
+			{/* <div>
 				<ul>
 					{foods.map((food) => (
 						<li key={food.id}>
@@ -59,7 +59,7 @@ const FoodList = () => {
 						</li>
 					))}
 				</ul>
-			</div>
+			</div> */}
 			{/* <div>
 				<ul>
 					{users.map((user) => (

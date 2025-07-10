@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { privateLogin, privateGetUserData } from "../utils/api_req";
+import { privateLogin } from "../utils/api_req";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,28 +12,30 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useAuth } from "@/context/AuthContext";
+import { privateGetUserData } from "../utils/api_req";
 
 const LoginPage = () => {
+	const { setIsAuthenticated, setUser } = useAuth();
+	const navigate = useNavigate();
+
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
-
-	const navigate = useNavigate();
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
 
 		try {
-			// FIXME: should work for either username or email as long as either matches the password it should authenticate
+			// Login the user
 			await privateLogin({ username, password });
 
-			// if login is successful fetch the user info
+			// Fetch user details after login
 			const res = await privateGetUserData();
-			const user = res.data;
-			console.log(user);
-			console.log("Login successful!!");
+			setUser(() => res.data);
+			setIsAuthenticated(() => true);
 
-			// navigate to user dashboard
-			navigate("/dashboard", { state: { user } });
+			// Navigate to dashboard
+			navigate("/dashboard", { replace: true });
 		} catch (err) {
 			console.error(
 				"Login failed:",
@@ -49,24 +51,24 @@ const LoginPage = () => {
 				<CardHeader>
 					<CardTitle>Welcome Back!</CardTitle>
 					<CardDescription>
-						Login to your account with your username or email
+						Login to your account
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
 					<form>
 						<div className="flex flex-col gap-6">
 							<div className="grid gap-3">
-								<Label htmlFor="email">
-									Username or Email
+								<Label htmlFor="username">
+									Username
 								</Label>
 								<Input
 									value={username}
 									onChange={(e) =>
 										setUsername(e.target.value)
 									}
-									id="email"
-									type="email"
-									placeholder="m@example.com"
+									id="username"
+									type="text"
+									placeholder="Username"
 									required
 								/>
 							</div>

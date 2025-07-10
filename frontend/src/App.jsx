@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import Dashboard from "./pages/Dashboard";
+import RequireAuth from "./routes/RequireAuth";
 
 function App() {
 	return (
@@ -29,7 +30,11 @@ function App() {
 						/>
 						<Route
 							path="/dashboard"
-							element={<Dashboard />}
+							element={
+								<RequireAuth>
+									<Dashboard />
+								</RequireAuth>
+							}
 						/>
 					</Routes>
 				</PageTemplate>

@@ -20,8 +20,8 @@ const BlogList = () => {
 
 	return (
 		<>
-			<h2>BlogList component</h2>
-			{/* TODO: later add filters here for “type=recipe” or “type=discussion” */}
+			<h2>Recent Blogs</h2>
+			{/* TODO: later add search bar for foods to filter, or “type=recipe” or “type=discussion”, etc. */}
 			<div>
 				<ul>
 					{blogs.map((blog) => (

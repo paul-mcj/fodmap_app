@@ -1,9 +1,5 @@
 import { useState } from "react";
-import {
-	privateRegistration,
-	privateGetUserData,
-	privateLogin
-} from "../utils/api_req";
+import { privateRegistration, privateLogin } from "../utils/api_req";
 import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
@@ -30,12 +26,8 @@ const RegisterPage = () => {
 			// login new user
 			await privateLogin({ username, password });
 
-			// fetch their info
-			const res = await privateGetUserData();
-			const user = res.data;
-
-			// navigate to user dashboard
-			navigate("/dashboard", { state: { user } });
+			navigate("/login");
+			// TODO: update alert that they can now tyr to log in
 		} catch (err) {
 			console.error(
 				"Login failed:",
@@ -65,7 +57,7 @@ const RegisterPage = () => {
 					placeholder="Password"
 					type="password"
 				/>
-
+				{/* TODO: add a confirm password field that matches before the form can even attempt to be validated */}
 				<input
 					value={bio}
 					onChange={(e) => setBio(e.target.value)}

@@ -31,7 +31,6 @@ const CardTemplate = ({
 				<p>{description}</p>
 			</CardContent>
 			<CardFooter>
-				{/* TODO: foods as tagged badges! */}
 				<ul>
 					{foods.map((food) => (
 						<li key={food.id}>

@@ -1,7 +1,5 @@
-import { useNavigate } from "react-router-dom";
 import {
 	privateGetUserPosts,
-	privateGetUserData,
 	privateGetUserJournalEntries,
 	privateGetUserBlogs
 } from "../utils/api_req";
@@ -10,11 +8,11 @@ import { formatPostDate } from "../utils/format";
 import JournalEntryForm from "../components/JournalEntryForm";
 import BlogForm from "@/components/BlogForm";
 import LogoutButton from "@/components/ui/LogoutButton";
+import { useAuth } from "@/context/AuthContext";
 
 function Dashboard() {
-	// const { state } = useLocation();
-	const navigate = useNavigate();
-	const [user, setUser] = useState({});
+	const { user } = useAuth();
+
 	const [posts, setPosts] = useState([]);
 	const [journalEntries, setJournalEntries] = useState([]);
 	const [userBlogs, setUserBlogs] = useState([]);
@@ -39,38 +37,21 @@ function Dashboard() {
 		}
 	};
 
+	const fetchPosts = async () => {
+		try {
+			const res = await privateGetUserPosts();
+			setPosts(() => res.data);
+			console.log(posts);
+		} catch (err) {
+			console.error("Fetching user posts failed:", err);
+		}
+	};
+
 	useEffect(() => {
-		// verify user is authenticated to view dashboard, otherwise the browser might load a cached version of the page even if user logged out and cookies were cleared
-		const verifyUser = async () => {
-			try {
-				const res = await privateGetUserData();
-				setUser(() => res.data);
-			} catch (err) {
-				console.error(
-					"Verification failed:",
-					err?.response?.data?.detail || err.message
-				);
-				navigate("/login"); // force to login page if auth fails
-			}
-		};
-
-		const fetchPosts = async () => {
-			try {
-				const res = await privateGetUserPosts();
-				setPosts(() => res.data);
-				console.log(posts);
-			} catch (err) {
-				console.error("Fetching user posts failed:", err);
-			}
-		};
-
-		verifyUser();
 		fetchPosts();
 		fetchJournalEntries();
 		fetchUserBlogs();
 	}, []);
-
-	if (!user) return <p>Loading...</p>; // or redirect if needed
 
 	return (
 		<div>
@@ -99,7 +80,6 @@ function Dashboard() {
 					))}
 				</ul>
 			)}
-
 			<JournalEntryForm onNewJournalEntry={fetchJournalEntries} />
 			<BlogForm onCreateNewBlog={fetchUserBlogs} />
 		</div>
