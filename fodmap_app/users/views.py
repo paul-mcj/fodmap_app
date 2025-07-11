@@ -1,5 +1,7 @@
+from django.http import JsonResponse
 from .models import CustomUser
 from rest_framework import generics, status
+from rest_framework.decorators import api_view
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -72,3 +74,21 @@ class LogoutView(APIView):
         response.delete_cookie("refresh")
 
         return response
+
+# Check if username exists
+@api_view(['GET'])
+def check_username(request):
+    username = request.query_params.get('username', None)
+    if not username:
+        return Response({"available": False, "detail": "No username provided"}, status=400)
+    is_taken = CustomUser.objects.filter(username__iexact=username).exists()
+    return Response({"available": not is_taken})
+
+# Check if email exists
+@api_view(['GET'])
+def check_email(request):
+    email = request.query_params.get('email', None)
+    if not email:
+        return Response({"available": False, "detail": "No email provided"}, status=400)
+    is_taken = CustomUser.objects.filter(email__iexact=email).exists()
+    return Response({"available": not is_taken})

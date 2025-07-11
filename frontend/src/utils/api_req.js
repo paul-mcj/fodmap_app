@@ -16,10 +16,35 @@ const PUBLIC_API = axios.create({
 export const privateLogin = (credentials) =>
 	PRIVATE_API.post("users/token/", credentials);
 export const privateLogout = () => PRIVATE_API.post("users/logout/");
-export const privateRegistration = (info) =>
-	PRIVATE_API.post("users/register/", info);
+// export const privateRegistration = (info) =>
+// 	PRIVATE_API.post("users/register/", info);
+export const privateRegistration = (info) => {
+	const formData = new FormData();
+	formData.append("username", info.username);
+	formData.append("email", info.email);
+	formData.append("password", info.password);
+	formData.append("bio", info.bio || "");
+
+	// Only append profile image if user selected one
+	if (info.profileImage) {
+		formData.append("profile_image", info.profileImage);
+	}
+
+	return PRIVATE_API.post("users/register/", formData, {
+		headers: {
+			"Content-Type": "multipart/form-data"
+		}
+	});
+};
+
 export const privateGetUserData = () => PRIVATE_API.get("users/me/");
 export const publicGetAllUsers = () => PUBLIC_API.get("users/");
+export const publicCheckUsername = (username) =>
+	PUBLIC_API.get(
+		`users/check-username/?username=${encodeURIComponent(username)}`
+	);
+export const publicCheckEmail = (email) =>
+	PUBLIC_API.get(`users/check-email/?email=${encodeURIComponent(email)}`);
 
 // Foods
 // TODO: CRUD add, update, and delete functions

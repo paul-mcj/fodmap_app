@@ -15,6 +15,7 @@ import { useAuth } from "@/context/AuthContext";
 const Navbar = () => {
 	const { isAuthenticated } = useAuth();
 
+	// TODO: needs to float on top when users scroll
 	return (
 		<NavigationMenu>
 			<NavigationMenuList>

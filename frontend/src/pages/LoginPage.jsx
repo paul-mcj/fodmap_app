@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { privateLogin } from "../utils/api_req";
+import { privateLogin, privateGetUserData } from "../utils/api_req";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,7 +13,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/context/AuthContext";
-import { privateGetUserData } from "../utils/api_req";
 
 const LoginPage = () => {
 	const { setIsAuthenticated, setUser } = useAuth();
@@ -100,11 +99,11 @@ const LoginPage = () => {
 									className="w-full">
 									Login
 								</Button>
-								<Button
+								{/* <Button
 									variant="outline"
 									className="w-full">
 									Login with Google
-								</Button>
+								</Button> */}
 							</div>
 						</div>
 						<div className="mt-4 text-center text-sm">
@@ -120,29 +119,6 @@ const LoginPage = () => {
 			</Card>
 		</div>
 	);
-
-	// return (
-	// 	<>
-	// 		<p>
-	// 			Already a user? Login here (you can use your username or
-	// 			email):
-	// 		</p>
-	// 		<form onSubmit={handleLogin}>
-	// 			<input
-	// 				value={username}
-	// 				onChange={(e) => setUsername(e.target.value)}
-	// 				placeholder="Username or Email"
-	// 			/>
-	// 			<input
-	// 				value={password}
-	// 				onChange={(e) => setPassword(e.target.value)}
-	// 				placeholder="Password"
-	// 				type="password"
-	// 			/>
-	// 			<button type="submit">Login</button>
-	// 		</form>
-	// 	</>
-	// );
 };
 
 export default LoginPage;
