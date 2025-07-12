@@ -54,7 +54,7 @@ const LoginPage = () => {
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
-					<form>
+					<form onSubmit={handleLogin}>
 						<div className="flex flex-col gap-6">
 							<div className="grid gap-3">
 								<Label htmlFor="username">
@@ -95,7 +95,6 @@ const LoginPage = () => {
 							<div className="flex flex-col gap-3">
 								<Button
 									type="submit"
-									onClick={handleLogin}
 									className="w-full">
 									Login
 								</Button>
