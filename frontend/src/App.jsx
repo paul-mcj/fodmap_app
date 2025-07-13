@@ -13,7 +13,6 @@ function App() {
 		<>
 			<Router>
 				<Navbar />
-				<h1>FODMAP Community</h1>
 				<PageTemplate>
 					<Routes>
 						<Route

@@ -6,7 +6,7 @@ import {
 import { useEffect, useState } from "react";
 import { formatPostDate } from "../utils/format";
 import JournalEntryForm from "../components/JournalEntryForm";
-import BlogForm from "@/components/BlogForm";
+import BlogForm from "@/components/blog/BlogForm";
 import LogoutButton from "@/components/ui/LogoutButton";
 import { useAuth } from "@/context/AuthContext";
 

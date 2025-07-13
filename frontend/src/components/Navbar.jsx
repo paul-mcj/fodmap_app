@@ -21,7 +21,9 @@ const Navbar = () => {
 			<NavigationMenuList>
 				<NavigationMenuItem>
 					<NavigationMenuLink asChild>
-						<Link to="/">Home</Link>
+						<Link to="/">
+							<h1>FODMAP Community</h1>
+						</Link>
 					</NavigationMenuLink>
 				</NavigationMenuItem>
 				{isAuthenticated && (
