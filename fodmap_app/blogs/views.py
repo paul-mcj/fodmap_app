@@ -31,11 +31,6 @@ class UserBlogRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView
     def get_queryset(self):
         return Blog.objects.filter(author=self.request.user)
 
-
-
-
-
-
 # GET all blogs
 class BlogListAPIView(generics.ListCreateAPIView):
     queryset = Blog.objects.all()

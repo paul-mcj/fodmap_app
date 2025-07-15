@@ -25,7 +25,7 @@ This project is a combination of personal need, clean design and modern tools.
 
 ## Tech Stack
 
--    **Frontend**: React (vite.js), TailwindCSS (via ShadCN/UI)
+-    **Frontend**: React (vite.js), TailwindCSS (via ShadCN/UI and Preline)
 -    **Backend**: Django, Django REST Framework
 -    **Database**: PostgreSQL
 -    **Authentication**: JWT (simplejwt + HttpOnly cookies)
