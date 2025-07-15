@@ -10,6 +10,7 @@ import {
 	CardHeader,
 	CardTitle
 } from "@/components/ui/card";
+import PageTemplate from "./PageTemplate";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/context/AuthContext";
@@ -45,78 +46,84 @@ const LoginPage = () => {
 	};
 
 	return (
-		<div className={cn("flex flex-col gap-6")}>
-			<Card>
-				<CardHeader>
-					<CardTitle>Welcome Back!</CardTitle>
-					<CardDescription>
-						Login to your account
-					</CardDescription>
-				</CardHeader>
-				<CardContent>
-					<form onSubmit={handleLogin}>
-						<div className="flex flex-col gap-6">
-							<div className="grid gap-3">
-								<Label htmlFor="username">
-									Username
-								</Label>
-								<Input
-									value={username}
-									onChange={(e) =>
-										setUsername(e.target.value)
-									}
-									id="username"
-									type="text"
-									placeholder="Username"
-									required
-								/>
-							</div>
-							<div className="grid gap-3">
-								<div className="flex items-center">
-									<Label htmlFor="password">
-										Password
+		<PageTemplate>
+			<div className={cn("flex flex-col gap-6")}>
+				<Card>
+					<CardHeader>
+						<CardTitle>Welcome Back!</CardTitle>
+						<CardDescription>
+							Login to your account
+						</CardDescription>
+					</CardHeader>
+					<CardContent>
+						<form onSubmit={handleLogin}>
+							<div className="flex flex-col gap-6">
+								<div className="grid gap-3">
+									<Label htmlFor="username">
+										Username
 									</Label>
-									<Link
-										to="/forgot-password"
-										className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
-										Forgot your password?
-									</Link>
+									<Input
+										value={username}
+										onChange={(e) =>
+											setUsername(
+												e.target.value
+											)
+										}
+										id="username"
+										type="text"
+										placeholder="Username"
+										required
+									/>
 								</div>
-								<Input
-									value={password}
-									id="password"
-									type="password"
-									onChange={(e) =>
-										setPassword(e.target.value)
-									}
-									required
-								/>
-							</div>
-							<div className="flex flex-col gap-3">
-								<Button
-									type="submit"
-									className="w-full">
-									Login
-								</Button>
-								{/* <Button
+								<div className="grid gap-3">
+									<div className="flex items-center">
+										<Label htmlFor="password">
+											Password
+										</Label>
+										<Link
+											to="/forgot-password"
+											className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
+											Forgot your password?
+										</Link>
+									</div>
+									<Input
+										value={password}
+										id="password"
+										type="password"
+										onChange={(e) =>
+											setPassword(
+												e.target.value
+											)
+										}
+										required
+									/>
+								</div>
+								<div className="flex flex-col gap-3">
+									<Button
+										type="submit"
+										className="w-full">
+										Login
+									</Button>
+									{/* <Button
 									variant="outline"
 									className="w-full">
 									Login with Google
 								</Button> */}
+								</div>
 							</div>
-						</div>
-						<div className="mt-4 text-center text-sm">
-							Don&apos;t have an account?&nbsp;
-							<Link
-								to="/register"
-								className="underline underline-offset-4">
-								Signup
-							</Link>
-						</div>
-					</form>
-				</CardContent>
-			</Card>
-		</div>
+							<div className="mt-4 text-center text-sm">
+								Don&apos;t have an account?&nbsp;
+								<Link
+									to="/register"
+									className="underline underline-offset-4">
+									Signup
+								</Link>
+							</div>
+						</form>
+					</CardContent>
+				</Card>
+			</div>
+		</PageTemplate>
 	);
 };
 

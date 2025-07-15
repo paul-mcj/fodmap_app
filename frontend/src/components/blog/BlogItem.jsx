@@ -22,8 +22,8 @@ const BlogItem = ({
 					alt={title}
 				/>
 			</div>
-			<div className="p-4 md:p-5">
-				<ul className="flex flex-row">
+			<div className="p-4 md:p-5 text-left">
+				<ul className="flex flex-row justify-evenly flex-wrap">
 					<li>
 						<Badge>{type}</Badge>
 					</li>
@@ -35,13 +35,17 @@ const BlogItem = ({
 						</li>
 					))}
 				</ul>
-				<p>{formatPostDate(created_at)}</p>
+				<div className="flex flex-row justify-between">
+					<p className="mt-2 text-xs text-gray-600 dark:text-neutral-400">
+						{formatPostDate(created_at)}
+					</p>
+					<p className="mt-2 text-xs text-gray-600 dark:text-neutral-400">
+						{author}
+					</p>
+				</div>
 				<h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white">
 					{title}
 				</h3>
-				<p className="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400">
-					{author}
-				</p>
 			</div>
 		</Link>
 	);

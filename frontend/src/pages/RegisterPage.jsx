@@ -15,6 +15,7 @@ import {
 	CardHeader,
 	CardTitle
 } from "@/components/ui/card";
+import PageTemplate from "./PageTemplate";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -203,163 +204,179 @@ const RegisterPage = () => {
 	};
 
 	return (
-		<div className={cn("flex flex-col gap-6")}>
-			<Card>
-				<CardHeader>
-					<CardTitle>Signup for FODMAP Community</CardTitle>
-					<CardDescription>Create an account</CardDescription>
-				</CardHeader>
-				<CardContent>
-					<form
-						onSubmit={handleRegistration}
-						className="flex flex-col gap-6">
-						{/* Username */}
-						<div className="grid gap-2">
-							<Label htmlFor="username">Username</Label>
-							<Input
-								id="username"
-								value={username}
-								onChange={(e) =>
-									setUsername(e.target.value)
-								}
-								type="text"
-								placeholder="Username"
-								required
-							/>
-							{errors.username ? (
-								<p className="text-red-500 text-sm">
-									{errors.username}
-								</p>
-							) : (
-								username && (
-									<ValidationStatus
-										status={usernameStatus}
-										successMsg="Username available"
-										failMsg="Username taken"
-									/>
-								)
-							)}
-						</div>
+		<PageTemplate>
+			<div className={cn("flex flex-col gap-6")}>
+				<Card>
+					<CardHeader>
+						<CardTitle>Signup for FODMAP Community</CardTitle>
+						<CardDescription>
+							Create an account
+						</CardDescription>
+					</CardHeader>
+					<CardContent>
+						<form
+							onSubmit={handleRegistration}
+							className="flex flex-col gap-6">
+							{/* Username */}
+							<div className="grid gap-2">
+								<Label htmlFor="username">
+									Username
+								</Label>
+								<Input
+									id="username"
+									value={username}
+									onChange={(e) =>
+										setUsername(e.target.value)
+									}
+									type="text"
+									placeholder="Username"
+									required
+								/>
+								{errors.username ? (
+									<p className="text-red-500 text-sm">
+										{errors.username}
+									</p>
+								) : (
+									username && (
+										<ValidationStatus
+											status={usernameStatus}
+											successMsg="Username available"
+											failMsg="Username taken"
+										/>
+									)
+								)}
+							</div>
 
-						{/* Email */}
-						<div className="grid gap-2">
-							<Label htmlFor="email">Email</Label>
-							<Input
-								id="email"
-								value={email}
-								onChange={(e) =>
-									setEmail(e.target.value)
-								}
-								type="email"
-								placeholder="you@example.com"
-								required
-							/>
-							{errors.email ? (
-								<p className="text-red-500 text-sm">
-									{errors.email}
-								</p>
-							) : (
-								email && (
-									<ValidationStatus
-										status={emailStatus}
-										successMsg="Email available"
-										failMsg="Email already in use"
-									/>
-								)
-							)}
-						</div>
+							{/* Email */}
+							<div className="grid gap-2">
+								<Label htmlFor="email">Email</Label>
+								<Input
+									id="email"
+									value={email}
+									onChange={(e) =>
+										setEmail(e.target.value)
+									}
+									type="email"
+									placeholder="you@example.com"
+									required
+								/>
+								{errors.email ? (
+									<p className="text-red-500 text-sm">
+										{errors.email}
+									</p>
+								) : (
+									email && (
+										<ValidationStatus
+											status={emailStatus}
+											successMsg="Email available"
+											failMsg="Email already in use"
+										/>
+									)
+								)}
+							</div>
 
-						{/* Password */}
-						<div className="grid gap-2">
-							<Label htmlFor="password">Password</Label>
-							<Input
-								id="password"
-								value={password}
-								onChange={(e) =>
-									setPassword(e.target.value)
-								}
-								type="password"
-								placeholder="••••••••"
-								required
-							/>
-							{errors.password && (
-								<p className="text-red-500 text-sm">
-									{errors.password}
-								</p>
-							)}
-						</div>
+							{/* Password */}
+							<div className="grid gap-2">
+								<Label htmlFor="password">
+									Password
+								</Label>
+								<Input
+									id="password"
+									value={password}
+									onChange={(e) =>
+										setPassword(e.target.value)
+									}
+									type="password"
+									placeholder="••••••••"
+									required
+								/>
+								{errors.password && (
+									<p className="text-red-500 text-sm">
+										{errors.password}
+									</p>
+								)}
+							</div>
 
-						{/* Confirm Password */}
-						<div className="grid gap-2">
-							<Label htmlFor="confirmPassword">
-								Confirm Password
-							</Label>
-							<Input
-								id="confirmPassword"
-								value={confirmPassword}
-								onChange={(e) =>
-									setConfirmPassword(e.target.value)
-								}
-								type="password"
-								placeholder="••••••••"
-								required
-							/>
-							{errors.confirmPassword && (
-								<p className="text-red-500 text-sm">
-									{errors.confirmPassword}
-								</p>
-							)}
-						</div>
+							{/* Confirm Password */}
+							<div className="grid gap-2">
+								<Label htmlFor="confirmPassword">
+									Confirm Password
+								</Label>
+								<Input
+									id="confirmPassword"
+									value={confirmPassword}
+									onChange={(e) =>
+										setConfirmPassword(
+											e.target.value
+										)
+									}
+									type="password"
+									placeholder="••••••••"
+									required
+								/>
+								{errors.confirmPassword && (
+									<p className="text-red-500 text-sm">
+										{errors.confirmPassword}
+									</p>
+								)}
+							</div>
 
-						{/* Bio */}
-						<div className="grid gap-2">
-							<Label htmlFor="bio">Bio (optional)</Label>
-							<Textarea
-								id="bio"
-								value={bio}
-								onChange={(e) => setBio(e.target.value)}
-								type="text"
-								placeholder="Tell us about yourself…"
-							/>
-						</div>
+							{/* Bio */}
+							<div className="grid gap-2">
+								<Label htmlFor="bio">
+									Bio (optional)
+								</Label>
+								<Textarea
+									id="bio"
+									value={bio}
+									onChange={(e) =>
+										setBio(e.target.value)
+									}
+									type="text"
+									placeholder="Tell us about yourself…"
+								/>
+							</div>
 
-						{/* Profile Image */}
-						<div className="grid gap-2">
-							<Label htmlFor="profileImage">
-								Profile Picture (optional)
-							</Label>
-							<Input
-								id="profileImage"
-								onChange={(e) =>
-									setProfileImage(e.target.files[0])
-								}
-								type="file"
-								accept="image/png, image/jpeg"
-							/>
-						</div>
+							{/* Profile Image */}
+							<div className="grid gap-2">
+								<Label htmlFor="profileImage">
+									Profile Picture (optional)
+								</Label>
+								<Input
+									id="profileImage"
+									onChange={(e) =>
+										setProfileImage(
+											e.target.files[0]
+										)
+									}
+									type="file"
+									accept="image/png, image/jpeg"
+								/>
+							</div>
 
-						<Button
-							type="submit"
-							disabled={!isFormValid}
-							className={cn(
-								"w-full",
-								!isFormValid &&
-									"opacity-50 cursor-not-allowed"
-							)}>
-							Signup
-						</Button>
-					</form>
-					<div className="mt-4 text-center text-sm">
-						Already have an account?{" "}
-						<Link
-							to="/login"
-							className="underline underline-offset-4">
-							Login
-						</Link>
-					</div>
-				</CardContent>
-			</Card>
-		</div>
+							<Button
+								type="submit"
+								disabled={!isFormValid}
+								className={cn(
+									"w-full",
+									!isFormValid &&
+										"opacity-50 cursor-not-allowed"
+								)}>
+								Signup
+							</Button>
+						</form>
+						<div className="mt-4 text-center text-sm">
+							Already have an account?{" "}
+							<Link
+								to="/login"
+								className="underline underline-offset-4">
+								Login
+							</Link>
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</PageTemplate>
 	);
 };
 
