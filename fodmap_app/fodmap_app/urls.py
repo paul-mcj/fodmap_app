@@ -18,13 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    # admin
     path('admin/', admin.site.urls),
-
-    # api
-    path("api/foods/", include("foods.urls")),
-    path("api/users/", include("users.urls")),
-    path("api/blogs/", include("blogs.urls")),
-    path("api/posts/", include("posts.urls")),
-    path("api/journals/", include("journals.urls"))
+    path('api/', include('users.urls')),   # Your users app API
+    path('api/', include('foods.urls')),   # Your foods app API
+    path('api/', include('blogs.urls')),   # Your blogs API (includes nested posts)
+    path('api/', include('journals.urls')) # Your journals API
 ]

@@ -4,27 +4,26 @@ from django.db import models
 
 class AbstractPost(models.Model):
     # Base Post model for reuse by RecipePost and DiscussionPost.
-    blog = models.ForeignKey(
-        "blogs.Blog",
-        on_delete=models.CASCADE,
-        related_name="%(class)ss",  # e.g., "recipeposts", "discussionposts"
-    )
+    content = models.TextField(blank=False, validators=[MinLengthValidator(1)])
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name="%(class)ss"
     )
-    title = models.CharField(max_length=255)
-    content = models.TextField()
+    blog = models.ForeignKey(
+        "blogs.Blog",
+        on_delete=models.CASCADE,
+        related_name="%(class)s_posts"
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         abstract = True  # prevents table creation for AbstractPost
-        ordering = ["-created_at", "-updated_at", "-title"]
+        ordering = ["-created_at", "-updated_at"]
 
     def __str__(self):
-        return self.title
+        return f"{self.author.username} on {self.blog.title}"
     
 class RecipePost(AbstractPost):
     # Recipe-specific fields

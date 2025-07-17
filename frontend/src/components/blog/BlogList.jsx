@@ -10,7 +10,7 @@ const BlogList = () => {
 	useEffect(() => {
 		publicGetAllBlogs()
 			.then((res) => {
-				console.log(res.data);
+				console.log("API returned:", res.data);
 				setBlogs(() => res.data);
 				console.log("blogs complete");
 			})

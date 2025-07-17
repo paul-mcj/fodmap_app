@@ -1,15 +1,14 @@
-from django.urls import path
-from .views import (
-    PublicBlogListAPIView,
-    UserBlogListCreateAPIView,
-    UserBlogRetrieveUpdateDestroyAPIView,
-)
+from rest_framework.routers import DefaultRouter
+from rest_framework_nested.routers import NestedSimpleRouter
+from .views import BlogViewSet
+from posts.views import PostViewSet
 
-urlpatterns = [
-    # Public endpoint: anyone can view all blogs
-    path('', PublicBlogListAPIView.as_view(), name='blogs-list'),
+# Main router for blogs
+router = DefaultRouter()
+router.register(r'blogs', BlogViewSet, basename='blogs')
 
-    # User-specific endpoints: must be logged in
-    path('my/', UserBlogListCreateAPIView.as_view(), name='user-blogs-list-create'),
-    path('my/<int:pk>/', UserBlogRetrieveUpdateDestroyAPIView.as_view(), name='user-blog-detail'),
-]
+# Nested router for posts inside blogs
+posts_router = NestedSimpleRouter(router, r'blogs', lookup='blog')
+posts_router.register(r'posts', PostViewSet, basename='blog-posts')
+
+urlpatterns = router.urls + posts_router.urls

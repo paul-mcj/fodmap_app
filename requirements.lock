@@ -10,3 +10,37 @@
 #   universal: false
 
 -e file:.
+asgiref==3.8.1
+    # via django
+    # via django-cors-headers
+    # via fodmap-app
+django==5.2.1
+    # via django-cors-headers
+    # via djangorestframework
+    # via djangorestframework-simplejwt
+    # via drf-nested-routers
+    # via fodmap-app
+django-cors-headers==4.7.0
+    # via fodmap-app
+djangorestframework==3.16.0
+    # via djangorestframework-simplejwt
+    # via drf-nested-routers
+    # via fodmap-app
+djangorestframework-simplejwt==5.5.0
+    # via fodmap-app
+drf-nested-routers==0.94.2
+    # via fodmap-app
+pillow==11.2.1
+    # via fodmap-app
+pyjwt==2.9.0
+    # via djangorestframework-simplejwt
+    # via fodmap-app
+python-decouple==3.8
+    # via fodmap-app
+python-dotenv==1.1.1
+    # via fodmap-app
+sqlparse==0.5.3
+    # via django
+    # via fodmap-app
+tzdata==2025.2
+    # via fodmap-app
