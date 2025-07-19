@@ -1,12 +1,10 @@
 from django.urls import path
 from .views import (
     UserPostsAPIView,
-    RecipePostDetailAPIView,
-    DiscussionPostDetailAPIView
+    AllPostsAPIView
 )
 
 urlpatterns = [
-    path('posts/user/', UserPostsAPIView.as_view(), name='user-posts'),
-    path('posts/user/recipes/<int:pk>/', RecipePostDetailAPIView.as_view(), name='user-recipe-detail'),
-    path('posts/user/discussions/<int:pk>/', DiscussionPostDetailAPIView.as_view(), name='user-discussion-detail'),
+    path("", AllPostsAPIView.as_view(), name="all-posts"),  # matches /api/posts/
+    path("user/", UserPostsAPIView.as_view(), name="user-posts"),  # matches /api/posts/user/
 ]

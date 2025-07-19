@@ -32,4 +32,5 @@ class RecipePost(AbstractPost):
 
 class DiscussionPost(AbstractPost):
     # Discussion-specific fields (optional)
-    topic = models.CharField(max_length=255, blank=True)
+    # topic = models.CharField(max_length=255, blank=True)
+    pass

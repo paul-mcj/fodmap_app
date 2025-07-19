@@ -1,6 +1,7 @@
-from django.urls import path
-from .views import FoodListAPIView
+from rest_framework.routers import DefaultRouter
+from .views import FoodViewSet
 
-urlpatterns = [
-    path('', FoodListAPIView.as_view(), name='food-list'),
-]
+router = DefaultRouter()
+router.register(r'', FoodViewSet, basename='foods')
+
+urlpatterns = router.urls

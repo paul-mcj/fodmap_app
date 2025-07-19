@@ -6,6 +6,14 @@ from .models import RecipePost, DiscussionPost
 from blogs.models import Blog
 from .serializers import PostSerializer
 
+class AllPostsAPIView(generics.ListAPIView):
+    serializer_class = PostSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
+    def get_queryset(self):
+        return (RecipePost.objects.all() | DiscussionPost.objects.all()).order_by("-created_at")
+
+
 class IsAuthorOrReadOnly(BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in SAFE_METHODS:

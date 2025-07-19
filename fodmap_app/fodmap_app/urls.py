@@ -19,8 +19,12 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('users.urls')),   # Your users app API
-    path('api/', include('foods.urls')),   # Your foods app API
-    path('api/', include('blogs.urls')),   # Your blogs API (includes nested posts)
-    path('api/', include('journals.urls')) # Your journals API
+
+    # Blogs & Posts (nested)
+    path("api/", include("blogs.urls")),
+
+    # API endpoints
+    path("api/users/", include("users.urls")),
+    path("api/foods/", include("foods.urls")),
+    path("api/journals/", include("journals.urls")),
 ]
