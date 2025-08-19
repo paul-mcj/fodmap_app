@@ -54,6 +54,8 @@ export const publicGetAllFoods = () => PUBLIC_API.get("foods/");
 // Blogs
 // TODO: CRUD add, update, and delete functions
 export const publicGetAllBlogs = () => PUBLIC_API.get("blogs/");
+export const publicGetSingleBlog = (id) => PUBLIC_API.get(`blogs/${id}/`);
+export const publicGetAllBlogsOfType = (type) => PUBLIC_API.get(`/${type}/`); // get either all "discussions" or "recipes"
 export const privateGetUserBlogs = () => PRIVATE_API.get("blogs/my/");
 export const privatePostNewBlog = (content) =>
 	PRIVATE_API.post("blogs/my/", content);

@@ -4,6 +4,7 @@ from django.db import models
 
 class Blog(models.Model):
     TYPE_CHOICES = [
+        ("", ""),
         ("recipe", "Recipe"),
         ("discussion", "Discussion"),
     ]

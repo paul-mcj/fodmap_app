@@ -6,6 +6,9 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import Dashboard from "./pages/Dashboard";
 import RequireAuth from "./routes/RequireAuth";
+import BlogDetail from "./pages/BlogDetail";
+import Discussions from "./pages/Discussions";
+import Recipes from "./pages/Recipes";
 
 function App() {
 	return (
@@ -32,6 +35,18 @@ function App() {
 					<Route
 						path="/register"
 						element={<RegisterPage />}
+					/>
+					<Route
+						path="/blogs/:id"
+						element={<BlogDetail />}
+					/>
+					<Route
+						path="/discussions"
+						element={<Discussions />}
+					/>
+					<Route
+						path="/recipes"
+						element={<Recipes />}
 					/>
 				</Routes>
 			</Router>

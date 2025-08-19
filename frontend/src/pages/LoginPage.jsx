@@ -23,6 +23,7 @@ const LoginPage = () => {
 	const [password, setPassword] = useState("");
 
 	const handleLogin = async (e) => {
+		console.log(password);
 		e.preventDefault();
 
 		try {
@@ -38,10 +39,9 @@ const LoginPage = () => {
 			navigate("/dashboard", { replace: true });
 		} catch (err) {
 			console.error(
-				"Login failed:",
+				"Login failed!!!:",
 				err?.response?.data?.detail || err.message
 			);
-			console.log("login failed!!");
 		}
 	};
 
