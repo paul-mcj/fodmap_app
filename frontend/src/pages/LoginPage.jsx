@@ -23,7 +23,6 @@ const LoginPage = () => {
 	const [password, setPassword] = useState("");
 
 	const handleLogin = async (e) => {
-		console.log(password);
 		e.preventDefault();
 
 		try {

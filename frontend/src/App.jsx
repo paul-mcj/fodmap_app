@@ -9,12 +9,15 @@ import RequireAuth from "./routes/RequireAuth";
 import BlogDetail from "./pages/BlogDetail";
 import Discussions from "./pages/Discussions";
 import Recipes from "./pages/Recipes";
+import { useAuth } from "./context/AuthContext";
 
 function App() {
+	const { isAuthenticated } = useAuth();
+
 	return (
 		<>
 			<Router>
-				<Navbar />
+				{!isAuthenticated && <Navbar />}
 				<Routes>
 					<Route
 						path="/"
