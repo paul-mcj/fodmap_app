@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import {
 	House,
 	CookingPot,
@@ -20,18 +20,18 @@ const DashboardSidebar = () => {
 	return (
 		<div
 			id="hs-application-sidebar"
-			className="hs-overlay  [--auto-close:lg] hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform w-65 h-full hidden fixed inset-y-0 start-0 z-60 bg-white border-e border-gray-200 lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 dark:bg-neutral-800 dark:border-neutral-700"
+			className="hs-overlay [--auto-close:lg] hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform w-65 h-full hidden fixed inset-y-0 start-0 z-60 bg-white border-e border-gray-200 lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 dark:bg-neutral-800 dark:border-neutral-700"
 			role="dialog"
 			tabindex="-1"
 			aria-label="Sidebar">
 			<div className="relative flex flex-col h-full max-h-full">
 				<div className="px-6 pt-4 flex items-center">
-					<a
+					<Link
 						className="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80"
-						href="/"
+						to="/"
 						aria-label="FODMAP Community">
 						Logo and name here
-					</a>
+					</Link>
 					<div className="hidden lg:block ms-2"></div>
 				</div>
 				<div className="h-full overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
@@ -114,6 +114,7 @@ const DashboardSidebar = () => {
 								<DashboardSidebarListItem
 									Icon={House}
 									text="Dashboard"
+									to="/dashboard/"
 								/>
 							</ul>
 						</div>
@@ -125,14 +126,19 @@ const DashboardSidebar = () => {
 								<DashboardSidebarListItem
 									Icon={MessagesSquare}
 									text="All Discussions"
+									to="/discussions/"
 								/>
 								<DashboardSidebarListItem
 									Icon={MessageSquare}
 									text="Your Discussions"
+									// TODO: need frontend page to display this
+									// to="/blogs/my/"
 								/>
 								<DashboardSidebarListItem
 									Icon={MessageSquarePlus}
 									text="New Discussion"
+									// TODO: need frontend page to display this
+									// to="/discussions/new/"
 								/>
 							</ul>
 						</div>
@@ -144,18 +150,25 @@ const DashboardSidebar = () => {
 								<DashboardSidebarListItem
 									Icon={CookingPot}
 									text="All Recipes"
+									to="/recipes/"
 								/>
 								<DashboardSidebarListItem
 									Icon={Utensils}
 									text="Your Recipes"
+									// TODO: need frontend page to display this
+									// to="/recipes/my/"
 								/>
 								<DashboardSidebarListItem
 									Icon={Heart}
 									text="Favourite Recipes"
+									// TODO: need frontend page to display this
+									// to="/favourite-recipes/"
 								/>
 								<DashboardSidebarListItem
 									Icon={SquarePlus}
 									text="New Recipe"
+									// TODO: need frontend page to display this
+									// to="/recipe/new/"
 								/>
 							</ul>
 						</div>
@@ -167,6 +180,8 @@ const DashboardSidebar = () => {
 								<DashboardSidebarListItem
 									Icon={MessageCircle}
 									text="Your Posts"
+									// TODO: need frontend page to display this
+									// to="/posts/"
 								/>
 							</ul>
 						</div>
@@ -178,10 +193,14 @@ const DashboardSidebar = () => {
 								<DashboardSidebarListItem
 									Icon={Notebook}
 									text="Your Journal"
+									// TODO: need frontend page to display this
+									// to="/journal/"
 								/>
 								<DashboardSidebarListItem
 									Icon={NotebookPen}
 									text="New Journal Entry"
+									// TODO: need frontend page to display this
+									// to="/journal/new/"
 								/>
 							</ul>
 						</div>
@@ -193,6 +212,8 @@ const DashboardSidebar = () => {
 								<DashboardSidebarListItem
 									Icon={Hamburger}
 									text="Food Tracker"
+									// TODO: need frontend page to display this
+									// to="/tracker/"
 								/>
 							</ul>
 						</div>

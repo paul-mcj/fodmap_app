@@ -9,51 +9,63 @@ import RequireAuth from "./routes/RequireAuth";
 import BlogDetail from "./pages/BlogDetail";
 import Discussions from "./pages/Discussions";
 import Recipes from "./pages/Recipes";
+import MainFooter from "./components/MainFooter";
+import DashboardMainWrapper from "./components/dashboard/DashboardMainWrapper";
 import { useAuth } from "./context/AuthContext";
 
 function App() {
 	const { isAuthenticated } = useAuth();
 
+	const routes = (
+		<Routes>
+			<Route
+				path="/"
+				element={<HomePage />}
+			/>
+			<Route
+				path="/dashboard/"
+				element={
+					<RequireAuth>
+						<Dashboard />
+					</RequireAuth>
+				}
+			/>
+			<Route
+				path="/login/"
+				element={<LoginPage />}
+			/>
+			<Route
+				path="/register/"
+				element={<RegisterPage />}
+			/>
+			<Route
+				path="/blogs/:id/"
+				element={<BlogDetail />}
+			/>
+			<Route
+				path="/discussions/"
+				element={<Discussions />}
+			/>
+			<Route
+				path="/recipes/"
+				element={<Recipes />}
+			/>
+		</Routes>
+	);
+
 	return (
-		<>
-			<Router>
-				{!isAuthenticated && <Navbar />}
-				<Routes>
-					<Route
-						path="/"
-						element={<HomePage />}
-					/>
-					<Route
-						path="/dashboard"
-						element={
-							<RequireAuth>
-								<Dashboard />
-							</RequireAuth>
-						}
-					/>
-					<Route
-						path="/login"
-						element={<LoginPage />}
-					/>
-					<Route
-						path="/register"
-						element={<RegisterPage />}
-					/>
-					<Route
-						path="/blogs/:id"
-						element={<BlogDetail />}
-					/>
-					<Route
-						path="/discussions"
-						element={<Discussions />}
-					/>
-					<Route
-						path="/recipes"
-						element={<Recipes />}
-					/>
-				</Routes>
-			</Router>
-		</>
+		<Router>
+			{!isAuthenticated && (
+				<>
+					<Navbar />
+					{routes}
+					<MainFooter />
+				</>
+			)}
+			{isAuthenticated && (
+				<DashboardMainWrapper>{routes}</DashboardMainWrapper>
+			)}
+		</Router>
 	);
 }
 

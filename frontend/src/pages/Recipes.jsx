@@ -12,7 +12,6 @@ const Recipes = () => {
 					</div>
 				</div>
 			</div>
-
 			<BlogList type="recipes" />
 		</>
 	);
