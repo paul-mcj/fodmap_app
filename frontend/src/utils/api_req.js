@@ -12,12 +12,10 @@ const PUBLIC_API = axios.create({
 	withCredentials: false // Do NOT send cookies for public endpoints
 });
 
-// Users
+// Users (private routes)
 export const privateLogin = (credentials) =>
 	PRIVATE_API.post("users/token/", credentials);
 export const privateLogout = () => PRIVATE_API.post("users/logout/");
-// export const privateRegistration = (info) =>
-// 	PRIVATE_API.post("users/register/", info);
 export const privateRegistration = (info) => {
 	const formData = new FormData();
 	formData.append("username", info.username);
@@ -36,8 +34,9 @@ export const privateRegistration = (info) => {
 		}
 	});
 };
-
 export const privateGetUserData = () => PRIVATE_API.get("users/me/");
+
+// Users (public routes)
 export const publicGetAllUsers = () => PUBLIC_API.get("users/");
 export const publicCheckUsername = (username) =>
 	PUBLIC_API.get(
@@ -46,27 +45,37 @@ export const publicCheckUsername = (username) =>
 export const publicCheckEmail = (email) =>
 	PUBLIC_API.get(`users/check-email/?email=${encodeURIComponent(email)}`);
 
-// Foods
-// TODO: CRUD add, update, and delete functions
-export const publicGetAllFoods = () => PUBLIC_API.get("foods/");
-// export const publicPostFoodData = (foodData) => PUBLIC_API.post("foods/", foodData);
-
-// Blogs
-// TODO: CRUD add, update, and delete functions
-export const publicGetAllBlogs = () => PUBLIC_API.get("blogs/");
-export const publicGetSingleBlog = (id) => PUBLIC_API.get(`blogs/${id}/`);
-export const publicGetAllBlogsOfType = (type) => PUBLIC_API.get(`/${type}/`); // get either all "discussions" or "recipes"
+// Blogs (private routes)
+// FIXME: currently working on these two functions:
 export const privateGetUserBlogs = () => PRIVATE_API.get("blogs/my/");
 export const privatePostNewBlog = (content) =>
 	PRIVATE_API.post("blogs/my/", content);
+// TODO: need update and delete functions (discussions and recipes)
 
-// Posts
-// TODO: CRUD add, update, and delete functions
-export const publicGetAllPosts = () => PUBLIC_API.get("posts/");
+// Blogs (public routes)
+export const publicGetAllBlogs = () => PUBLIC_API.get("blogs/");
+export const publicGetSingleBlog = (id) => PUBLIC_API.get(`blogs/${id}/`);
+export const publicGetAllBlogsOfType = (type) => PUBLIC_API.get(`/${type}/`); // get either all "discussions" or "recipes"
+
+// Posts (private routes)
 export const privateGetUserPosts = () => PRIVATE_API.get("posts/user/");
-
-// Journals
 // TODO: CRUD add, update, and delete functions
+// TODO: need a function to get all posts by a specific private user
+
+// Posts (public routes)
+// TODO: needs to change to only get posts from one specific blog at a time
+export const publicGetAllPosts = () => PUBLIC_API.get("posts/");
+// TODO: need a function to get the most recent post of any given blog
+
+// Journals (private routes only)
 export const privateGetUserJournalEntries = () => PRIVATE_API.get("journals/");
 export const privatePostUserJournalEntry = (body) =>
 	PRIVATE_API.post("journals/", { body });
+// TODO: need delete function (no updating allowed)
+
+// Foods (private routes)
+// TODO: CRUD add, update, and delete functions
+
+// Foods (public routes)
+export const publicGetAllFoods = () => PUBLIC_API.get("foods/");
+// export const publicPostFoodData = (foodData) => PUBLIC_API.post("foods/", foodData);

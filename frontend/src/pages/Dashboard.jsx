@@ -8,9 +8,12 @@ import { formatPostDate } from "../utils/format";
 import JournalEntryForm from "../components/JournalEntryForm";
 import BlogForm from "@/components/blog/BlogForm";
 import { useAuth } from "@/context/AuthContext";
-import { Focus } from "lucide-react";
 import DashboardPageHeader from "@/components/dashboard/DashboardPageHeader";
 import BlogItem from "@/components/blog/BlogItem";
+import ProfileCard from "@/components/ProfileCard";
+import { Button } from "@/components/ui/button";
+import DashboardContentHeader from "@/components/dashboard/DashboardContentHeader";
+import DashboardCard from "@/components/dashboard/DashboardCard";
 
 function Dashboard() {
 	const { user } = useAuth();
@@ -33,7 +36,6 @@ function Dashboard() {
 		try {
 			const res = await privateGetUserBlogs();
 			setUserBlogs(() => res.data);
-			console.log(userBlogs);
 		} catch (err) {
 			console.error("Fetching user blogs failed:", err);
 		}
@@ -60,217 +62,196 @@ function Dashboard() {
 	}, []);
 
 	return (
-		<>
-			<div className="w-full lg:ps-64">
-				<div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
-					<div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-						<DashboardPageHeader text={"Dashboard"} />
-					</div>
-					{/* Profile */}
-					<div className="flex flex-col relative p-8 items-start text-left">
-						<img
-							className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl -z-10 opacity-20"
-							src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80"
-							alt="Blog Image"
+		<div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+			<div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+				<DashboardPageHeader text={"Dashboard"} />
+			</div>
+			<ProfileCard />
+			<div className="max-w-[85rem] py-10 lg:py-14 mx-auto">
+				<div className="mx-auto text-center mb-10 lg:mb-14">
+					<DashboardContentHeader
+						header="Your Recent Activity"
+						subheader={`Welcome back @${user.username} — here’s what
+							you were working on.`}
+					/>
+					<div className="grid sm:grid-cols-3 gap-6">
+						{/* TODO: fetch the last post logged in user made as per timestamp (fetch on back or front end for efficiency?) */}
+						{/* TODO: this card always needs a special default image */}
+						<DashboardCard
+							badgeText="Last Post"
+							title="d89w32hjr893"
+							text="lorme sajisj dsioad89 dsa8d9wd dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43 dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43
+						dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43
+						dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43
+						dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43
+						dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf4343g0ruew9fgjr gvu 9rehwg9urg"
+							linkText="Read more"
+							imgRef="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80"
 						/>
-						<div className="flex items-end gap-x-3 ">
-							<div className="absolute top-0 right-0 p-2">
-								<Focus className="size-4 shrink-0" />
-								<p>Change Banner</p>
-								{/* //TODO: clicking this button allows users to choose a new banner (they should only be able to choose form like 20 default ones, no customizing allowed -- have a modal appear when they select) */}
-							</div>
-							<div className="shrink-0 ">
-								<img
-									className="shrink-0 size-16 rounded-full"
-									src="https://images.unsplash.com/photo-1510706019500-d23a509eecd4?q=80&w=2667&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-									alt="Avatar"
-								/>
-							</div>
-							<div className="text-left">
-								<h1 className="text-lg font-medium text-gray-800 dark:text-neutral-200">
-									@{user.username}
-								</h1>
-								<a
-									className="block text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-									href="#">
-									Update Photo
-								</a>
-								<a
-									className="block text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-									href="#">
-									Update Bio
-								</a>
-							</div>
-						</div>
-						<div className="mt-8">
-							<p className="text-md text-gray-600 dark:text-neutral-400">
-								{user.bio ||
-									`Tell us about yourself! ${(
-										<a
-											className="block text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-											href="#">
-											Update Bio
-										</a>
-									)}`}
-								hello my name is he real alsim shady
-								this is a sentence about nothing its
-								really just ryring to make sure that the
-								papraprhj donest overlfow and looks
-								naturla when its really long for some
-								users, it needs to not overflow becaus
-								rhen wt wil look bad hello my name is he
-								real alsim shady this is a sentence
-								about nothing its really just ryring to
-								make sure that the papraprhj donest
-								overlfow and looks naturla when its
-								really long for some users, it needs to
-								not overflow becaus rhen wt wil look bad
-								hello my name is he real alsim shady
-								this is a sentence about nothing its
-								really just ryring to make sure that the
-								papraprhj donest overlfow and looks
-								naturla when its really long for some
-								users, it needs to not overflow becaus
-								rhen wt wil look bad
-							</p>
-							<ul className="mt-5 flex flex-col">
-								<li className="text-[13px] text-gray-500">
-									Discussions created: number here
-								</li>
-								<li className="text-[13px] text-gray-500">
-									Recipes created: number here
-								</li>
-								<li className="text-[13px] text-gray-500">
-									Favourite Recipes: number here
-								</li>
-							</ul>
-						</div>
+						{/* TODO: fetch last favourited recipe as per timestamp */}
+						{/* TODO: this card always needs a special default image */}
+						<DashboardCard
+							badgeText="Favourite Recipe"
+							title="Cabbage rolls"
+							text="lorme sg43urg"
+							linkText="View Recipe"
+							imgRef="https://images.unsplash.com/photo-1755289446025-d04dfe8f0fe3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8"
+						/>
+						{/* TODO: fetch last journal entry as per timestamp */}
+						{/* TODO: this card always needs a special default image */}
+						<DashboardCard
+							badgeText="Journal Entry"
+							title="Bacon didn't turn out to good Bacon didn't turn out to good Bacon didn't turn out to good Bacon didn't turn out to good Bacon didn't turn out to good Bacon didn't turn out to good Bacon didn't turn out to goodBacon didn't turn out to good Bacon didn't turn out to good"
+							text="ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43
+						dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43
+						dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiw"
+							linkText="View Journal"
+							imgRef="https://images.unsplash.com/photo-1756296576686-decd6d93f699?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1OHx8fGVufDB8fHx8fA%3D%3D"
+						/>
 					</div>
+				</div>
+				<div className="mx-auto text-center mb-10 lg:mb-14">
+					<DashboardContentHeader
+						header="Discussions"
+						subheader="Engage with other FODMAP Community members."
+					/>
+					<div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+						{/* TODO: 5 to 6 most recent discussions, then a "see all" */}
+						<DashboardCard
+							title="discussion 1"
+							text="lorme sajisj dsioad89 dsa8 lorme sajisj sajisj dsioad89 dsa8 lorme sajis sajisj dsioad89 dsa8 lorme sajis sajisj dsioad89 dsa8 lorme sajisdsioad89 dsa8 lorme sajisj dsioad89 dsa8"
+							linkText="Read more"
+						/>
+						<DashboardCard
+							title="discussion 2"
+							text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
+							linkText="Read more"
+						/>
+						<DashboardCard
+							title="discussion 3"
+							text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
+							linkText="Read more"
+						/>
+						<DashboardCard
+							title="discussion 4"
+							text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
+							linkText="Read more"
+						/>
+						<DashboardCard
+							title="discussion 5"
+							text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
+							linkText="Read more"
+						/>
+						<Button className="cursor-pointer self-end">
+							All discussions
+						</Button>
+					</div>
+				</div>
+				<div className="mx-auto text-center mb-10 lg:mb-14">
+					<DashboardContentHeader
+						header="Recipes"
+						subheader="Get inspired ideas on what to eat for dinner tonight, or
+				post one of your famous meals for others."
+					/>
+					<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+						{/* TODO: 5 to 6 most recent recipes, then a "see all" */}
+						<DashboardCard
+							title="Meat pie"
+							text="lorme sajisj dsioad89 dsa8d9wd dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43 dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43
+						dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43
+						dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43
+						dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43
+						dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf4343g0ruew9fgjr gvu 9rehwg9urg"
+							linkText="View recipe"
+							imgRef="https://images.unsplash.com/photo-1608039783021-6116a558f0c5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVhdCUyMHBpZXxlbnwwfHwwfHx8MA%3D%3D"
+						/>
+						<DashboardCard
+							title="Cabbage rolls"
+							text="lorme sg43urg"
+							linkText="View Recipe"
+							imgRef="https://images.unsplash.com/photo-1622220736031-714bcc9f96b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FiYmFnZSUyMHJvbGxzfGVufDB8fDB8fHww"
+						/>
+						<DashboardCard
+							title="Feta salad with roasted pecans"
+							text="ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43
+						dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiwe g430jf43
+						dwq0d9uqw ej32u49320 f3209trj3 f0329jmfiwe4jtoiw"
+							linkText="View recipe"
+							imgRef="https://plus.unsplash.com/premium_photo-1673590981774-d9f534e0c617?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2FsYWR8ZW58MHx8MHx8fDA%3D"
+						/>
+						<Button className="cursor-pointer self-end md:col-start-2 md:row-start-2">
+							All recipes
+						</Button>
+					</div>
+				</div>
 
-					<h2>Your Journal</h2>
-					{journalEntries.length === 0 ? (
-						<p>No current entries! Make one!</p>
-					) : (
-						<ul>
-							{journalEntries.map((entry) => (
-								<li key={entry.id}>
-									<div>{entry.body}</div>
+				<div className="mx-auto text-center mb-10 lg:mb-14">
+					<DashboardContentHeader
+						header="Your Recent Posts"
+						subheader="View what you have posted on other discussions and recipes."
+					/>
+					<div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+						{/* TODO: show users posts in chronological order of last edited, 5 to 6 recent then a "see all" */}
+						{/* {posts.map((post) => (
+								<li key={post.id}>
+									<div>{post.body}</div>
 									<div>
 										{formatPostDate(
-											entry.created_at
+											post.created_at
 										)}
 									</div>
 								</li>
-							))}
-						</ul>
-					)}
-					<JournalEntryForm
-						onNewJournalEntry={fetchJournalEntries}
+							))} */}
+						<DashboardCard
+							title="post 1"
+							text="lorme sajisj dsioad89 dsa8 lorme sajisj sajisj dsioad89 dsa8 lorme sajis sajisj dsioad89 dsa8 lorme sajis sajisj dsioad89 dsa8 lorme sajisdsioad89 dsa8 lorme sajisj dsioad89 dsa8"
+							linkText="Read more"
+						/>
+						<DashboardCard
+							title="post 2"
+							text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
+							linkText="Read more"
+						/>
+						<DashboardCard
+							title="post 3"
+							text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
+							linkText="Read more"
+						/>
+						<DashboardCard
+							title="post 4"
+							text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
+							linkText="Read more"
+						/>
+						<DashboardCard
+							title="post 5"
+							text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
+							linkText="Read more"
+						/>
+						<Button className="cursor-pointer self-end">
+							All your posts
+						</Button>
+					</div>
+				</div>
+
+				<div className="mx-auto text-center mb-10 lg:mb-14">
+					<DashboardContentHeader
+						header="Journal and Food Tracker"
+						subheader="Both are private and their contents are never
+								shared with anyone."
 					/>
-					<BlogForm onCreateNewBlog={fetchUserBlogs} />
-					{/* End Title */}
-					{/* Grid */}
-					<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-						{/* Card */}
-						<a
-							className="group flex flex-col focus:outline-hidden"
-							href="#">
-							<div className="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
-								<img
-									className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
-									src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80"
-									alt="Blog Image"
-								/>
-								<span className="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-xs font-medium bg-gray-800 text-white py-1.5 px-3 dark:bg-neutral-900">
-									Most Recent Post
-								</span>
-							</div>
+					<div className="grid grid-cols-2 gap-6">
+						{/* TODO: this is a custom card on the dashboard, but it follows similar card design */}
 
-							<div className="mt-7">
-								<h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-neutral-300 dark:group-hover:text-white">
-									title of blog here (as well as tag
-									saying if its a discussion or
-									recipe)
-								</h3>
-								<p className="mt-3 text-gray-800 dark:text-neutral-200">
-									post made (up to 140 chartcers and
-									then ...)
-								</p>
-								<p className="mt-5 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500">
-									Read more
-									<svg
-										className="shrink-0 size-4"
-										xmlns="http://www.w3.org/2000/svg"
-										width="24"
-										height="24"
-										viewBox="0 0 24 24"
-										fill="none"
-										stroke="currentColor"
-										strokeWidth="2"
-										strokeLinecap="round"
-										strokeLinejoin="round">
-										<path d="m9 18 6-6-6-6" />
-									</svg>
-								</p>
-							</div>
-						</a>
-						{/* TODO: get blogs from database for user */}
-						{/* <BlogItem /> */}
-						{/* End Card */}
-
-						{/* Card */}
-						<a
-							className="group flex flex-col focus:outline-hidden"
-							href="#">
-							<div className="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
-								<img
-									className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
-									src="https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80"
-									alt="Blog Image"
-								/>
-							</div>
-
-							<div className="mt-7">
-								<h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-neutral-300 dark:group-hover:text-white">
-									View Favourite Recipes
-								</h3>
-								<p className="mt-3 text-gray-800 dark:text-neutral-200">
-									View all your favourite recipes
-									form other members of the FODMAP
-									Community
-								</p>
-								<p className="mt-5 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500">
-									View all
-									<svg
-										className="shrink-0 size-4"
-										xmlns="http://www.w3.org/2000/svg"
-										width="24"
-										height="24"
-										viewBox="0 0 24 24"
-										fill="none"
-										stroke="currentColor"
-										strokeWidth="2"
-										strokeLinecap="round"
-										strokeLinejoin="round">
-										<path d="m9 18 6-6-6-6" />
-									</svg>
-								</p>
-							</div>
-						</a>
-						{/* End Card */}
-
-						{/* Card */}
 						<a
 							className="group relative flex flex-col w-full min-h-60 bg-[url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80')] bg-center bg-cover rounded-xl hover:shadow-lg focus:outline-hidden focus:shadow-lg transition"
 							href="#">
 							<div className="flex-auto p-4 md:p-6">
-								<h3 className="text-xl text-white/90 group-hover:text-white">
+								<h3 className="text-md text-white/80 group-hover:text-white">
 									<span className="font-bold">
 										Your Journal
-									</span>{" "}
-									is private and its contents are
-									never shared. Write down any
-									experiences you have while on
+									</span>
+									&nbsp; is where you can write down
+									any experiences you have while on
 									FODMAP and keep track of your
 									progress with certain foods.
 								</h3>
@@ -294,43 +275,23 @@ function Dashboard() {
 								</div>
 							</div>
 						</a>
-						{/* End Card */}
-					</div>
-					{/* End Grid */}
-					{/* Title */}
-				</div>
-				{/* TODO: carousel of maybe 5 or 6 items (most recent first) then a "see all" link after */}
-				{/* <BlogItem />s and carousel? */}
-
-				<div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-					<div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-						<h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
-							Your Recipes
-						</h2>
-						<p className="mt-1 text-gray-600 dark:text-neutral-400">
-							View all recipes made by you.
-						</p>
-						<h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
-							Recent Posts
-						</h2>
-						<p className="mt-1 text-gray-600 dark:text-neutral-400">
-							show users posts in chronological order of
-							last edited
-							{posts.map((post) => (
-								<li key={post.id}>
-									<div>{post.body}</div>
-									<div>
-										{formatPostDate(
-											post.created_at
-										)}
-									</div>
-								</li>
-							))}
-						</p>
+						{/* TODO: show a little list of 10 or so items and their level, but a button to go to the "food tracker" page with "more details" */}
+						{/* TODO: this is a custom card on the dashboard, but it follows similar card design */}
+						<DashboardCard
+							badgeText="Food Tracker"
+							// title="Keep track of what foods agree with you and which don't."
+							title="Keep track of your trigger foods."
+							text="carrots 10, cherrires 4"
+							linkText="Go to Food Tracker"
+							imgRef="https://images.unsplash.com/photo-1756296576686-decd6d93f699?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1OHx8fGVufDB8fHx8fA%3D%3D"
+						/>
 					</div>
 				</div>
 			</div>
-		</>
+			<Button className="cursor-pointer self-end mb-16">
+				Back to top
+			</Button>
+		</div>
 	);
 }
 

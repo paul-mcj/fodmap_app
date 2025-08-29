@@ -22,7 +22,7 @@ const DashboardSidebar = () => {
 			id="hs-application-sidebar"
 			className="hs-overlay [--auto-close:lg] hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform w-65 h-full hidden fixed inset-y-0 start-0 z-60 bg-white border-e border-gray-200 lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 dark:bg-neutral-800 dark:border-neutral-700"
 			role="dialog"
-			tabindex="-1"
+			tabIndex="-1"
 			aria-label="Sidebar">
 			<div className="relative flex flex-col h-full max-h-full">
 				<div className="px-6 pt-4 flex items-center">
@@ -106,11 +106,11 @@ const DashboardSidebar = () => {
 							</div>
 							{/* End Search Input */}
 						</div>
-						<div class="pt-3 mt-3 flex flex-col border-t border-gray-200 first:border-t-0 first:pt-0 first:mt-0 dark:border-neutral-700">
-							<span class="block ps-2.5 mb-2 font-medium text-xs text-left uppercase text-gray-500 dark:text-neutral-500">
+						<div className="pt-3 mt-3 flex flex-col border-t border-gray-200 first:border-t-0 first:pt-0 first:mt-0 dark:border-neutral-700">
+							<span className="block ps-2.5 mb-2 font-medium text-xs text-left uppercase text-gray-500 dark:text-neutral-500">
 								Home
 							</span>
-							<ul class="flex flex-col gap-y-1">
+							<ul className="flex flex-col gap-y-1">
 								<DashboardSidebarListItem
 									Icon={House}
 									text="Dashboard"
@@ -118,11 +118,11 @@ const DashboardSidebar = () => {
 								/>
 							</ul>
 						</div>
-						<div class="pt-3 mt-3 flex flex-col border-t border-gray-200 first:border-t-0 first:pt-0 first:mt-0 dark:border-neutral-700">
-							<span class="block ps-2.5 mb-2 font-medium text-xs text-left uppercase text-gray-500 dark:text-neutral-500">
+						<div className="pt-3 mt-3 flex flex-col border-t border-gray-200 first:border-t-0 first:pt-0 first:mt-0 dark:border-neutral-700">
+							<span className="block ps-2.5 mb-2 font-medium text-xs text-left uppercase text-gray-500 dark:text-neutral-500">
 								Discussions
 							</span>
-							<ul class="flex flex-col gap-y-1">
+							<ul className="flex flex-col gap-y-1">
 								<DashboardSidebarListItem
 									Icon={MessagesSquare}
 									text="All Discussions"
@@ -142,11 +142,11 @@ const DashboardSidebar = () => {
 								/>
 							</ul>
 						</div>
-						<div class="pt-3 mt-3 flex flex-col border-t border-gray-200 first:border-t-0 first:pt-0 first:mt-0 dark:border-neutral-700">
-							<span class="block ps-2.5 mb-2 font-medium text-xs text-left uppercase text-gray-500 dark:text-neutral-500">
+						<div className="pt-3 mt-3 flex flex-col border-t border-gray-200 first:border-t-0 first:pt-0 first:mt-0 dark:border-neutral-700">
+							<span className="block ps-2.5 mb-2 font-medium text-xs text-left uppercase text-gray-500 dark:text-neutral-500">
 								Recipes
 							</span>
-							<ul class="flex flex-col gap-y-1">
+							<ul className="flex flex-col gap-y-1">
 								<DashboardSidebarListItem
 									Icon={CookingPot}
 									text="All Recipes"
@@ -172,11 +172,11 @@ const DashboardSidebar = () => {
 								/>
 							</ul>
 						</div>
-						<div class="pt-3 mt-3 flex flex-col border-t border-gray-200 first:border-t-0 first:pt-0 first:mt-0 dark:border-neutral-700">
-							<span class="block ps-2.5 mb-2 font-medium text-xs text-left uppercase text-gray-500 dark:text-neutral-500">
+						<div className="pt-3 mt-3 flex flex-col border-t border-gray-200 first:border-t-0 first:pt-0 first:mt-0 dark:border-neutral-700">
+							<span className="block ps-2.5 mb-2 font-medium text-xs text-left uppercase text-gray-500 dark:text-neutral-500">
 								Posts
 							</span>
-							<ul class="flex flex-col gap-y-1">
+							<ul className="flex flex-col gap-y-1">
 								<DashboardSidebarListItem
 									Icon={MessageCircle}
 									text="Your Posts"
@@ -185,11 +185,11 @@ const DashboardSidebar = () => {
 								/>
 							</ul>
 						</div>
-						<div class="pt-3 mt-3 flex flex-col border-t border-gray-200 first:border-t-0 first:pt-0 first:mt-0 dark:border-neutral-700">
-							<span class="block ps-2.5 mb-2 font-medium text-xs text-left uppercase text-gray-500 dark:text-neutral-500">
+						<div className="pt-3 mt-3 flex flex-col border-t border-gray-200 first:border-t-0 first:pt-0 first:mt-0 dark:border-neutral-700">
+							<span className="block ps-2.5 mb-2 font-medium text-xs text-left uppercase text-gray-500 dark:text-neutral-500">
 								Journal
 							</span>
-							<ul class="flex flex-col gap-y-1">
+							<ul className="flex flex-col gap-y-1">
 								<DashboardSidebarListItem
 									Icon={Notebook}
 									text="Your Journal"
@@ -204,11 +204,11 @@ const DashboardSidebar = () => {
 								/>
 							</ul>
 						</div>
-						<div class="pt-3 mt-3 flex flex-col border-t border-gray-200 first:border-t-0 first:pt-0 first:mt-0 dark:border-neutral-700">
-							<span class="block ps-2.5 mb-2 font-medium text-xs text-left uppercase text-gray-500 dark:text-neutral-500">
+						<div className="pt-3 mt-3 flex flex-col border-t border-gray-200 first:border-t-0 first:pt-0 first:mt-0 dark:border-neutral-700">
+							<span className="block ps-2.5 mb-2 font-medium text-xs text-left uppercase text-gray-500 dark:text-neutral-500">
 								Food Tracker
 							</span>
-							<ul class="flex flex-col gap-y-1">
+							<ul className="flex flex-col gap-y-1">
 								<DashboardSidebarListItem
 									Icon={Hamburger}
 									text="Food Tracker"

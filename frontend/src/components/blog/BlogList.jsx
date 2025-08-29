@@ -3,7 +3,6 @@ import {
 	publicGetAllBlogsOfType
 } from "../../utils/api_req";
 import { useState, useEffect } from "react";
-import CardTemplate from "../CardTemplate";
 import BlogItem from "./BlogItem";
 
 const BlogList = ({ type }) => {

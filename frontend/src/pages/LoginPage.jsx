@@ -100,7 +100,7 @@ const LoginPage = () => {
 								<div className="flex flex-col gap-3">
 									<Button
 										type="submit"
-										className="w-full">
+										className="w-full cursor-pointer">
 										Login
 									</Button>
 									{/* <Button

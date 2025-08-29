@@ -180,18 +180,17 @@ const DashboardMainWrapper = ({ children }) => {
 				</div>
 			</div>
 			<DashboardSidebar />
-			{/* ||| this is where all the "internal" pages (i.e. children prop components) will need to be shown so that when a user is logged in, the dashboard always wraps those page components! */}
-			{/* <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10"> */}
-			{/* <div className="w-full">{children} </div> */}
-			{/* <div className="w-full max-w-sm">{children} </div> */}
-			{/* </div> */}
-			{children}
-
-			<MainFooter>
-				<li>
-					<Link to="/dashboard/">Go to Dashboard</Link>
-				</li>
-			</MainFooter>
+			<div className="w-full lg:ps-64">
+				<div className="px-2 md:px-8 lg:px-8 xl:px-32">
+					{/* ||| this is where all the "internal" pages (i.e. children prop components) will need to be shown so that when a user is logged in, the dashboard always wraps those page components! */}
+					{children}
+				</div>
+				<MainFooter>
+					<li>
+						<Link to="/dashboard/">Go to Dashboard</Link>
+					</li>
+				</MainFooter>
+			</div>
 		</div>
 	);
 };

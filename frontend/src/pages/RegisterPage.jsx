@@ -358,7 +358,7 @@ const RegisterPage = () => {
 								type="submit"
 								disabled={!isFormValid}
 								className={cn(
-									"w-full",
+									"w-full cursor-pointer",
 									!isFormValid &&
 										"opacity-50 cursor-not-allowed"
 								)}>
