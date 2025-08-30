@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+	Navigate,
+	BrowserRouter as Router,
+	Routes,
+	Route
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
@@ -22,6 +27,18 @@ function App() {
 				path="/"
 				element={<HomePage />}
 			/>
+			{/* redirect users away from /dashboard if not logged-in */}
+			{!isAuthenticated && (
+				<Route
+					path="/dashboard/"
+					element={
+						<Navigate
+							to="/login/"
+							replace
+						/>
+					}
+				/>
+			)}
 			<Route
 				path="/dashboard/"
 				element={
@@ -30,14 +47,19 @@ function App() {
 					</RequireAuth>
 				}
 			/>
-			<Route
-				path="/login/"
-				element={<LoginPage />}
-			/>
-			<Route
-				path="/register/"
-				element={<RegisterPage />}
-			/>
+			{/* Only show login + register routes if NOT logged in */}
+			{!isAuthenticated && (
+				<>
+					<Route
+						path="/login/"
+						element={<LoginPage />}
+					/>
+					<Route
+						path="/register/"
+						element={<RegisterPage />}
+					/>
+				</>
+			)}
 			<Route
 				path="/blogs/:id/"
 				element={<BlogDetail />}
@@ -50,19 +72,53 @@ function App() {
 				path="/recipes/"
 				element={<Recipes />}
 			/>
+			{/* redirect logged-in users away from /login or /register */}
+			{isAuthenticated && (
+				<>
+					<Route
+						path="/login/"
+						element={
+							<Navigate
+								to="/dashboard/"
+								replace
+							/>
+						}
+					/>
+					<Route
+						path="/register/"
+						element={
+							<Navigate
+								to="/dashboard/"
+								replace
+							/>
+						}
+					/>
+				</>
+			)}
 		</Routes>
 	);
 
 	return (
+		// <Router>
+		// 	{!isAuthenticated && (
+		// 		<>
+		// 			<Navbar />
+		// 			{routes}
+		// 			<MainFooter />
+		// 		</>
+		// 	)}
+		// 	{isAuthenticated && (
+		// 		<DashboardMainWrapper>{routes}</DashboardMainWrapper>
+		// 	)}
+		// </Router>
 		<Router>
-			{!isAuthenticated && (
+			{!isAuthenticated ? (
 				<>
 					<Navbar />
 					{routes}
 					<MainFooter />
 				</>
-			)}
-			{isAuthenticated && (
+			) : (
 				<DashboardMainWrapper>{routes}</DashboardMainWrapper>
 			)}
 		</Router>

@@ -57,7 +57,7 @@ const ProfileCard = () => {
 					</div>
 				</div>
 			</div>
-			<div className="rounded-b-xl pt-32 px-4 mb-0 md:px-8 lg:px-12 bg-neutral-100 text-left">
+			<div className="rounded-b-xl pt-32 px-4 pb-4 lg:pb-8 mb-0 md:px-8 lg:px-12 bg-neutral-100 text-left">
 				{isAuthenticated &&
 					(user.bio || (
 						<p className="text-md text-gray-700 dark:text-neutral-400">

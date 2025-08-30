@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 # local development -- TODO: add domain later when pushing to production
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", default="localhost,127.0.0.1").split(",")
 
 
 # Application definition
@@ -77,12 +77,12 @@ CORS_ALLOW_CREDENTIALS = True
 
 # TODO: Replace with https deployed site
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:5173",  
+    config("FRONTEND_URL", default="http://127.0.0.1:5173")
 ]
 
 # TODO: Replace with https deployed site
 CSRF_TRUSTED_ORIGINS = [
-     "http://127.0.0.1:5173",
+    config("FRONTEND_URL", default="http://127.0.0.1:5173")
 ]
 
 # TODO: When you deploy to production with HTTPS, set 'Lax' to 'None' and False to True !!

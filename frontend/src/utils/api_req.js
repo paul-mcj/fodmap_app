@@ -2,13 +2,13 @@ import axios from "axios";
 
 // functions that consume this callback require authentication
 const PRIVATE_API = axios.create({
-	baseURL: "http://127.0.0.1:8000/api/",
+	baseURL: import.meta.env.VITE_API_BASE_URL,
 	withCredentials: true // crucial so that cookies (like access/refresh tokens) are set on the browser.
 });
 
 // any endpoint that calls this does not need to authenticate the user
 const PUBLIC_API = axios.create({
-	baseURL: "http://127.0.0.1:8000/api/",
+	baseURL: import.meta.env.VITE_API_BASE_URL,
 	withCredentials: false // Do NOT send cookies for public endpoints
 });
 
