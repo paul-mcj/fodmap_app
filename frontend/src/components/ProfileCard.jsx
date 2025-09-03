@@ -1,31 +1,76 @@
 import { useAuth } from "@/context/AuthContext";
 import { Focus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect, useRef } from "react";
+import BannerModal from "./banner/BannerModal";
+import { formatPostDate } from "@/utils/format";
+import { useLocation } from "react-router-dom";
 
 const ProfileCard = () => {
 	const { user, isAuthenticated } = useAuth();
+	const location = useLocation();
+
+	const [isBannerModalOpen, setIsBannerModalOpen] = useState(false);
+	const [bannerSelection, setBannerSelection] = useState("bg-red-400");
+	const originalBannerSelection = useRef(bannerSelection);
+
+	const handleBannerModal = () => {
+		setIsBannerModalOpen((prev) => !prev);
+	};
+
+	useEffect(() => {
+		if (location.state?.openModal === "banner") {
+			// always set to true
+			setIsBannerModalOpen(() => true);
+
+			// remove the state so back navigation doesn't reopen it
+			window.history.replaceState({}, document.title);
+
+			// scroll to top
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		}
+	}, [location.state]);
 
 	return (
 		<>
 			<div className="flex relative items-start text-left mb-0 pt-0 md:pt-12">
-				<img
-					className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-t-xl -z-10"
-					// src="https://images.unsplash.com/photo-1546805220-8638b5ff0d42?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-					// src="https://images.unsplash.com/photo-1754753676170-f91ffcddb57e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-					src="https://images.unsplash.com/photo-1756129725708-87f667b30418?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-					alt="Blog Image"
-				/>
+				{/* TODO: eventually will need to check database for something else to differentiate images from colors/gradients */}
+				{bannerSelection?.startsWith("http") ? (
+					<img
+						className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-t-xl -z-10"
+						// src="https://images.unsplash.com/photo-1546805220-8638b5ff0d42?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						// src="https://images.unsplash.com/photo-1754753676170-f91ffcddb57e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						src={bannerSelection}
+						alt="Blog Image"
+					/>
+				) : (
+					bannerSelection && (
+						<span
+							className={`${bannerSelection} size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-t-xl -z-10 border border-gray-200 cursor-pointer disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700`}></span>
+					)
+				)}
 				{isAuthenticated && (
 					<div className="absolute top-0 right-0 p-2 sm:p-4">
-						{/* //TODO: clicking this button allows users to choose a new banner (they should only be able to choose form like 20 default ones, no customizing allowed -- have a modal appear when they select) */}
+						{/* //TODO: clicking this button allows users to choose a new banner (they should only be able to choose form like 20 default images or a color picker w defaults, no customizing allowed -- have a modal appear when they select) */}
 						<Button
 							variant="ghost"
-							className="cursor-pointer">
+							className="cursor-pointer"
+							state={{ openModal: "banner" }}
+							onClick={handleBannerModal}>
 							<Focus className="size-4 shrink-0" />
 							<p className="hidden sm:block">
 								Change Banner
 							</p>
 						</Button>
+						<BannerModal
+							handleBannerModal={handleBannerModal}
+							bannerSelection={bannerSelection}
+							isBannerModalOpen={isBannerModalOpen}
+							setBannerSelection={setBannerSelection}
+							originalBannerSelection={
+								originalBannerSelection
+							}
+						/>
 					</div>
 				)}
 				<div className="flex items-end gap-4 ml-4 md:ml-8 lg:ml-12 relative top-20">
@@ -42,7 +87,7 @@ const ProfileCard = () => {
 								<a
 									className="block text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
 									href="#">
-									Update Photo
+									Change Avatar
 								</a>
 								<a
 									className="block text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
@@ -57,7 +102,8 @@ const ProfileCard = () => {
 					</div>
 				</div>
 			</div>
-			<div className="rounded-b-xl pt-32 px-4 pb-4 lg:pb-8 mb-0 md:px-8 lg:px-12 bg-neutral-100 text-left">
+			{/* <div className="rounded-b-xl pt-32 px-4 pb-4 lg:pb-8 mb-0 md:px-8 lg:px-12 bg-neutral-100 text-left"> */}
+			<div className="rounded-b-xl pt-32 px-4 pb-4 lg:pb-8 mb-0 md:px-8 lg:px-12 text-left bg-white border border-t-0 border-gray-200 shadow-xl dark:bg-neutral-900 dark:border-neutral-800">
 				{isAuthenticated &&
 					(user.bio || (
 						<p className="text-md text-gray-700 dark:text-neutral-400">
@@ -86,20 +132,21 @@ const ProfileCard = () => {
 				ryring to make sure that the papraprhj donest overlfow and
 				looks naturla when its really long for some users, it needs
 				to not overflow becaus rhen wt wil look bad
-				{isAuthenticated && (
-					<>
-						<ul className="mt-8 flex flex-col">
-							<li className="text-[13px] text-gray-500">
-								Discussions created: number here
-							</li>
-							<li className="text-[13px] text-gray-500">
-								Recipes created: number here
-							</li>
-							<li className="text-[13px] text-gray-500">
-								Favourite Recipes: number here
-							</li>
-						</ul>
-					</>
+				{isAuthenticated && user.date_joined && (
+					<p className="text-[13px] text-gray-500 mt-8">
+						Joined on&nbsp;
+						{new Date(user.date_joined).toLocaleDateString(
+							"en-US",
+							{
+								year: "numeric",
+								month: "long",
+								day: "numeric"
+							}
+						)}
+						&nbsp;&#40;
+						{formatPostDate(user.date_joined)}
+						&#41;
+					</p>
 				)}
 			</div>
 		</>

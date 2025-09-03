@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const DashboardCard = ({ badgeText, title, text, linkText, imgRef }) => {
 	return (
 		<Link
-			className="group flex flex-col focus:outline-hidden rounded-xl bg-neutral-100"
-			to="#">
+			className="group flex flex-col bg-white border border-gray-200 shadow-2xs rounded-xl hover:shadow-md focus:outline-hidden focus:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800"
+			to="/">
 			{imgRef && (
 				<div className="relative pt-[50%] sm:pt-[70%] rounded-t-xl overflow-hidden">
 					<img
@@ -19,13 +19,13 @@ const DashboardCard = ({ badgeText, title, text, linkText, imgRef }) => {
 					)}
 				</div>
 			)}
-			<div className="p-4">
-				<h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-neutral-300 dark:group-hover:text-white">
+			<div className="p-2 md:p-4">
+				<h3 className="text-md md:text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-neutral-300 dark:group-hover:text-white">
 					{title.length > 60
 						? title.substring(0, 60) + "..."
 						: title}
 				</h3>
-				<p className="my-4 text-gray-800 dark:text-neutral-200">
+				<p className="my-4 text-gray-800 dark:text-neutral-200 text-xs md:text-sm">
 					{text.length > 120
 						? text.substring(0, 120) + "..."
 						: text}

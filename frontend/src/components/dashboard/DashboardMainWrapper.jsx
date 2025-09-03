@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
 import DashboardUserPopover from "@/components/dashboard/DashboardUserPopover";
 import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
 import MainFooter from "@/components/MainFooter";
 import { useState } from "react";
 import { useAuth } from "@/context/AuthContext";
+import { Link } from "react-router-dom";
+import { Button } from "@headlessui/react";
 
 const DashboardMainWrapper = ({ children }) => {
 	const { user } = useAuth();
@@ -32,7 +33,7 @@ const DashboardMainWrapper = ({ children }) => {
 							{/* TODO: Add notifications when a new comment has been made on any blogs that specific user has made?? */}
 							<button
 								type="button"
-								className="size-9.5 relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700">
+								className="size-9.5 cursor-pointer  hover:shadow-md relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white  dark:focus:bg-neutral-700">
 								<svg
 									className="shrink-0 size-4"
 									xmlns="http://www.w3.org/2000/svg"
@@ -56,9 +57,9 @@ const DashboardMainWrapper = ({ children }) => {
 
 							<button
 								type="button"
-								className="size-9.5 relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700">
+								className="size-9.5 cursor-pointer  hover:shadow-md relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800  focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white  dark:focus:bg-neutral-700">
 								<svg
-									className="shrink-0 size-4"
+									className="shrink-0 size-4 "
 									xmlns="http://www.w3.org/2000/svg"
 									width="24"
 									height="24"
@@ -81,7 +82,7 @@ const DashboardMainWrapper = ({ children }) => {
 									onClick={handleUserPopover}
 									id="hs-dropdown-account"
 									type="button"
-									className="size-9.5 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none dark:text-white"
+									className="size-9.5 cursor-pointer hover:shadow-md inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none dark:text-white"
 									aria-haspopup="menu"
 									aria-expanded="false"
 									aria-label="Dropdown">
@@ -93,6 +94,9 @@ const DashboardMainWrapper = ({ children }) => {
 								</button>
 								<DashboardUserPopover
 									userPopoverOpen={userPopoverOpen}
+									handleUserPopover={
+										handleUserPopover
+									}
 									user={user}
 								/>
 							</div>
@@ -110,7 +114,7 @@ const DashboardMainWrapper = ({ children }) => {
 						{/* Navigation Toggle */}
 						<button
 							type="button"
-							className="size-8 flex justify-center items-center gap-x-2 border border-gray-200 text-gray-800 hover:text-gray-500 rounded-lg focus:outline-hidden focus:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+							className="size-8 flex cursor-pointer hover:shadow-md justify-center items-center gap-x-2 border border-gray-200 text-gray-800  rounded-lg focus:outline-hidden focus:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-neutral-200  dark:focus:text-neutral-500"
 							aria-haspopup="dialog"
 							aria-expanded="false"
 							aria-controls="hs-application-sidebar"
@@ -187,7 +191,11 @@ const DashboardMainWrapper = ({ children }) => {
 				</div>
 				<MainFooter>
 					<li>
-						<Link to="/dashboard/">Go to Dashboard</Link>
+						<a href="/dashboard/">
+							<Button className="cursor-pointer">
+								Go to Dashboard
+							</Button>
+						</a>
 					</li>
 				</MainFooter>
 			</div>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Button } from "@headlessui/react";
 
 const MainFooter = ({ children }) => {
 	return (
@@ -9,10 +9,18 @@ const MainFooter = ({ children }) => {
 					rights reserved.
 				</li>
 				<li>
-					<Link to="/">Terms</Link>
+					<a href="#">
+						{/* TODO: go to terms page */}
+						<Button className="cursor-pointer">Terms</Button>
+					</a>
 				</li>
 				<li>
-					<Link to="#">Privacy</Link>
+					{/* TODO: go to privacy page */}
+					<a href="#">
+						<Button className="cursor-pointer">
+							Privacy
+						</Button>
+					</a>
 				</li>
 				{children}
 			</ul>

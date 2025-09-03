@@ -7,7 +7,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         # for general API consumption -- does NOT expose password field
-        fields = ['id', 'email', 'username', 'bio', 'profile_image']
+        fields = ['id', 'email', 'username', 'bio', 'profile_image', 'date_joined']
 
 class RegisterUserSerializer(serializers.ModelSerializer):
     class Meta:

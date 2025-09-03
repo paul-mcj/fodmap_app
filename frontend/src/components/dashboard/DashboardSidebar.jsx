@@ -21,6 +21,7 @@ const DashboardSidebar = () => {
 		<div
 			id="hs-application-sidebar"
 			className="hs-overlay [--auto-close:lg] hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform w-65 h-full hidden fixed inset-y-0 start-0 z-60 bg-white border-e border-gray-200 lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 dark:bg-neutral-800 dark:border-neutral-700"
+			// hover:z-200
 			role="dialog"
 			tabIndex="-1"
 			aria-label="Sidebar">
@@ -30,7 +31,7 @@ const DashboardSidebar = () => {
 						className="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80"
 						to="/"
 						aria-label="FODMAP Community">
-						Logo and name here
+						FODMAP Community
 					</Link>
 					<div className="hidden lg:block ms-2"></div>
 				</div>
@@ -40,6 +41,8 @@ const DashboardSidebar = () => {
 						data-hs-accordion-always-open>
 						<div className="hidden md:block">
 							{/* Search Input */}
+							{/* TODO: later add search bar for foods to filter, or “type=recipe” or “type=discussion”, etc. */}
+
 							<div className="relative">
 								<div className="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
 									<Search className="size-4 shrink-0" />

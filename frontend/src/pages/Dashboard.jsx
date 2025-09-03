@@ -4,12 +4,8 @@ import {
 	privateGetUserBlogs
 } from "../utils/api_req";
 import { useEffect, useState } from "react";
-import { formatPostDate } from "../utils/format";
-import JournalEntryForm from "../components/JournalEntryForm";
-import BlogForm from "@/components/blog/BlogForm";
 import { useAuth } from "@/context/AuthContext";
 import DashboardPageHeader from "@/components/dashboard/DashboardPageHeader";
-import BlogItem from "@/components/blog/BlogItem";
 import ProfileCard from "@/components/ProfileCard";
 import { Button } from "@/components/ui/button";
 import DashboardContentHeader from "@/components/dashboard/DashboardContentHeader";
@@ -66,7 +62,7 @@ function Dashboard() {
 			<div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
 				<div className="max-w-[85rem] mx-auto">
 					<div className="max-w-2xl mx-auto text-center mb-12">
-						<DashboardPageHeader text={"Dashboard"} />
+						<DashboardPageHeader text="Dashboard" />
 					</div>
 					<ProfileCard />
 					<div className="mx-auto text-center">
@@ -134,8 +130,8 @@ function Dashboard() {
 								linkText="Read more"
 							/>
 							<DashboardCard
-								title="discussion 4"
-								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
+								title="discussion 4 sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme saj sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme saj sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme saj"
+								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme saj sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme saj sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
 								linkText="Read more"
 							/>
 							<DashboardCard
@@ -143,10 +139,15 @@ function Dashboard() {
 								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
 								linkText="Read more"
 							/>
-							<Button className="cursor-pointer self-end">
-								All discussions
-							</Button>
+							<DashboardCard
+								title="discussion 6"
+								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
+								linkText="Read more"
+							/>
 						</div>
+						<Button className="cursor-pointer mt-8 md:col-start-2 md:row-start-2">
+							All discussions
+						</Button>
 					</div>
 					<div className="mx-auto text-center">
 						<DashboardContentHeader
@@ -154,7 +155,8 @@ function Dashboard() {
 							subheader="Get inspired ideas on what to eat for dinner tonight, or
 				post one of your famous meals for others."
 						/>
-						<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+						<div className="grid sm:grid-cols-3 gap-6">
+							{/* <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"> */}
 							{/* TODO: 5 to 6 most recent recipes, then a "see all" */}
 							<DashboardCard
 								title="Meat pie"
@@ -180,10 +182,10 @@ function Dashboard() {
 								linkText="View recipe"
 								imgRef="https://plus.unsplash.com/premium_photo-1673590981774-d9f534e0c617?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2FsYWR8ZW58MHx8MHx8fDA%3D"
 							/>
-							<Button className="cursor-pointer self-end md:col-start-2 md:row-start-2">
-								All recipes
-							</Button>
 						</div>
+						<Button className="cursor-pointer mt-8 md:col-start-2 md:row-start-2">
+							All recipes
+						</Button>
 					</div>
 
 					<div className="mx-auto text-center">
@@ -214,7 +216,7 @@ function Dashboard() {
 								linkText="Read more"
 							/>
 							<DashboardCard
-								title="post 3"
+								title="pme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8me sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
 								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
 								linkText="Read more"
 							/>
@@ -228,73 +230,49 @@ function Dashboard() {
 								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
 								linkText="Read more"
 							/>
-							<Button className="cursor-pointer self-end">
-								All your posts
-							</Button>
+							<DashboardCard
+								title="post 6"
+								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
+								linkText="Read more"
+							/>
 						</div>
+						<Button className="cursor-pointer mt-8 md:col-start-2 md:row-start-2">
+							All your posts
+						</Button>
 					</div>
-
 					<div className="mx-auto text-center">
 						<DashboardContentHeader
 							header="Journal and Food Tracker"
 							subheader="Both are private and their contents are never
 								shared with anyone."
 						/>
-						<div className="grid grid-cols-2 gap-6">
-							{/* TODO: this is a custom card on the dashboard, but it follows similar card design */}
-
-							<a
-								className="group relative flex flex-col w-full min-h-60 bg-[url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80')] bg-center bg-cover rounded-xl hover:shadow-lg focus:outline-hidden focus:shadow-lg transition"
-								href="#">
-								<div className="flex-auto p-4 md:p-6">
-									<h3 className="text-md text-white/80 group-hover:text-white">
-										<span className="font-bold">
-											Your Journal
-										</span>
-										&nbsp; is where you can write
+						{/* <div className="grid grid-cols-2 gap-6"> */}
+						<div className="grid sm:grid-cols-2 gap-6">
+							<DashboardCard
+								title="Your Journal"
+								text="Write
 										down any experiences you have
 										while on FODMAP and keep track
-										of your progress with certain
-										foods.
-									</h3>
-								</div>
-								<div className="pt-0 p-4 md:p-6">
-									<div className="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-white/70 group-focus:text-white/70">
-										Go to Journal
-										<svg
-											className="shrink-0 size-4"
-											xmlns="http://www.w3.org/2000/svg"
-											width="24"
-											height="24"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											strokeWidth="2"
-											strokeLinecap="round"
-											strokeLinejoin="round">
-											<path d="m9 18 6-6-6-6" />
-										</svg>
-									</div>
-								</div>
-							</a>
-							{/* TODO: show a little list of 10 or so items and their level, but a button to go to the "food tracker" page with "more details" */}
-							{/* TODO: this is a custom card on the dashboard, but it follows similar card design */}
+										of your progress."
+								linkText="Go to Journal"
+								imgRef="https://images.unsplash.com/photo-1462642109801-4ac2971a3a51?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGpvdXJuYWx8ZW58MHwwfDB8fHww"
+							/>
 							<DashboardCard
-								badgeText="Food Tracker"
-								// title="Keep track of what foods agree with you and which don't."
-								title="Keep track of your trigger foods."
-								text="carrots 10, cherrires 4"
+								text="Keep track of what foods agree with you and which don't."
+								title="Food Tracker"
 								linkText="Go to Food Tracker"
-								imgRef="https://images.unsplash.com/photo-1756296576686-decd6d93f699?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1OHx8fGVufDB8fHx8fA%3D%3D"
+								imgRef="https://images.unsplash.com/photo-1748609523112-da78cb7210a2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNoZWNrbGlzdHxlbnwwfDB8MHx8fDA%3D"
 							/>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div className="mt-10 md:mt-42">
-				<Button className="cursor-pointer self-end mb-16">
-					Back to top
-				</Button>
+				<a href="#">
+					<Button className="cursor-pointer self-end mb-16">
+						Go to top
+					</Button>
+				</a>
 			</div>
 		</>
 	);

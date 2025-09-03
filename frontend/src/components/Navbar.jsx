@@ -10,7 +10,7 @@ import {
 
 const Navbar = () => {
 	return (
-		<div className="top-0 fixed z-10 bg-[var(--background)] w-min [@media(min-width:375px)]:w-full p-4">
+		<div className="top-0 fixed z-10 bg-[var(--background)] w-full p-4">
 			<NavigationMenu>
 				<NavigationMenuList>
 					<NavigationMenuItem>
