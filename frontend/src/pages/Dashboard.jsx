@@ -5,7 +5,7 @@ import {
 } from "../utils/api_req";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
-import DashboardPageHeader from "@/components/dashboard/DashboardPageHeader";
+import PageHeader from "@/components/PageHeader";
 import ProfileCard from "@/components/ProfileCard";
 import { Button } from "@/components/ui/button";
 import DashboardContentHeader from "@/components/dashboard/DashboardContentHeader";
@@ -62,7 +62,7 @@ function Dashboard() {
 			<div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
 				<div className="max-w-[85rem] mx-auto">
 					<div className="max-w-2xl mx-auto text-center mb-12">
-						<DashboardPageHeader text="Dashboard" />
+						<PageHeader text="Dashboard" />
 					</div>
 					<ProfileCard />
 					<div className="mx-auto text-center">
@@ -109,7 +109,7 @@ function Dashboard() {
 					</div>
 					<div className="mx-auto text-center">
 						<DashboardContentHeader
-							header="Discussions"
+							header="Recent Discussions"
 							subheader="Engage with other FODMAP Community members."
 						/>
 						<div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
@@ -151,7 +151,7 @@ function Dashboard() {
 					</div>
 					<div className="mx-auto text-center">
 						<DashboardContentHeader
-							header="Recipes"
+							header="Recent Recipes"
 							subheader="Get inspired ideas on what to eat for dinner tonight, or
 				post one of your famous meals for others."
 						/>

@@ -134,8 +134,7 @@ const DashboardSidebar = () => {
 								<DashboardSidebarListItem
 									Icon={MessageSquare}
 									text="Your Discussions"
-									// TODO: need frontend page to display this
-									// to="/blogs/my/"
+									to="/blogs/my/"
 								/>
 								<DashboardSidebarListItem
 									Icon={MessageSquarePlus}

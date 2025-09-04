@@ -1,4 +1,4 @@
-const DashboardPageHeader = ({ text }) => {
+const PageHeader = ({ text }) => {
 	return (
 		<h1 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
 			{text}
@@ -6,4 +6,4 @@ const DashboardPageHeader = ({ text }) => {
 	);
 };
 
-export default DashboardPageHeader;
+export default PageHeader;

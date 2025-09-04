@@ -15,6 +15,7 @@ import BlogDetail from "./pages/BlogDetail";
 import Discussions from "./pages/Discussions";
 import Recipes from "./pages/Recipes";
 import MainFooter from "./components/MainFooter";
+import UserBlogs from "./pages/UserBlogs";
 import DashboardMainWrapper from "./components/dashboard/DashboardMainWrapper";
 import { useAuth } from "./context/AuthContext";
 
@@ -27,39 +28,6 @@ function App() {
 				path="/"
 				element={<HomePage />}
 			/>
-			{/* redirect users away from /dashboard if not logged-in */}
-			{!isAuthenticated && (
-				<Route
-					path="/dashboard/"
-					element={
-						<Navigate
-							to="/login/"
-							replace
-						/>
-					}
-				/>
-			)}
-			<Route
-				path="/dashboard/"
-				element={
-					<RequireAuth>
-						<Dashboard />
-					</RequireAuth>
-				}
-			/>
-			{/* Only show login + register routes if NOT logged in */}
-			{!isAuthenticated && (
-				<>
-					<Route
-						path="/login/"
-						element={<LoginPage />}
-					/>
-					<Route
-						path="/register/"
-						element={<RegisterPage />}
-					/>
-				</>
-			)}
 			<Route
 				path="/blogs/:id/"
 				element={<BlogDetail />}
@@ -72,9 +40,44 @@ function App() {
 				path="/recipes/"
 				element={<Recipes />}
 			/>
-			{/* redirect logged-in users away from /login or /register */}
+			{/* TODO: 404 not found for anything that doesn't match routes in here */}
+			{!isAuthenticated && (
+				<>
+					{/* Only show login page if NOT logged in */}
+					<Route
+						path="/login/"
+						element={<LoginPage />}
+					/>
+					{/* Only show register page if NOT logged in */}
+					<Route
+						path="/register/"
+						element={<RegisterPage />}
+					/>
+					{/* TODO: redirect users away from the following pages if NOT authenticated */}
+					<Route
+						path="/dashboard/"
+						element={
+							<Navigate
+								to="/login/"
+								replace
+							/>
+						}
+					/>
+					<Route
+						path="/blogs/my/"
+						element={
+							<Navigate
+								to="/login/"
+								replace
+							/>
+						}
+					/>
+				</>
+			)}
 			{isAuthenticated && (
 				<>
+					{/* TODO: determine what routes need to be redirected for logged in users*/}
+					{/* redirect logged in users away from /login */}
 					<Route
 						path="/login/"
 						element={
@@ -84,6 +87,7 @@ function App() {
 							/>
 						}
 					/>
+					{/* redirect logged in users away from /register */}
 					<Route
 						path="/register/"
 						element={
@@ -93,24 +97,30 @@ function App() {
 							/>
 						}
 					/>
+					{/* routes below all require authentication */}
+					{/* TODO: determine what routes need to be authenticated */}
+					<Route
+						path="/dashboard/"
+						element={
+							<RequireAuth>
+								<Dashboard />
+							</RequireAuth>
+						}
+					/>
+					<Route
+						path="/blogs/my/"
+						element={
+							<RequireAuth>
+								<UserBlogs />
+							</RequireAuth>
+						}
+					/>
 				</>
 			)}
 		</Routes>
 	);
 
 	return (
-		// <Router>
-		// 	{!isAuthenticated && (
-		// 		<>
-		// 			<Navbar />
-		// 			{routes}
-		// 			<MainFooter />
-		// 		</>
-		// 	)}
-		// 	{isAuthenticated && (
-		// 		<DashboardMainWrapper>{routes}</DashboardMainWrapper>
-		// 	)}
-		// </Router>
 		<Router>
 			{!isAuthenticated ? (
 				<>

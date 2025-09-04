@@ -35,8 +35,12 @@ export const privateRegistration = (info) => {
 	});
 };
 export const privateGetUserData = () => PRIVATE_API.get("users/me/");
+// TODO: ability for logged in user via private routes to CRUD their user info
 
 // Users (public routes)
+// FIXME:
+export const publicGetUserData = (username) =>
+	PUBLIC_API.get(`users/${username}/`);
 export const publicGetAllUsers = () => PUBLIC_API.get("users/");
 export const publicCheckUsername = (username) =>
 	PUBLIC_API.get(
