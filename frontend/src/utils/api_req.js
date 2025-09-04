@@ -61,6 +61,12 @@ export const publicGetAllBlogs = () => PUBLIC_API.get("blogs/");
 export const publicGetSingleBlog = (id) => PUBLIC_API.get(`blogs/${id}/`);
 export const publicGetAllBlogsOfType = (type) => PUBLIC_API.get(`/${type}/`); // get either all "discussions" or "recipes"
 
+// Discussions (private routes)
+export const privateGetUserDiscussions = () =>
+	PRIVATE_API.get("/discussions/my");
+
+// Discussions (public routes)
+
 // Posts (private routes)
 export const privateGetUserPosts = () => PRIVATE_API.get("posts/user/");
 // TODO: CRUD add, update, and delete functions

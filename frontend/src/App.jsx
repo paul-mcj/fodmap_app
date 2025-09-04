@@ -29,15 +29,15 @@ function App() {
 				element={<HomePage />}
 			/>
 			<Route
-				path="/blogs/:id/"
+				path="/blogs/:id"
 				element={<BlogDetail />}
 			/>
 			<Route
-				path="/discussions/"
+				path="/discussions"
 				element={<Discussions />}
 			/>
 			<Route
-				path="/recipes/"
+				path="/recipes"
 				element={<Recipes />}
 			/>
 			{/* TODO: 404 not found for anything that doesn't match routes in here */}
@@ -45,29 +45,38 @@ function App() {
 				<>
 					{/* Only show login page if NOT logged in */}
 					<Route
-						path="/login/"
+						path="/login"
 						element={<LoginPage />}
 					/>
 					{/* Only show register page if NOT logged in */}
 					<Route
-						path="/register/"
+						path="/register"
 						element={<RegisterPage />}
 					/>
 					{/* TODO: redirect users away from the following pages if NOT authenticated */}
 					<Route
-						path="/dashboard/"
+						path="/dashboard"
 						element={
 							<Navigate
-								to="/login/"
+								to="/login"
 								replace
 							/>
 						}
 					/>
 					<Route
-						path="/blogs/my/"
+						path="/blogs/my"
 						element={
 							<Navigate
-								to="/login/"
+								to="/login"
+								replace
+							/>
+						}
+					/>
+					<Route
+						path="/discussions/my"
+						element={
+							<Navigate
+								to="/login"
 								replace
 							/>
 						}
@@ -79,20 +88,20 @@ function App() {
 					{/* TODO: determine what routes need to be redirected for logged in users*/}
 					{/* redirect logged in users away from /login */}
 					<Route
-						path="/login/"
+						path="/login"
 						element={
 							<Navigate
-								to="/dashboard/"
+								to="/dashboard"
 								replace
 							/>
 						}
 					/>
 					{/* redirect logged in users away from /register */}
 					<Route
-						path="/register/"
+						path="/register"
 						element={
 							<Navigate
-								to="/dashboard/"
+								to="/dashboard"
 								replace
 							/>
 						}
@@ -100,7 +109,7 @@ function App() {
 					{/* routes below all require authentication */}
 					{/* TODO: determine what routes need to be authenticated */}
 					<Route
-						path="/dashboard/"
+						path="/dashboard"
 						element={
 							<RequireAuth>
 								<Dashboard />
@@ -108,10 +117,18 @@ function App() {
 						}
 					/>
 					<Route
-						path="/blogs/my/"
+						path="/blogs/my"
 						element={
 							<RequireAuth>
 								<UserBlogs />
+							</RequireAuth>
+						}
+					/>
+					<Route
+						path="/discussions/my"
+						element={
+							<RequireAuth>
+								<Discussions />
 							</RequireAuth>
 						}
 					/>

@@ -117,7 +117,7 @@ const DashboardSidebar = () => {
 								<DashboardSidebarListItem
 									Icon={House}
 									text="Dashboard"
-									to="/dashboard/"
+									to="/dashboard"
 								/>
 							</ul>
 						</div>
@@ -129,18 +129,18 @@ const DashboardSidebar = () => {
 								<DashboardSidebarListItem
 									Icon={MessagesSquare}
 									text="All Discussions"
-									to="/discussions/"
+									to="/discussions"
 								/>
 								<DashboardSidebarListItem
 									Icon={MessageSquare}
 									text="Your Discussions"
-									to="/blogs/my/"
+									to="/discussions/my"
 								/>
 								<DashboardSidebarListItem
 									Icon={MessageSquarePlus}
 									text="New Discussion"
 									// TODO: need frontend page to display this
-									// to="/discussions/new/"
+									// to="/discussions/new"
 								/>
 							</ul>
 						</div>
@@ -152,25 +152,25 @@ const DashboardSidebar = () => {
 								<DashboardSidebarListItem
 									Icon={CookingPot}
 									text="All Recipes"
-									to="/recipes/"
+									to="/recipes"
 								/>
 								<DashboardSidebarListItem
 									Icon={Utensils}
 									text="Your Recipes"
 									// TODO: need frontend page to display this
-									// to="/recipes/my/"
+									// to="/recipes/my"
 								/>
 								<DashboardSidebarListItem
 									Icon={Heart}
 									text="Favourite Recipes"
 									// TODO: need frontend page to display this
-									// to="/favourite-recipes/"
+									// to="/favourite-recipes/my"
 								/>
 								<DashboardSidebarListItem
 									Icon={SquarePlus}
 									text="New Recipe"
 									// TODO: need frontend page to display this
-									// to="/recipe/new/"
+									// to="/recipe/new"
 								/>
 							</ul>
 						</div>
@@ -183,7 +183,7 @@ const DashboardSidebar = () => {
 									Icon={MessageCircle}
 									text="Your Posts"
 									// TODO: need frontend page to display this
-									// to="/posts/"
+									// to="/posts/my"
 								/>
 							</ul>
 						</div>
@@ -196,13 +196,13 @@ const DashboardSidebar = () => {
 									Icon={Notebook}
 									text="Your Journal"
 									// TODO: need frontend page to display this
-									// to="/journal/"
+									// to="/journal/my"
 								/>
 								<DashboardSidebarListItem
 									Icon={NotebookPen}
 									text="New Journal Entry"
 									// TODO: need frontend page to display this
-									// to="/journal/new/"
+									// to="/journal/new"
 								/>
 							</ul>
 						</div>
@@ -215,7 +215,7 @@ const DashboardSidebar = () => {
 									Icon={Hamburger}
 									text="Food Tracker"
 									// TODO: need frontend page to display this
-									// to="/tracker/"
+									// to="/tracker/my"
 								/>
 							</ul>
 						</div>
