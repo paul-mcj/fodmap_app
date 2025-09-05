@@ -15,8 +15,8 @@ import BlogDetail from "./pages/BlogDetail";
 import Discussions from "./pages/Discussions";
 import Recipes from "./pages/Recipes";
 import MainFooter from "./components/MainFooter";
-import UserBlogs from "./pages/UserBlogs";
 import DashboardMainWrapper from "./components/dashboard/DashboardMainWrapper";
+import DiscussionsForm from "./pages/DiscussionsForm";
 import { useAuth } from "./context/AuthContext";
 
 function App() {
@@ -81,6 +81,24 @@ function App() {
 							/>
 						}
 					/>
+					<Route
+						path="/recipes/my"
+						element={
+							<Navigate
+								to="/login"
+								replace
+							/>
+						}
+					/>
+					<Route
+						path="/discussions/new"
+						element={
+							<Navigate
+								to="/login"
+								replace
+							/>
+						}
+					/>
 				</>
 			)}
 			{isAuthenticated && (
@@ -117,18 +135,26 @@ function App() {
 						}
 					/>
 					<Route
-						path="/blogs/my"
-						element={
-							<RequireAuth>
-								<UserBlogs />
-							</RequireAuth>
-						}
-					/>
-					<Route
 						path="/discussions/my"
 						element={
 							<RequireAuth>
 								<Discussions />
+							</RequireAuth>
+						}
+					/>
+					<Route
+						path="/recipes/my"
+						element={
+							<RequireAuth>
+								<Recipes />
+							</RequireAuth>
+						}
+					/>
+					<Route
+						path="/discussions/new"
+						element={
+							<RequireAuth>
+								<DiscussionsForm />
 							</RequireAuth>
 						}
 					/>

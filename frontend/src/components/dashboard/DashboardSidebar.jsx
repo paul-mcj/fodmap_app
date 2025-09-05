@@ -140,7 +140,7 @@ const DashboardSidebar = () => {
 									Icon={MessageSquarePlus}
 									text="New Discussion"
 									// TODO: need frontend page to display this
-									// to="/discussions/new"
+									to="/discussions/new"
 								/>
 							</ul>
 						</div>
@@ -158,7 +158,7 @@ const DashboardSidebar = () => {
 									Icon={Utensils}
 									text="Your Recipes"
 									// TODO: need frontend page to display this
-									// to="/recipes/my"
+									to="/recipes/my"
 								/>
 								<DashboardSidebarListItem
 									Icon={Heart}

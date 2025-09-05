@@ -1,7 +1,8 @@
 import {
 	publicGetAllBlogs,
 	publicGetAllBlogsOfType,
-	privateGetUserDiscussions
+	privateGetUserDiscussions,
+	privateGetUserRecipes
 } from "../../utils/api_req";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
@@ -13,6 +14,8 @@ const BlogList = ({ type }) => {
 	const location = useLocation();
 	const { isAuthenticated } = useAuth();
 	const [blogs, setBlogs] = useState([]);
+
+	console.log(location.pathname);
 
 	const pageHeader = (() => {
 		if (type === "") return "Recent Blogs";
@@ -82,6 +85,17 @@ const BlogList = ({ type }) => {
 				});
 
 		// TODO: recipes
+		type === "recipes" &&
+			location.pathname === "/recipes/my" &&
+			isAuthenticated &&
+			privateGetUserRecipes()
+				.then((res) => {
+					console.log("Recipes returned:", res.data);
+					setBlogs(() => res.data);
+				})
+				.catch((error) => {
+					console.log(`Error with Recipes useEffect: ${error}`);
+				});
 
 		type === "recipes" &&
 			location.pathname === "/recipes" &&

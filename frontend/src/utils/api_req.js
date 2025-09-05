@@ -52,20 +52,25 @@ export const publicCheckEmail = (email) =>
 // Blogs (private routes)
 // FIXME: currently working on these two functions:
 export const privateGetUserBlogs = () => PRIVATE_API.get("blogs/my/");
-export const privatePostNewBlog = (content) =>
-	PRIVATE_API.post("blogs/my/", content);
-// TODO: need update and delete functions (discussions and recipes)
 
 // Blogs (public routes)
 export const publicGetAllBlogs = () => PUBLIC_API.get("blogs/");
 export const publicGetSingleBlog = (id) => PUBLIC_API.get(`blogs/${id}/`);
 export const publicGetAllBlogsOfType = (type) => PUBLIC_API.get(`/${type}/`); // get either all "discussions" or "recipes"
 
+// TODO: need update and delete functions (discussions and recipes)
+
 // Discussions (private routes)
 export const privateGetUserDiscussions = () =>
 	PRIVATE_API.get("/discussions/my");
+export const privatePostNewDiscussion = (content) =>
+	PRIVATE_API.post("/discussions/", content);
 
 // Discussions (public routes)
+
+// Recipes (private routes)
+export const privateGetUserRecipes = () => PRIVATE_API.get("/recipes/my");
+// Recipes (public routes)
 
 // Posts (private routes)
 export const privateGetUserPosts = () => PRIVATE_API.get("posts/user/");
