@@ -1,0 +1,457 @@
+[
+	{
+		"model": "foods.food",
+		"pk": 2000,
+		"fields": { "name": "apple", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2001,
+		"fields": { "name": "apricot", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2002,
+		"fields": { "name": "avocado", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2003,
+		"fields": { "name": "banana", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2004,
+		"fields": { "name": "blackberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2005,
+		"fields": { "name": "blueberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2006,
+		"fields": { "name": "boysenberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2007,
+		"fields": { "name": "cantaloupe", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2008,
+		"fields": { "name": "cherry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2009,
+		"fields": { "name": "clementine", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2010,
+		"fields": { "name": "cranberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2011,
+		"fields": { "name": "currant", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2012,
+		"fields": { "name": "date", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2013,
+		"fields": { "name": "dragonfruit", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2014,
+		"fields": { "name": "durian", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2015,
+		"fields": { "name": "elderberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2016,
+		"fields": { "name": "feijoa", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2017,
+		"fields": { "name": "fig", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2018,
+		"fields": { "name": "gooseberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2019,
+		"fields": { "name": "grapefruit", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2020,
+		"fields": { "name": "grape", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2021,
+		"fields": { "name": "guava", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2022,
+		"fields": { "name": "honeydew", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2023,
+		"fields": { "name": "jackfruit", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2024,
+		"fields": { "name": "jambul", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2025,
+		"fields": { "name": "jujube", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2026,
+		"fields": { "name": "kiwi", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2027,
+		"fields": { "name": "kumquat", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2028,
+		"fields": { "name": "lemon", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2029,
+		"fields": { "name": "lime", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2030,
+		"fields": { "name": "longan", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2031,
+		"fields": { "name": "loquat", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2032,
+		"fields": { "name": "lychee", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2033,
+		"fields": { "name": "mango", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2034,
+		"fields": { "name": "mulberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2035,
+		"fields": { "name": "nectarine", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2036,
+		"fields": { "name": "orange", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2037,
+		"fields": { "name": "papaya", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2038,
+		"fields": { "name": "passionfruit", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2039,
+		"fields": { "name": "peach", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2040,
+		"fields": { "name": "pear", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2041,
+		"fields": { "name": "persimmon", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2042,
+		"fields": { "name": "pineapple", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2043,
+		"fields": { "name": "plum", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2044,
+		"fields": { "name": "pomegranate", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2045,
+		"fields": { "name": "pomelo", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2046,
+		"fields": { "name": "quince", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2047,
+		"fields": { "name": "raspberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2048,
+		"fields": { "name": "red currant", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2049,
+		"fields": { "name": "rhubarb", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2050,
+		"fields": { "name": "starfruit", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2051,
+		"fields": { "name": "strawberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2052,
+		"fields": { "name": "tamarind", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2053,
+		"fields": { "name": "tangerine", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2054,
+		"fields": { "name": "ugli fruit", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2055,
+		"fields": { "name": "watermelon", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2056,
+		"fields": { "name": "yuzu", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2057,
+		"fields": { "name": "mulberry pear", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2058,
+		"fields": { "name": "cranberry bush", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2059,
+		"fields": { "name": "lingonberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2060,
+		"fields": { "name": "bilberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2061,
+		"fields": { "name": "cloudberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2062,
+		"fields": { "name": "marionberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2063,
+		"fields": { "name": "salak", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2064,
+		"fields": { "name": "santol", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2065,
+		"fields": { "name": "soursop", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2066,
+		"fields": { "name": "white currant", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2067,
+		"fields": { "name": "miracle fruit", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2068,
+		"fields": { "name": "jabuticaba", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2069,
+		"fields": { "name": "huckleberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2070,
+		"fields": { "name": "rowan", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2071,
+		"fields": { "name": "cupuacu", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2072,
+		"fields": { "name": "nance", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2073,
+		"fields": { "name": "pawpaw", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2074,
+		"fields": { "name": "saskatoon berry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2075,
+		"fields": { "name": "jaboticaba", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2076,
+		"fields": { "name": "acerola", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2077,
+		"fields": { "name": "feijoa pear", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2078,
+		"fields": { "name": "persian lime", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2079,
+		"fields": { "name": "tayberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2080,
+		"fields": { "name": "mulberry apple", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2081,
+		"fields": { "name": "pineberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2082,
+		"fields": { "name": "white sapote", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2083,
+		"fields": { "name": "black sapote", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2084,
+		"fields": { "name": "monstera deliciosa", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2085,
+		"fields": { "name": "cempedak", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2086,
+		"fields": { "name": "salmonberry", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2087,
+		"fields": { "name": "pequi", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2088,
+		"fields": { "name": "tamarillo", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2089,
+		"fields": { "name": "white nectarine", "category": "fruits" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 2090,
+		"fields": { "name": "yellow passionfruit", "category": "fruits" }
+	}
+]

@@ -34,13 +34,12 @@ const BlogItem = (blog) => {
 				</div>
 				<ul className="flex mt-2 flex-row flex-wrap gap-2 justify-start">
 					{/* only show the first 5 food items as badges */}
-					{blog.blog.foods.slice(0, 5).map((food) => (
+					{blog?.blog?.foods_detail?.slice(0, 5).map((food) => (
 						<li key={food.id}>
 							<Badge>{food.name}</Badge>
 						</li>
 					))}
-
-					{blog.blog.foods.length > 5 && (
+					{blog?.blog?.foods_detail?.length > 5 && (
 						<li>
 							<Badge>+{blog.blog.foods.length - 5}</Badge>
 						</li>

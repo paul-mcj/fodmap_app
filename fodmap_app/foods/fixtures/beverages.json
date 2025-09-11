@@ -1,0 +1,305 @@
+[
+	{
+		"model": "foods.food",
+		"pk": 11000,
+		"fields": { "name": "Black tea", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11001,
+		"fields": { "name": "Green tea", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11002,
+		"fields": { "name": "Oolong tea", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11003,
+		"fields": { "name": "White tea", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11004,
+		"fields": { "name": "Herbal tea", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11005,
+		"fields": { "name": "Chai tea", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11006,
+		"fields": { "name": "Matcha tea", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11007,
+		"fields": { "name": "Iced tea", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11008,
+		"fields": { "name": "Black coffee", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11009,
+		"fields": { "name": "Espresso", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11010,
+		"fields": { "name": "Latte", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11011,
+		"fields": { "name": "Cappuccino", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11012,
+		"fields": { "name": "Americano", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11013,
+		"fields": { "name": "Macchiato", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11014,
+		"fields": { "name": "Mocha", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11015,
+		"fields": { "name": "Flat white", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11016,
+		"fields": { "name": "Instant coffee", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11017,
+		"fields": { "name": "Cold brew coffee", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11018,
+		"fields": { "name": "Decaf coffee", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11019,
+		"fields": { "name": "Coffee with milk", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11020,
+		"fields": { "name": "Hot chocolate", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11021,
+		"fields": { "name": "Chocolate milk", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11022,
+		"fields": { "name": "Almond milk beverage", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11023,
+		"fields": { "name": "Soy milk beverage", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11024,
+		"fields": { "name": "Oat milk beverage", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11025,
+		"fields": { "name": "Coconut milk beverage", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11026,
+		"fields": { "name": "Apple juice", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11027,
+		"fields": { "name": "Orange juice", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11028,
+		"fields": { "name": "Grape juice", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11029,
+		"fields": { "name": "Cranberry juice", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11030,
+		"fields": { "name": "Pineapple juice", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11031,
+		"fields": { "name": "Tomato juice", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11032,
+		"fields": { "name": "Vegetable juice", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11033,
+		"fields": { "name": "Lemonade", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11034,
+		"fields": { "name": "Limeade", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11035,
+		"fields": { "name": "Fruit punch", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11036,
+		"fields": { "name": "Ginger ale", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11037,
+		"fields": { "name": "Sparkling water", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11038,
+		"fields": { "name": "Still water", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11039,
+		"fields": { "name": "Coconut water", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11040,
+		"fields": { "name": "Sports drink", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11041,
+		"fields": { "name": "Energy drink", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11042,
+		"fields": { "name": "Iced coffee", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11043,
+		"fields": { "name": "Iced latte", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11044,
+		"fields": { "name": "Iced cappuccino", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11045,
+		"fields": { "name": "Fruit smoothie", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11046,
+		"fields": { "name": "Green smoothie", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11047,
+		"fields": { "name": "Protein shake", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11048,
+		"fields": { "name": "Milkshake", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11049,
+		"fields": { "name": "Hot cider", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11050,
+		"fields": { "name": "Iced tea lemon", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11051,
+		"fields": { "name": "Iced tea peach", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11052,
+		"fields": { "name": "Herbal iced tea", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11053,
+		"fields": { "name": "Kombucha", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11054,
+		"fields": { "name": "Iced chai latte", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11055,
+		"fields": { "name": "Café au lait", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11056,
+		"fields": { "name": "Turmeric latte", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11057,
+		"fields": { "name": "Golden milk", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11058,
+		"fields": { "name": "Yerba mate", "category": "Beverages" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 11059,
+		"fields": {
+			"name": "Hot chocolate with marshmallows",
+			"category": "Beverages"
+		}
+	}
+]

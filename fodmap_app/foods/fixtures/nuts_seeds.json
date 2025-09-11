@@ -1,0 +1,257 @@
+[
+	{
+		"model": "foods.food",
+		"pk": 3000,
+		"fields": { "name": "almond", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3001,
+		"fields": { "name": "brazil nut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3002,
+		"fields": { "name": "cashew", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3003,
+		"fields": { "name": "chestnut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3004,
+		"fields": { "name": "hazelnut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3005,
+		"fields": { "name": "macadamia", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3006,
+		"fields": { "name": "pecan", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3007,
+		"fields": { "name": "pistachio", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3008,
+		"fields": { "name": "walnut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3009,
+		"fields": { "name": "pine nut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3010,
+		"fields": { "name": "sunflower seed", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3011,
+		"fields": { "name": "pumpkin seed", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3012,
+		"fields": { "name": "sesame seed", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3013,
+		"fields": { "name": "flaxseed", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3014,
+		"fields": { "name": "chia seed", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3015,
+		"fields": { "name": "hemp seed", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3016,
+		"fields": { "name": "poppy seed", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3017,
+		"fields": { "name": "coconut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3018,
+		"fields": { "name": "acorn", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3019,
+		"fields": { "name": "beechnut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3020,
+		"fields": { "name": "watermelon seed", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3021,
+		"fields": { "name": "melon seed", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3022,
+		"fields": { "name": "candle nut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3023,
+		"fields": { "name": "shea nut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3024,
+		"fields": { "name": "baru nut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3025,
+		"fields": { "name": "kola nut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3026,
+		"fields": { "name": "candlenut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3027,
+		"fields": { "name": "pine kernel", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3028,
+		"fields": { "name": "chia kernel", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3029,
+		"fields": { "name": "hemp kernel", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3030,
+		"fields": { "name": "flax kernel", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3031,
+		"fields": { "name": "sunflower kernel", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3032,
+		"fields": { "name": "pumpkin kernel", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3033,
+		"fields": { "name": "sesame kernel", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3034,
+		"fields": { "name": "black walnut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3035,
+		"fields": { "name": "hickory nut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3036,
+		"fields": { "name": "butternut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3037,
+		"fields": { "name": "pili nut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3038,
+		"fields": { "name": "tigernut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3039,
+		"fields": { "name": "groundnut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3040,
+		"fields": { "name": "candlenut tree nut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3041,
+		"fields": { "name": "baru kernel", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3042,
+		"fields": { "name": "kola kernel", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3043,
+		"fields": { "name": "jackfruit seed", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3044,
+		"fields": { "name": "water chestnut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3045,
+		"fields": { "name": "ginkgo nut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3046,
+		"fields": { "name": "poppy kernel", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3047,
+		"fields": { "name": "melon kernel", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3048,
+		"fields": { "name": "sacha inchi", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3049,
+		"fields": { "name": "african walnut", "category": "nuts_seeds" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 3050,
+		"fields": { "name": "malabar chestnut", "category": "nuts_seeds" }
+	}
+]

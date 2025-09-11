@@ -1,0 +1,305 @@
+[
+	{
+		"model": "foods.food",
+		"pk": 6000,
+		"fields": { "name": "Salmon fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6001,
+		"fields": { "name": "Salmon steak", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6002,
+		"fields": { "name": "Tuna steak", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6003,
+		"fields": { "name": "Tuna fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6004,
+		"fields": { "name": "Cod fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6005,
+		"fields": { "name": "Cod steak", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6006,
+		"fields": { "name": "Haddock fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6007,
+		"fields": { "name": "Haddock steak", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6008,
+		"fields": { "name": "Halibut fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6009,
+		"fields": { "name": "Halibut steak", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6010,
+		"fields": { "name": "Snapper fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6011,
+		"fields": { "name": "Snapper steak", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6012,
+		"fields": { "name": "Mackerel fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6013,
+		"fields": { "name": "Mackerel steak", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6014,
+		"fields": { "name": "Sardines whole", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6015,
+		"fields": { "name": "Sardine fillets", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6016,
+		"fields": { "name": "Trout fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6017,
+		"fields": { "name": "Trout steak", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6018,
+		"fields": { "name": "Rainbow trout", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6019,
+		"fields": { "name": "Tilapia fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6020,
+		"fields": { "name": "Tilapia steak", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6021,
+		"fields": { "name": "Catfish fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6022,
+		"fields": { "name": "Catfish steak", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6023,
+		"fields": { "name": "Bass fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6024,
+		"fields": { "name": "Bass steak", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6025,
+		"fields": { "name": "Flounder fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6026,
+		"fields": { "name": "Flounder steak", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6027,
+		"fields": { "name": "Sea bass fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6028,
+		"fields": { "name": "Sea bass steak", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6029,
+		"fields": { "name": "Herring fillet", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6030,
+		"fields": { "name": "Herring whole", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6031,
+		"fields": { "name": "Clams whole", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6032,
+		"fields": { "name": "Clam meat", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6033,
+		"fields": { "name": "Oysters whole", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6034,
+		"fields": { "name": "Oyster meat", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6035,
+		"fields": { "name": "Mussels whole", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6036,
+		"fields": { "name": "Mussel meat", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6037,
+		"fields": { "name": "Scallops whole", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6038,
+		"fields": { "name": "Scallop meat", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6039,
+		"fields": { "name": "Shrimp peeled", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6040,
+		"fields": { "name": "Shrimp whole", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6041,
+		"fields": { "name": "Prawns peeled", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6042,
+		"fields": { "name": "Prawns whole", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6043,
+		"fields": { "name": "Lobster tail", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6044,
+		"fields": { "name": "Lobster whole", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6045,
+		"fields": { "name": "Crab legs", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6046,
+		"fields": { "name": "Crab meat", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6047,
+		"fields": { "name": "Octopus whole", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6048,
+		"fields": {
+			"name": "Octopus tentacles",
+			"category": "Fish & Seafood"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 6049,
+		"fields": { "name": "Squid whole", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6050,
+		"fields": { "name": "Squid rings", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6051,
+		"fields": { "name": "Calamari rings", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6052,
+		"fields": { "name": "Anchovies whole", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6053,
+		"fields": { "name": "Anchovy fillets", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6054,
+		"fields": { "name": "Seaweed dried", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6055,
+		"fields": { "name": "Caviar", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6056,
+		"fields": { "name": "Smoked salmon", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6057,
+		"fields": { "name": "Anchovy paste", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6058,
+		"fields": { "name": "Imitation crab", "category": "Fish & Seafood" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 6059,
+		"fields": { "name": "Fish sticks", "category": "Fish & Seafood" }
+	}
+]

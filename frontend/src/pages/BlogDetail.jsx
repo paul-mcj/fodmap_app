@@ -61,7 +61,7 @@ const BlogDetail = () => {
 				</div>
 				<div className="rounded-b-xl pt-32 px-4 pb-4 lg:pb-8 md:px-8 lg:px-12 text-left bg-white border border-t-0 border-gray-200 shadow-xl dark:bg-neutral-900 dark:border-neutral-800">
 					<ul className="flex flex-row flex-wrap gap-2 justify-start">
-						{blog?.foods?.map((food) => (
+						{blog?.foods_detail?.map((food) => (
 							<li key={food.id}>
 								<Badge>{food.name}</Badge>
 							</li>

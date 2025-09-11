@@ -93,4 +93,10 @@ export const privatePostUserJournalEntry = (body) =>
 
 // Foods (public routes)
 export const publicGetAllFoods = () => PUBLIC_API.get("foods/");
+export const publicSearchFoods = async (query) => {
+	const res = await PUBLIC_API.get(
+		`/foods/search/?q=${encodeURIComponent(query)}`
+	);
+	return res.data;
+};
 // export const publicPostFoodData = (foodData) => PUBLIC_API.post("foods/", foodData);

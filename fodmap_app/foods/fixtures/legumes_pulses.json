@@ -1,0 +1,273 @@
+[
+	{
+		"model": "foods.food",
+		"pk": 5000,
+		"fields": { "name": "chickpeas", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5001,
+		"fields": { "name": "lentils", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5002,
+		"fields": { "name": "black beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5003,
+		"fields": { "name": "kidney beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5004,
+		"fields": { "name": "pinto beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5005,
+		"fields": { "name": "navy beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5006,
+		"fields": { "name": "mung beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5007,
+		"fields": { "name": "black-eyed peas", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5008,
+		"fields": { "name": "green peas", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5009,
+		"fields": { "name": "soybeans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5010,
+		"fields": { "name": "fava beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5011,
+		"fields": { "name": "butter beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5012,
+		"fields": { "name": "split peas", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5013,
+		"fields": { "name": "broad beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5014,
+		"fields": { "name": "adzuki beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5015,
+		"fields": { "name": "lima beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5016,
+		"fields": { "name": "pigeon peas", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5017,
+		"fields": { "name": "cranberry beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5018,
+		"fields": {
+			"name": "scarlet runner beans",
+			"category": "legumes_pulses"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 5019,
+		"fields": {
+			"name": "yellow split peas",
+			"category": "legumes_pulses"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 5020,
+		"fields": { "name": "green split peas", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5021,
+		"fields": { "name": "marrow beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5022,
+		"fields": { "name": "red lentils", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5023,
+		"fields": { "name": "brown lentils", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5024,
+		"fields": { "name": "green lentils", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5025,
+		"fields": { "name": "yellow lentils", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5026,
+		"fields": { "name": "red kidney beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5027,
+		"fields": {
+			"name": "white kidney beans",
+			"category": "legumes_pulses"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 5028,
+		"fields": { "name": "cannellini beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5029,
+		"fields": { "name": "flageolet beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5030,
+		"fields": { "name": "lupini beans", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5031,
+		"fields": { "name": "bengal gram", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5032,
+		"fields": { "name": "urad dal", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5033,
+		"fields": { "name": "moong dal", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5034,
+		"fields": { "name": "toor dal", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5035,
+		"fields": { "name": "masoor dal", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5036,
+		"fields": { "name": "split moong dal", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5037,
+		"fields": { "name": "split toor dal", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5038,
+		"fields": { "name": "split masoor dal", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5039,
+		"fields": { "name": "chana dal", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5040,
+		"fields": { "name": "black gram", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5041,
+		"fields": { "name": "mung dal", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5042,
+		"fields": { "name": "white peas", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5043,
+		"fields": { "name": "red peas", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5044,
+		"fields": { "name": "yellow peas", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5045,
+		"fields": { "name": "green peas (dry)", "category": "legumes_pulses" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 5046,
+		"fields": {
+			"name": "butter beans (dry)",
+			"category": "legumes_pulses"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 5047,
+		"fields": {
+			"name": "broad beans (dry)",
+			"category": "legumes_pulses"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 5048,
+		"fields": {
+			"name": "adzuki beans (dry)",
+			"category": "legumes_pulses"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 5049,
+		"fields": {
+			"name": "pigeon peas (dry)",
+			"category": "legumes_pulses"
+		}
+	}
+]

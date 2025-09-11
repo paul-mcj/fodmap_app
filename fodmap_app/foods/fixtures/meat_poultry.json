@@ -1,0 +1,839 @@
+[
+	{
+		"model": "foods.food",
+		"pk": 8000,
+		"fields": { "name": "Chicken breast", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8001,
+		"fields": { "name": "Chicken thigh", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8002,
+		"fields": {
+			"name": "Chicken drumstick",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8003,
+		"fields": { "name": "Chicken wings", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8004,
+		"fields": { "name": "Whole chicken", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8005,
+		"fields": { "name": "Turkey breast", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8006,
+		"fields": { "name": "Turkey thigh", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8007,
+		"fields": { "name": "Turkey drumstick", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8008,
+		"fields": { "name": "Whole turkey", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8009,
+		"fields": { "name": "Duck breast", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8010,
+		"fields": { "name": "Duck leg", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8011,
+		"fields": { "name": "Whole duck", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8012,
+		"fields": { "name": "Goose breast", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8013,
+		"fields": { "name": "Goose leg", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8014,
+		"fields": { "name": "Whole goose", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8015,
+		"fields": { "name": "Chicken liver", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8016,
+		"fields": { "name": "Chicken heart", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8017,
+		"fields": { "name": "Chicken gizzard", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8018,
+		"fields": { "name": "Turkey liver", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8019,
+		"fields": { "name": "Turkey heart", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8020,
+		"fields": { "name": "Turkey gizzard", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8021,
+		"fields": { "name": "Duck liver", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8022,
+		"fields": { "name": "Duck heart", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8023,
+		"fields": { "name": "Duck gizzard", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8024,
+		"fields": {
+			"name": "Beef ribeye steak",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8025,
+		"fields": {
+			"name": "Beef sirloin steak",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8026,
+		"fields": { "name": "Beef tenderloin", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8027,
+		"fields": { "name": "Beef flank steak", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8028,
+		"fields": { "name": "Beef short ribs", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8029,
+		"fields": { "name": "Beef brisket", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8030,
+		"fields": { "name": "Beef chuck roast", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8031,
+		"fields": { "name": "Beef ground", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8032,
+		"fields": { "name": "Beef oxtail", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8033,
+		"fields": { "name": "Veal cutlet", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8034,
+		"fields": { "name": "Veal shoulder", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8035,
+		"fields": { "name": "Veal shank", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8036,
+		"fields": { "name": "Veal rib chop", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8037,
+		"fields": { "name": "Lamb chop", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8038,
+		"fields": { "name": "Lamb shoulder", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8039,
+		"fields": { "name": "Lamb leg", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8040,
+		"fields": { "name": "Lamb rack", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8041,
+		"fields": { "name": "Lamb shank", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8042,
+		"fields": { "name": "Lamb loin chop", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8043,
+		"fields": { "name": "Pork chop", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8044,
+		"fields": { "name": "Pork tenderloin", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8045,
+		"fields": { "name": "Pork shoulder", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8046,
+		"fields": { "name": "Pork belly", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8047,
+		"fields": { "name": "Pork ribs", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8048,
+		"fields": { "name": "Pork loin", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8049,
+		"fields": { "name": "Pork ham", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8050,
+		"fields": { "name": "Ground pork", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8051,
+		"fields": { "name": "Bacon", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8052,
+		"fields": { "name": "Sausage links", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8053,
+		"fields": { "name": "Sausage patties", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8054,
+		"fields": { "name": "Ground beef", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8055,
+		"fields": { "name": "Beef tongue", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8056,
+		"fields": { "name": "Beef heart", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8057,
+		"fields": { "name": "Beef liver", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8058,
+		"fields": { "name": "Veal liver", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8059,
+		"fields": { "name": "Veal kidney", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8060,
+		"fields": { "name": "Lamb liver", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8061,
+		"fields": { "name": "Lamb heart", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8062,
+		"fields": { "name": "Lamb kidney", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8063,
+		"fields": { "name": "Pork liver", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8064,
+		"fields": { "name": "Pork heart", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8065,
+		"fields": { "name": "Pork kidney", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8066,
+		"fields": { "name": "Ground lamb", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8067,
+		"fields": { "name": "Ground veal", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8068,
+		"fields": { "name": "Ground turkey", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8069,
+		"fields": { "name": "Ground chicken", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8070,
+		"fields": { "name": "Veal cutlets", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8071,
+		"fields": { "name": "Veal chops", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8072,
+		"fields": { "name": "Veal roast", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8073,
+		"fields": { "name": "Lamb chops", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8074,
+		"fields": {
+			"name": "Lamb shoulder roast",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8075,
+		"fields": { "name": "Lamb leg roast", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8076,
+		"fields": {
+			"name": "Pork tenderloin roast",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8077,
+		"fields": {
+			"name": "Pork shoulder roast",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8078,
+		"fields": { "name": "Pork ribs spare", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8079,
+		"fields": { "name": "Beef rump roast", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8080,
+		"fields": {
+			"name": "Beef top round steak",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8081,
+		"fields": {
+			"name": "Beef bottom round roast",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8082,
+		"fields": {
+			"name": "Beef eye of round",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8083,
+		"fields": { "name": "Beef skirt steak", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8084,
+		"fields": {
+			"name": "Beef hanger steak",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8085,
+		"fields": {
+			"name": "Beef brisket flat cut",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8086,
+		"fields": {
+			"name": "Beef brisket point cut",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8087,
+		"fields": {
+			"name": "Veal shank osso buco",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8088,
+		"fields": { "name": "Veal breast", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8089,
+		"fields": {
+			"name": "Lamb shoulder chops",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8090,
+		"fields": { "name": "Lamb neck", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8091,
+		"fields": {
+			"name": "Lamb shank braised",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8092,
+		"fields": {
+			"name": "Pork shoulder blade roast",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8093,
+		"fields": {
+			"name": "Pork picnic shoulder",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8094,
+		"fields": { "name": "Pork hock", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8095,
+		"fields": { "name": "Pork back ribs", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8096,
+		"fields": {
+			"name": "Chicken tenderloin",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8097,
+		"fields": {
+			"name": "Chicken whole leg",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8098,
+		"fields": { "name": "Chicken quarter", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8099,
+		"fields": { "name": "Turkey drumette", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8100,
+		"fields": { "name": "Turkey wing", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8101,
+		"fields": { "name": "Duck whole", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8102,
+		"fields": { "name": "Duck leg quarter", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8103,
+		"fields": {
+			"name": "Duck breast fillet",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8104,
+		"fields": { "name": "Goose whole", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8105,
+		"fields": {
+			"name": "Goose leg quarter",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8106,
+		"fields": {
+			"name": "Goose breast fillet",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8107,
+		"fields": { "name": "Quail whole", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8108,
+		"fields": { "name": "Quail breast", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8109,
+		"fields": { "name": "Quail leg", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8110,
+		"fields": {
+			"name": "Cornish hen whole",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8111,
+		"fields": {
+			"name": "Cornish hen breast",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8112,
+		"fields": {
+			"name": "Cornish hen thigh",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8113,
+		"fields": { "name": "Rabbit whole", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8114,
+		"fields": { "name": "Rabbit loin", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8115,
+		"fields": { "name": "Rabbit leg", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8116,
+		"fields": { "name": "Venison loin", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8117,
+		"fields": { "name": "Venison shoulder", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8118,
+		"fields": { "name": "Venison shank", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8119,
+		"fields": { "name": "Venison ground", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8120,
+		"fields": { "name": "Bison ribeye", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8121,
+		"fields": { "name": "Bison ground", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8122,
+		"fields": { "name": "Bison sirloin", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8123,
+		"fields": { "name": "Bison tenderloin", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8124,
+		"fields": { "name": "Elk loin", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8125,
+		"fields": { "name": "Elk roast", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8126,
+		"fields": { "name": "Elk ground", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8127,
+		"fields": { "name": "Goat leg", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8128,
+		"fields": { "name": "Goat shoulder", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8129,
+		"fields": { "name": "Goat chops", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8130,
+		"fields": { "name": "Goat ribs", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8131,
+		"fields": {
+			"name": "Wild boar shoulder",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8132,
+		"fields": { "name": "Wild boar loin", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8133,
+		"fields": { "name": "Wild boar ribs", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8134,
+		"fields": { "name": "Wild boar ground", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8135,
+		"fields": {
+			"name": "Veal shoulder roast",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8136,
+		"fields": { "name": "Veal rib roast", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8137,
+		"fields": { "name": "Veal leg roast", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8138,
+		"fields": { "name": "Veal stew meat", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8139,
+		"fields": { "name": "Lamb stew meat", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8140,
+		"fields": {
+			"name": "Lamb shoulder blade chop",
+			"category": "meat & poultry"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 8141,
+		"fields": { "name": "Lamb neck chops", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8142,
+		"fields": { "name": "Pork stew meat", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8143,
+		"fields": { "name": "Pork cheek", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8144,
+		"fields": { "name": "Pork jowl", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8145,
+		"fields": { "name": "Chicken back", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8146,
+		"fields": { "name": "Turkey neck", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8147,
+		"fields": { "name": "Turkey giblets", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8148,
+		"fields": { "name": "Chicken feet", "category": "meat & poultry" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 8149,
+		"fields": {
+			"name": "Chicken wings drumettes",
+			"category": "meat & poultry"
+		}
+	}
+]

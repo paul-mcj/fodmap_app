@@ -1,0 +1,252 @@
+[
+	{
+		"model": "foods.food",
+		"pk": 4000,
+		"fields": { "name": "wheat", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4001,
+		"fields": { "name": "rice", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4002,
+		"fields": { "name": "barley", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4003,
+		"fields": { "name": "oats", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4005,
+		"fields": { "name": "rye", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4006,
+		"fields": { "name": "sorghum", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4007,
+		"fields": { "name": "millet", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4008,
+		"fields": { "name": "quinoa", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4009,
+		"fields": { "name": "buckwheat", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4010,
+		"fields": { "name": "spelt", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4011,
+		"fields": { "name": "teff", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4012,
+		"fields": { "name": "amaranth", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4013,
+		"fields": { "name": "farro", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4014,
+		"fields": { "name": "freekeh", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4015,
+		"fields": { "name": "wild rice", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4016,
+		"fields": { "name": "white rice", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4017,
+		"fields": { "name": "brown rice", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4018,
+		"fields": { "name": "red rice", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4019,
+		"fields": { "name": "black rice", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4020,
+		"fields": { "name": "white corn", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4021,
+		"fields": { "name": "yellow corn", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4022,
+		"fields": { "name": "popcorn", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4023,
+		"fields": { "name": "cornmeal", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4024,
+		"fields": { "name": "corn flour", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4025,
+		"fields": { "name": "barley flour", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4026,
+		"fields": { "name": "oat flour", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4027,
+		"fields": { "name": "rice flour", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4028,
+		"fields": { "name": "sorghum flour", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4029,
+		"fields": { "name": "millet flour", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4030,
+		"fields": { "name": "quinoa flour", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4031,
+		"fields": { "name": "spelt flour", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4032,
+		"fields": { "name": "teff flour", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4033,
+		"fields": { "name": "amaranth flour", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4034,
+		"fields": { "name": "freekeh flour", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4035,
+		"fields": { "name": "farro flour", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4036,
+		"fields": { "name": "bread wheat", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4037,
+		"fields": { "name": "durum wheat", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4038,
+		"fields": { "name": "einkorn wheat", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4039,
+		"fields": { "name": "emmer wheat", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4040,
+		"fields": { "name": "spelt wheat", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4041,
+		"fields": { "name": "corn grits", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4042,
+		"fields": { "name": "corn starch", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4043,
+		"fields": { "name": "polenta", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4044,
+		"fields": { "name": "couscous", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4045,
+		"fields": { "name": "bulgur", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4046,
+		"fields": { "name": "cracked wheat", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4047,
+		"fields": { "name": "farro grain", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4048,
+		"fields": { "name": "teff grain", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4049,
+		"fields": { "name": "millet grain", "category": "grains_cereals" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 4050,
+		"fields": { "name": "sorghum grain", "category": "grains_cereals" }
+	}
+]

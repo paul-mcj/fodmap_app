@@ -14,7 +14,10 @@ class BaseBlogViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly, IsAuthorOrReadOnly]
 
     def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
+        foods_data = self.request.data.get("foods", [])
+        blog = serializer.save(author=self.request.user)  # save first
+        if foods_data:
+            blog.foods.set(foods_data)  # attach the foods
 
     @action(detail=False, methods=["get"], permission_classes=[IsAuthenticated])
     def my(self, request):

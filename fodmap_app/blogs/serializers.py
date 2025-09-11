@@ -17,9 +17,15 @@ class UserSerializer(serializers.ModelSerializer):
 
 class BlogSerializer(serializers.ModelSerializer):
     author = UserSerializer(read_only=True)
-    foods = FoodSerializer(many=True, read_only=True)
+    foods = serializers.PrimaryKeyRelatedField(
+        many=True,
+        queryset=Food.objects.all(),
+        write_only=False  # default False, so it's included in output
+    )
+
+    foods_detail = FoodSerializer(source="foods", many=True, read_only=True)  # for frontend display
 
     class Meta:
         model = Blog
-        fields = ["id", "title", "description", "foods", "type", "author", "created_at", "updated_at"]
+        fields = ["id", "title", "description", "foods", "foods_detail", "type", "author", "created_at", "updated_at"]
         read_only_fields = ["author", "created_at", "updated_at"]

@@ -1,0 +1,308 @@
+[
+	{
+		"model": "foods.food",
+		"pk": 9000,
+		"fields": { "name": "Basil", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9001,
+		"fields": { "name": "Oregano", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9002,
+		"fields": { "name": "Thyme", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9003,
+		"fields": { "name": "Rosemary", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9004,
+		"fields": { "name": "Sage", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9005,
+		"fields": { "name": "Parsley", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9006,
+		"fields": { "name": "Cilantro", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9007,
+		"fields": { "name": "Dill", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9008,
+		"fields": { "name": "Mint", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9009,
+		"fields": { "name": "Tarragon", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9010,
+		"fields": { "name": "Chives", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9011,
+		"fields": { "name": "Bay leaves", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9012,
+		"fields": { "name": "Marjoram", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9013,
+		"fields": { "name": "Fennel fronds", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9014,
+		"fields": { "name": "Lemongrass", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9015,
+		"fields": { "name": "Lavender", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9016,
+		"fields": { "name": "Curry leaves", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9017,
+		"fields": { "name": "Saffron", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9018,
+		"fields": { "name": "Paprika", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9019,
+		"fields": { "name": "Cayenne pepper", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9020,
+		"fields": { "name": "Black pepper", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9021,
+		"fields": { "name": "White pepper", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9022,
+		"fields": { "name": "Red chili flakes", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9023,
+		"fields": { "name": "Ground cumin", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9024,
+		"fields": { "name": "Coriander seeds", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9025,
+		"fields": { "name": "Turmeric", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9026,
+		"fields": { "name": "Ginger powder", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9027,
+		"fields": { "name": "Mustard seeds", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9028,
+		"fields": { "name": "Caraway seeds", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9029,
+		"fields": { "name": "Fennel seeds", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9030,
+		"fields": { "name": "Cloves", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9031,
+		"fields": { "name": "Nutmeg", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9032,
+		"fields": { "name": "Allspice", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9033,
+		"fields": { "name": "Cardamom", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9034,
+		"fields": { "name": "Cinnamon", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9035,
+		"fields": { "name": "Star anise", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9036,
+		"fields": { "name": "Fenugreek seeds", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9037,
+		"fields": { "name": "Sumac", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9038,
+		"fields": { "name": "Wasabi powder", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9039,
+		"fields": { "name": "Horseradish", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9040,
+		"fields": { "name": "Chili powder", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9041,
+		"fields": { "name": "Dried basil", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9042,
+		"fields": { "name": "Dried oregano", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9043,
+		"fields": { "name": "Dried thyme", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9044,
+		"fields": { "name": "Dried rosemary", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9045,
+		"fields": { "name": "Dried parsley", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9046,
+		"fields": { "name": "Dried dill", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9047,
+		"fields": { "name": "Dried cilantro", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9048,
+		"fields": { "name": "Dried chives", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9049,
+		"fields": { "name": "Dried mint", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9050,
+		"fields": { "name": "Dried tarragon", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9051,
+		"fields": { "name": "Paprika smoked", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9052,
+		"fields": { "name": "Paprika sweet", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9053,
+		"fields": { "name": "Curry powder", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9054,
+		"fields": { "name": "Garam masala", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9055,
+		"fields": {
+			"name": "Herbes de Provence",
+			"category": "Herbs & Spices"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 9056,
+		"fields": {
+			"name": "Italian seasoning",
+			"category": "Herbs & Spices"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 9057,
+		"fields": { "name": "Za'atar", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9058,
+		"fields": { "name": "Dried bay leaves", "category": "Herbs & Spices" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 9059,
+		"fields": { "name": "Celery seed", "category": "Herbs & Spices" }
+	}
+]

@@ -1,0 +1,305 @@
+[
+	{
+		"model": "foods.food",
+		"pk": 7000,
+		"fields": { "name": "Whole milk", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7001,
+		"fields": { "name": "Skim milk", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7002,
+		"fields": { "name": "2% milk", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7003,
+		"fields": { "name": "Cream", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7004,
+		"fields": { "name": "Half-and-half", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7005,
+		"fields": { "name": "Butter", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7006,
+		"fields": { "name": "Margarine", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7007,
+		"fields": { "name": "Cheddar cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7008,
+		"fields": { "name": "Mozzarella cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7009,
+		"fields": { "name": "Parmesan cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7010,
+		"fields": { "name": "Swiss cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7011,
+		"fields": { "name": "Goat cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7012,
+		"fields": { "name": "Cream cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7013,
+		"fields": { "name": "Cottage cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7014,
+		"fields": { "name": "Ricotta cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7015,
+		"fields": { "name": "Feta cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7016,
+		"fields": { "name": "Blue cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7017,
+		"fields": { "name": "Brie", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7018,
+		"fields": { "name": "Camembert", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7019,
+		"fields": { "name": "Eggs whole", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7020,
+		"fields": { "name": "Egg whites", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7021,
+		"fields": { "name": "Egg yolks", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7022,
+		"fields": { "name": "Yogurt plain", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7023,
+		"fields": { "name": "Greek yogurt", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7024,
+		"fields": { "name": "Flavored yogurt", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7025,
+		"fields": { "name": "Sour cream", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7026,
+		"fields": { "name": "Buttermilk", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7027,
+		"fields": { "name": "Evaporated milk", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7028,
+		"fields": { "name": "Condensed milk", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7029,
+		"fields": { "name": "Powdered milk", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7030,
+		"fields": { "name": "Cheese slices", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7031,
+		"fields": { "name": "Shredded cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7032,
+		"fields": { "name": "Creamer", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7033,
+		"fields": { "name": "Kefir", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7034,
+		"fields": { "name": "Mascarpone", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7035,
+		"fields": { "name": "Halloumi", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7036,
+		"fields": { "name": "Grated cheese mix", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7037,
+		"fields": {
+			"name": "Cream cheese spread",
+			"category": "Dairy & Eggs"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 7038,
+		"fields": { "name": "Goat milk", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7039,
+		"fields": { "name": "Sheep milk", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7040,
+		"fields": { "name": "Buffalo milk", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7041,
+		"fields": { "name": "Egg substitute", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7042,
+		"fields": { "name": "Eggnog", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7043,
+		"fields": { "name": "Cream cheese block", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7044,
+		"fields": { "name": "Soft cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7045,
+		"fields": { "name": "Hard cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7046,
+		"fields": { "name": "Processed cheese", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7047,
+		"fields": { "name": "Creamer non-dairy", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7048,
+		"fields": { "name": "Cheese curds", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7049,
+		"fields": { "name": "Egg salad", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7050,
+		"fields": { "name": "Egg patties", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7051,
+		"fields": { "name": "Egg muffins", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7052,
+		"fields": { "name": "Egg custard", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7053,
+		"fields": { "name": "Ghee", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7054,
+		"fields": { "name": "Clotted cream", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7055,
+		"fields": { "name": "Crème fraîche", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7056,
+		"fields": { "name": "Goat milk yogurt", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7057,
+		"fields": { "name": "Sheep milk yogurt", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7058,
+		"fields": { "name": "Labneh", "category": "Dairy & Eggs" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 7059,
+		"fields": { "name": "Egg wraps", "category": "Dairy & Eggs" }
+	}
+]

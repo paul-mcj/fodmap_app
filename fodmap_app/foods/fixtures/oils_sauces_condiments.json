@@ -1,0 +1,457 @@
+[
+	{
+		"model": "foods.food",
+		"pk": 10000,
+		"fields": {
+			"name": "Olive oil",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10001,
+		"fields": {
+			"name": "Vegetable oil",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10002,
+		"fields": {
+			"name": "Canola oil",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10003,
+		"fields": {
+			"name": "Sunflower oil",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10004,
+		"fields": {
+			"name": "Avocado oil",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10005,
+		"fields": {
+			"name": "Coconut oil",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10006,
+		"fields": {
+			"name": "Sesame oil",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10007,
+		"fields": {
+			"name": "Peanut oil",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10008,
+		"fields": {
+			"name": "Grapeseed oil",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10011,
+		"fields": {
+			"name": "Mayonnaise",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10012,
+		"fields": {
+			"name": "Ketchup",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10013,
+		"fields": {
+			"name": "Mustard",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10014,
+		"fields": {
+			"name": "Soy sauce",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10015,
+		"fields": {
+			"name": "Teriyaki sauce",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10016,
+		"fields": {
+			"name": "Worcestershire sauce",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10017,
+		"fields": {
+			"name": "Hot sauce",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10018,
+		"fields": {
+			"name": "Sriracha",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10019,
+		"fields": {
+			"name": "Barbecue sauce",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10020,
+		"fields": {
+			"name": "Vinegar white",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10021,
+		"fields": {
+			"name": "Vinegar balsamic",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10022,
+		"fields": {
+			"name": "Vinegar apple cider",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10023,
+		"fields": {
+			"name": "Vinegar red wine",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10024,
+		"fields": {
+			"name": "Vinegar rice",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10025,
+		"fields": {
+			"name": "Tahini",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10026,
+		"fields": {
+			"name": "Hoisin sauce",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10027,
+		"fields": {
+			"name": "Fish sauce",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10028,
+		"fields": {
+			"name": "Oyster sauce",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10029,
+		"fields": {
+			"name": "Chili sauce",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10030,
+		"fields": {
+			"name": "Tomato paste",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10031,
+		"fields": {
+			"name": "Tomato sauce",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10032,
+		"fields": { "name": "Pesto", "category": "Oils, Sauces & Condiments" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 10033,
+		"fields": {
+			"name": "Chimichurri",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10034,
+		"fields": {
+			"name": "Relish",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10035,
+		"fields": {
+			"name": "Pickles",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10036,
+		"fields": {
+			"name": "Capers",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10037,
+		"fields": {
+			"name": "Hot mustard",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10038,
+		"fields": {
+			"name": "Honey mustard",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10039,
+		"fields": {
+			"name": "Vinaigrette",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10040,
+		"fields": {
+			"name": "Ranch dressing",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10041,
+		"fields": {
+			"name": "Caesar dressing",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10042,
+		"fields": {
+			"name": "Blue cheese dressing",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10043,
+		"fields": {
+			"name": "Thousand island dressing",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10044,
+		"fields": {
+			"name": "Mayonnaise light",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10045,
+		"fields": { "name": "Aioli", "category": "Oils, Sauces & Condiments" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 10046,
+		"fields": { "name": "Salsa", "category": "Oils, Sauces & Condiments" }
+	},
+	{
+		"model": "foods.food",
+		"pk": 10047,
+		"fields": {
+			"name": "Tartar sauce",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10048,
+		"fields": {
+			"name": "Buffalo sauce",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10049,
+		"fields": {
+			"name": "Soy dressing",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10050,
+		"fields": {
+			"name": "Ponzu sauce",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10051,
+		"fields": {
+			"name": "Teriyaki glaze",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10052,
+		"fields": {
+			"name": "Barbecue rub",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10053,
+		"fields": {
+			"name": "Marinade",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10054,
+		"fields": {
+			"name": "Chili paste",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10055,
+		"fields": {
+			"name": "Tomato ketchup low sugar",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10056,
+		"fields": {
+			"name": "Vegan mayonnaise",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10057,
+		"fields": {
+			"name": "Relish sweet",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10058,
+		"fields": {
+			"name": "Hot pepper oil",
+			"category": "Oils, Sauces & Condiments"
+		}
+	},
+	{
+		"model": "foods.food",
+		"pk": 10059,
+		"fields": {
+			"name": "Truffle oil",
+			"category": "Oils, Sauces & Condiments"
+		}
+	}
+]
