@@ -56,7 +56,11 @@ export const privateGetUserBlogs = () => PRIVATE_API.get("blogs/my/");
 // Blogs (public routes)
 export const publicGetAllBlogs = () => PUBLIC_API.get("blogs/");
 export const publicGetSingleBlog = (id) => PUBLIC_API.get(`blogs/${id}/`);
-export const publicGetAllBlogsOfType = (type) => PUBLIC_API.get(`/${type}/`); // get either all "discussions" or "recipes"
+// get either all "discussions" or "recipes". Passing in a limit argument changes the amount of returned items.
+export const publicGetAllBlogsOfType = (type, limit) => {
+	const url = limit ? `/${type}/?limit=${limit}` : `/${type}/`;
+	return PUBLIC_API.get(url);
+};
 
 // TODO: need update and delete functions (discussions and recipes)
 

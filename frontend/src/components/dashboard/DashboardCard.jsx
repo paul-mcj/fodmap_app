@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-const DashboardCard = ({ badgeText, title, text, linkText, imgRef }) => {
+const DashboardCard = ({ badgeText, title, text, linkText, imgRef, to }) => {
 	return (
 		<Link
 			className="group flex flex-col bg-white border border-gray-200 shadow-2xs rounded-xl hover:shadow-md focus:outline-hidden focus:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800"
-			to="/">
+			to={to ? to : "/"}>
 			{imgRef && (
 				<div className="relative pt-[50%] sm:pt-[70%] rounded-t-xl overflow-hidden">
 					<img
@@ -26,7 +26,7 @@ const DashboardCard = ({ badgeText, title, text, linkText, imgRef }) => {
 						: title}
 				</h3>
 				<p className="my-4 text-gray-800 dark:text-neutral-200 text-xs md:text-sm">
-					{text.length > 120
+					{text?.length > 120
 						? text.substring(0, 120) + "..."
 						: text}
 				</p>

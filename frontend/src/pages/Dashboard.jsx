@@ -1,7 +1,8 @@
 import {
 	privateGetUserPosts,
 	privateGetUserJournalEntries,
-	privateGetUserBlogs
+	privateGetUserBlogs,
+	publicGetAllBlogsOfType
 } from "../utils/api_req";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
@@ -17,6 +18,7 @@ function Dashboard() {
 	const [posts, setPosts] = useState([]);
 	const [journalEntries, setJournalEntries] = useState([]);
 	const [userBlogs, setUserBlogs] = useState([]);
+	const [recentDiscussions, setRecentDiscussions] = useState([]);
 
 	const fetchJournalEntries = async () => {
 		try {
@@ -47,6 +49,17 @@ function Dashboard() {
 		}
 	};
 
+	const fetchRecentDiscussionsForDashboard = async () => {
+		publicGetAllBlogsOfType("discussions", 6)
+			.then((res) => {
+				console.log("Discussions returned:", res.data);
+				setRecentDiscussions(() => res.data);
+			})
+			.catch((error) => {
+				console.log(`Error with Discussions useEffect: ${error}`);
+			});
+	};
+
 	useEffect(() => {
 		// TODO: check isAuthenticated in initial loading useEffect?
 
@@ -54,6 +67,7 @@ function Dashboard() {
 		fetchPosts();
 		fetchJournalEntries();
 		fetchUserBlogs();
+		fetchRecentDiscussionsForDashboard();
 		console.log(user);
 	}, []);
 
@@ -74,6 +88,7 @@ function Dashboard() {
 						<div className="grid sm:grid-cols-3 gap-6">
 							{/* TODO: fetch the last post logged in user made as per timestamp (fetch on back or front end for efficiency?) */}
 							{/* TODO: this card always needs a special default image */}
+							{/* ||| need posts app */}
 							<DashboardCard
 								badgeText="Last Post"
 								title="d89w32hjr893"
@@ -87,6 +102,7 @@ function Dashboard() {
 							/>
 							{/* TODO: fetch last favourited recipe as per timestamp */}
 							{/* TODO: this card always needs a special default image */}
+							{/* ||| need ability for user to add fav recipes */}
 							<DashboardCard
 								badgeText="Favourite Recipe"
 								title="Cabbage rolls"
@@ -96,6 +112,7 @@ function Dashboard() {
 							/>
 							{/* TODO: fetch last journal entry as per timestamp */}
 							{/* TODO: this card always needs a special default image */}
+							{/* ||| need to fix journal app */}
 							<DashboardCard
 								badgeText="Journal Entry"
 								title="Bacon didn't turn out to good Bacon didn't turn out to good Bacon didn't turn out to good Bacon didn't turn out to good Bacon didn't turn out to good Bacon didn't turn out to good Bacon didn't turn out to goodBacon didn't turn out to good Bacon didn't turn out to good"
@@ -113,37 +130,19 @@ function Dashboard() {
 							subheader="Engage with other FODMAP Community members."
 						/>
 						<div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
-							{/* TODO: 5 to 6 most recent discussions, then a "see all" */}
-							<DashboardCard
-								title="discussion 1"
-								text="lorme sajisj dsioad89 dsa8 lorme sajisj sajisj dsioad89 dsa8 lorme sajis sajisj dsioad89 dsa8 lorme sajis sajisj dsioad89 dsa8 lorme sajisdsioad89 dsa8 lorme sajisj dsioad89 dsa8"
-								linkText="Read more"
-							/>
-							<DashboardCard
-								title="discussion 2"
-								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
-								linkText="Read more"
-							/>
-							<DashboardCard
-								title="discussion 3"
-								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
-								linkText="Read more"
-							/>
-							<DashboardCard
-								title="discussion 4 sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme saj sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme saj sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme saj"
-								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme saj sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme saj sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
-								linkText="Read more"
-							/>
-							<DashboardCard
-								title="discussion 5"
-								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
-								linkText="Read more"
-							/>
-							<DashboardCard
-								title="discussion 6"
-								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
-								linkText="Read more"
-							/>
+							{/* get 6 most recent discussions */}
+							{/* ||| should be bloglists not dashboard cards... */}
+							{recentDiscussions.map((discussion) => (
+								<DashboardCard
+									key={discussion.id}
+									title={discussion.title}
+									text={discussion.text}
+									linkText="Read more"
+									// TODO: this needs to be checked and eventually passed in, otherwise default image
+									imgRef="https://plus.unsplash.com/premium_vector-1707838698173-5c0a52af62e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZnJ1aXR8ZW58MHwwfDB8fHww"
+									to={`/blogs/${discussion.id}`}
+								/>
+							))}
 						</div>
 						<Button className="cursor-pointer mt-8 md:col-start-2 md:row-start-2">
 							All discussions

@@ -13,18 +13,28 @@ class BaseBlogViewSet(viewsets.ModelViewSet):
     serializer_class = BlogSerializer
     permission_classes = [IsAuthenticatedOrReadOnly, IsAuthorOrReadOnly]
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        limit = self.request.query_params.get("limit")
+        if limit:
+            try:
+                limit = int(limit)
+                queryset = queryset[:limit]
+            except ValueError:
+                pass  # ignore bad limit values
+        return queryset
+
     def perform_create(self, serializer):
         foods_data = self.request.data.get("foods", [])
-        blog = serializer.save(author=self.request.user)  # save first
+        blog = serializer.save(author=self.request.user)
         if foods_data:
-            blog.foods.set(foods_data)  # attach the foods
+            blog.foods.set(foods_data)
 
     @action(detail=False, methods=["get"], permission_classes=[IsAuthenticated])
     def my(self, request):
         queryset = self.get_queryset().filter(author=request.user)
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
-
 
 class BlogViewSet(BaseBlogViewSet):
     queryset = Blog.objects.all().order_by("-created_at")

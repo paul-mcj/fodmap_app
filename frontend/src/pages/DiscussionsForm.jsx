@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { publicGetAllFoods, publicSearchFoods } from "@/utils/api_req";
 import { Search } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { X } from "lucide-react";
+import { X, Check } from "lucide-react";
 
 // Reducer for form state
 function formReducer(state, action) {
@@ -140,6 +140,13 @@ const DiscussionsForm = () => {
 	}, []);
 
 	const handleInputFocus = () => setIsModalOpen(true);
+
+	const handleSearchOnClose = () => {
+		searchFoodDispatch({
+			type: "SET_QUERY",
+			value: ""
+		});
+	};
 
 	const handleOnSubmit = async () => {
 		console.log(state);
@@ -271,8 +278,11 @@ const DiscussionsForm = () => {
 										<div className="absolute inset-y-0 end-0 flex items-center z-20 pe-1">
 											<button
 												type="button"
-												className="inline-flex shrink-0 justify-center items-center size-6 rounded-full text-gray-500 hover:text-blue-600 focus:outline-hidden focus:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500"
-												aria-label="Close">
+												className="cursor-pointer inline-flex shrink-0 justify-center items-center size-6 rounded-full text-gray-500 hover:text-blue-600 focus:outline-hidden focus:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500"
+												aria-label="Close"
+												onClick={
+													handleSearchOnClose
+												}>
 												<span className="sr-only">
 													{/* TODO: erase current value in searchbar */}
 													Close
@@ -352,32 +362,46 @@ const DiscussionsForm = () => {
 															(
 																food
 															) => (
-																<FormItem
-																	key={
-																		food.id
-																	}
-																	className="flex items-center px-2 py-1 hover:bg-gray-100 cursor-pointer">
-																	<FormControl>
-																		<Checkbox
-																			checked={state.foods.includes(
-																				food.id
-																			)}
-																			onCheckedChange={() =>
-																				dispatch(
-																					{
-																						type: "TOGGLE_FOOD",
-																						food: food.id
-																					}
-																				)
+																<FormControl
+																	onClick={() =>
+																		dispatch(
+																			{
+																				type: "TOGGLE_FOOD",
+																				food: food.id
 																			}
-																		/>
-																	</FormControl>
-																	<FormLabel className="text-sm">
-																		{
-																			food.name
+																		)
+																	}
+																	// checked={state.foods.includes(
+																	// 	food.id
+																	// )}
+																	// onCheckedChange={() =>
+																	// 	dispatch(
+																	// 		{
+																	// 			type: "TOGGLE_FOOD",
+																	// 			food: food.id
+																	// 		}
+																	// 	)
+																	// }
+																>
+																	<FormItem
+																		key={
+																			food.id
 																		}
-																	</FormLabel>
-																</FormItem>
+																		className="flex items-center px-2 py-1 hover:bg-gray-100 cursor-pointer">
+																		<FormLabel className="text-sm">
+																			{state.foods.includes(
+																				food.id
+																			) && (
+																				<>
+																					<Check className="size-4 mr-1 shrink-0 group-hover:visible" />
+																				</>
+																			)}
+																			{
+																				food.name
+																			}
+																		</FormLabel>
+																	</FormItem>
+																</FormControl>
 															)
 														)}
 												</div>
