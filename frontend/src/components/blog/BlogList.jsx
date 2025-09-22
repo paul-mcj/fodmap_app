@@ -21,11 +21,11 @@ const BlogList = ({ type }) => {
 		if (type === "") return "Recent Blogs";
 		if (type === "discussions")
 			return location.pathname === "/discussions"
-				? "Recent Discussions"
+				? "All Discussions"
 				: "Your Discussions";
 		if (type === "recipes")
 			return location.pathname === "/recipes"
-				? "Recent Recipes"
+				? "All Recipes"
 				: "Your Recipes";
 		return ""; // default
 	})();

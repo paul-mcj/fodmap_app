@@ -1,6 +1,5 @@
 import { useReducer, useEffect, useState, useRef } from "react";
 import { useForm } from "react-hook-form";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
 	Form,
 	FormControl,
@@ -370,19 +369,7 @@ const DiscussionsForm = () => {
 																				food: food.id
 																			}
 																		)
-																	}
-																	// checked={state.foods.includes(
-																	// 	food.id
-																	// )}
-																	// onCheckedChange={() =>
-																	// 	dispatch(
-																	// 		{
-																	// 			type: "TOGGLE_FOOD",
-																	// 			food: food.id
-																	// 		}
-																	// 	)
-																	// }
-																>
+																	}>
 																	<FormItem
 																		key={
 																			food.id
@@ -407,6 +394,7 @@ const DiscussionsForm = () => {
 												</div>
 											)}
 									</div>
+									{/* ||| */}
 								</div>
 								<div className="grid gap-2">
 									<p
