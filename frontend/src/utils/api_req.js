@@ -74,6 +74,8 @@ export const privatePostNewDiscussion = (content) =>
 
 // Recipes (private routes)
 export const privateGetUserRecipes = () => PRIVATE_API.get("/recipes/my");
+export const privatePostNewRecipe = (content) =>
+	PRIVATE_API.post("/recipes/", content);
 // Recipes (public routes)
 
 // Posts (private routes)

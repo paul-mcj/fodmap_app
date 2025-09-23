@@ -21,6 +21,7 @@ function Dashboard() {
 	const [userBlogs, setUserBlogs] = useState([]);
 	const [recentDiscussions, setRecentDiscussions] = useState([]);
 	const [recentRecipes, setRecentRecipes] = useState([]);
+	const [recentPosts, setRecentPosts] = useState([]);
 
 	const fetchJournalEntries = async () => {
 		try {
@@ -73,6 +74,19 @@ function Dashboard() {
 			});
 	};
 
+	const fetchRecentPostsForDashboard = async () => {
+		console.log("fetch posts here.");
+		// TODO: need api fetch that allows for 6 most recent (may need to update view/url for app and helper function)
+		// publicGetAllBlogsOfType("recipes", 6)
+		// 	.then((res) => {
+		// 		console.log("Recipes returned:", res.data);
+		// 		setRecentRecipes(() => res.data);
+		// 	})
+		// 	.catch((error) => {
+		// 		console.log(`Error with Recipes useEffect: ${error}`);
+		// 	});
+	};
+
 	useEffect(() => {
 		// TODO: check isAuthenticated in initial loading useEffect?
 
@@ -82,6 +96,7 @@ function Dashboard() {
 		fetchUserBlogs();
 		fetchRecentDiscussionsForDashboard();
 		fetchRecentRecipesForDashboard();
+		fetchRecentPostsForDashboard();
 		console.log(user);
 	}, []);
 
@@ -192,57 +207,35 @@ function Dashboard() {
 							</Button>
 						</Link>
 					</div>
+					{/* TODO: if user has never made a post before, just hide this part */}
+					{/* TODO: recentPosts?.length !== 0 && () */}
 					<div className="mx-auto text-center">
 						<DashboardContentHeader
 							header="Your Recent Posts"
-							subheader="View what you have posted on other discussions and recipes."
+							subheader="View your most recent posts on other discussions and recipes."
 						/>
 						<div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
-							{/* TODO: show users posts in chronological order of last edited, 5 to 6 recent then a "see all" */}
-							{/* {posts.map((post) => (
-								<li key={post.id}>
-									<div>{post.body}</div>
-									<div>
-										{formatPostDate(
-											post.created_at
-										)}
-									</div>
-								</li>
+							{/* get 6 most recent posts in chronological order of last edited */}
+							{/* ||| should be bloglists not dashboard cards... */}
+							{/* {recentPosts.map((post) => (
+								<DashboardCard
+									key={post.id}
+									title={post.title}
+									text={post.text}
+									linkText="Read more"
+									// TODO: this needs to be checked and eventually passed in, otherwise default image
+									imgRef="https://plus.unsplash.com/premium_vector-1707838698173-5c0a52af62e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZnJ1aXR8ZW58MHwwfDB8fHww"
+									to={`/blogs/${post.id}`}
+								/>
 							))} */}
-							<DashboardCard
-								title="post 1"
-								text="lorme sajisj dsioad89 dsa8 lorme sajisj sajisj dsioad89 dsa8 lorme sajis sajisj dsioad89 dsa8 lorme sajis sajisj dsioad89 dsa8 lorme sajisdsioad89 dsa8 lorme sajisj dsioad89 dsa8"
-								linkText="Read more"
-							/>
-							<DashboardCard
-								title="post 2"
-								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
-								linkText="Read more"
-							/>
-							<DashboardCard
-								title="pme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8me sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
-								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
-								linkText="Read more"
-							/>
-							<DashboardCard
-								title="post 4"
-								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
-								linkText="Read more"
-							/>
-							<DashboardCard
-								title="post 5"
-								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
-								linkText="Read more"
-							/>
-							<DashboardCard
-								title="post 6"
-								text="lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8 lorme sajisj dsioad89 dsa8"
-								linkText="Read more"
-							/>
 						</div>
-						<Button className="cursor-pointer mt-8 md:col-start-2 md:row-start-2">
-							All your posts
-						</Button>
+
+						{/* <Link to="/posts"> */}
+						<Link to="/">
+							<Button className="cursor-pointer mt-8 md:col-start-2 md:row-start-2">
+								All Your Posts
+							</Button>
+						</Link>
 					</div>
 					<div className="mx-auto text-center">
 						<DashboardContentHeader

@@ -9,7 +9,7 @@ import {
 	FormMessage
 } from "@/components/ui/form";
 import { Card, CardContent } from "@/components/ui/card";
-import { privatePostNewDiscussion } from "@/utils/api_req";
+import { privatePostNewRecipe } from "@/utils/api_req";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { publicGetAllFoods, publicSearchFoods } from "@/utils/api_req";
@@ -55,7 +55,7 @@ function searchFoodReducer(state, action) {
 // Initial form state
 const initialFormState = {
 	title: "",
-	type: "discussion",
+	type: "recipe",
 	description: "",
 	imgSrc: "",
 	foods: [] // IDs of selected foods
@@ -67,7 +67,7 @@ const initialSearchFoodState = {
 	filteredFoods: [] // foods returned from backend search
 };
 
-const DiscussionsForm = () => {
+const RecipeForm = () => {
 	const [state, dispatch] = useReducer(formReducer, initialFormState);
 	const [searchFoodState, searchFoodDispatch] = useReducer(
 		searchFoodReducer,
@@ -150,11 +150,11 @@ const DiscussionsForm = () => {
 	const handleOnSubmit = async () => {
 		console.log(state);
 		try {
-			await privatePostNewDiscussion(state);
-			console.log("new discussion has been successfully added!!");
+			await privatePostNewRecipe(state);
+			console.log("new recipe has been successfully added!!");
 		} catch (err) {
 			console.error(
-				"ERROR with creating new discussion:",
+				"ERROR with creating new recipe:",
 				err?.response?.data || err.message
 			);
 		}
@@ -163,11 +163,11 @@ const DiscussionsForm = () => {
 	return (
 		<div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-white">
 			<div className="max-w-2xl text-center mx-auto mb-10 lg:mb-14">
-				<PageHeader text="New Discussion" />
+				<PageHeader text="New Recipe" />
 				<p className="mt-1 text-gray-600 dark:text-neutral-400">
-					Something on your mind? Create a new discussion and
-					start the conversation with other members of the FODMAP
-					Community.
+					Have something delicious that you make and think other
+					will like? Create a new recipe and share with the
+					FODMAP Community.
 				</p>
 			</div>
 			{/* <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 lg:mb-14"> */}
@@ -206,38 +206,6 @@ const DiscussionsForm = () => {
 														})
 													}
 													className="w-full border rounded px-2 py-1"
-												/>
-											</FormControl>
-											<FormMessage />
-										</FormItem>
-									)}
-								/>
-								<FormField
-									control={form.control}
-									name="description"
-									render={({ field }) => (
-										<FormItem>
-											<FormLabel>
-												Description
-											</FormLabel>
-											<FormControl>
-												<textarea
-													{...field}
-													value={
-														state.description
-													}
-													onChange={(
-														e
-													) =>
-														dispatch({
-															type: "SET_FIELD",
-															field: "description",
-															value: e
-																.target
-																.value
-														})
-													}
-													className="w-full border rounded px-2 py-1 h-40 resize-y"
 												/>
 											</FormControl>
 											<FormMessage />
@@ -362,6 +330,7 @@ const DiscussionsForm = () => {
 																food
 															) => (
 																<FormControl
+																	className="cursor-pointer"
 																	onClick={() =>
 																		dispatch(
 																			{
@@ -374,8 +343,8 @@ const DiscussionsForm = () => {
 																		key={
 																			food.id
 																		}
-																		className="flex items-center px-2 py-1 hover:bg-gray-100 cursor-pointer">
-																		<FormLabel className="text-sm">
+																		className="flex items-center px-2 py-1 hover:bg-gray-100">
+																		<FormLabel className="text-sm cursor-pointer">
 																			{state.foods.includes(
 																				food.id
 																			) && (
@@ -442,9 +411,41 @@ const DiscussionsForm = () => {
 										})}
 									</ul>
 								</div>
+								<FormField
+									control={form.control}
+									name="description"
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel>
+												Description
+											</FormLabel>
+											<FormControl>
+												<textarea
+													{...field}
+													value={
+														state.description
+													}
+													onChange={(
+														e
+													) =>
+														dispatch({
+															type: "SET_FIELD",
+															field: "description",
+															value: e
+																.target
+																.value
+														})
+													}
+													className="w-full border rounded px-2 py-1 h-40 resize-y"
+												/>
+											</FormControl>
+											<FormMessage />
+										</FormItem>
+									)}
+								/>
 								<Button
 									type="submit"
-									className="mt-48">
+									className="mt-8">
 									Submit
 								</Button>
 							</form>
@@ -456,4 +457,4 @@ const DiscussionsForm = () => {
 	);
 };
 
-export default DiscussionsForm;
+export default RecipeForm;

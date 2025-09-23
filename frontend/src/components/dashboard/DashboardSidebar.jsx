@@ -139,7 +139,6 @@ const DashboardSidebar = () => {
 								<DashboardSidebarListItem
 									Icon={MessageSquarePlus}
 									text="New Discussion"
-									// TODO: need frontend page to display this
 									to="/discussions/new"
 								/>
 							</ul>
@@ -157,7 +156,6 @@ const DashboardSidebar = () => {
 								<DashboardSidebarListItem
 									Icon={Utensils}
 									text="Your Recipes"
-									// TODO: need frontend page to display this
 									to="/recipes/my"
 								/>
 								<DashboardSidebarListItem
@@ -169,8 +167,7 @@ const DashboardSidebar = () => {
 								<DashboardSidebarListItem
 									Icon={SquarePlus}
 									text="New Recipe"
-									// TODO: need frontend page to display this
-									// to="/recipe/new"
+									to="/recipes/new"
 								/>
 							</ul>
 						</div>
