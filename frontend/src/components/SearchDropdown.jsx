@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
+import { Check, Search } from "lucide-react";
 
 export default function SearchDropdown({
 	query,
+	isSelected,
 	items,
 	onQueryChange,
 	onSelect,
@@ -13,11 +15,7 @@ export default function SearchDropdown({
 	const [isOpen, setIsOpen] = useState(false);
 	const inputRef = useRef(null);
 	const itemRefs = useRef([]);
-
-	// useEffect(() => {
-	// 	setHighlightIndex(-1);
-	// 	setIsOpen(items?.length > 0);
-	// }, [items]);
+	const containerRef = useRef(null);
 
 	useEffect(() => {
 		setHighlightIndex(-1);
@@ -37,6 +35,12 @@ export default function SearchDropdown({
 
 	const handleKeyDown = (e) => {
 		const visibleItems = items?.slice(0, maxItems) || [];
+
+		// If dropdown isn't open or no items to cycle through, let Tab key do its thing
+		if (!isOpen || visibleItems.length === 0) {
+			if (e.key === "Tab") return; // don't preventDefault
+		}
+
 		if (e.key === "ArrowDown") {
 			e.preventDefault();
 			setHighlightIndex((prev) =>
@@ -94,24 +98,42 @@ export default function SearchDropdown({
 		}
 	}, [highlightIndex]);
 
+	useEffect(() => {
+		const handleClickOutside = (e) => {
+			if (
+				containerRef.current &&
+				!containerRef.current.contains(e.target)
+			) {
+				setIsOpen(false);
+			}
+		};
+		document.addEventListener("mousedown", handleClickOutside);
+		return () =>
+			document.removeEventListener("mousedown", handleClickOutside);
+	}, []);
+
 	const shouldShowList = isOpen && items?.length > 0 && query.length > 0;
 
 	return (
-		<div className="relative w-full">
+		<div
+			ref={containerRef}
+			className="relative w-full">
 			<div className="relative">
-				<input
-					ref={inputRef}
-					value={query}
-					onChange={(e) => onQueryChange(e.target.value)}
-					onKeyDown={handleKeyDown}
-					onFocus={() => setIsOpen(true)} // <-- always open on focus
-					placeholder={placeholder}
-					aria-expanded={isOpen}
-					aria-autocomplete="list"
-					role="combobox"
-					className="w-full border border-gray-300 rounded px-2 py-1 pr-10"
-				/>
-
+				<div className="relative w-full">
+					<Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none size-4" />
+					<input
+						ref={inputRef}
+						value={query}
+						onChange={(e) => onQueryChange(e.target.value)}
+						onKeyDown={handleKeyDown}
+						onFocus={() => setIsOpen(true)}
+						placeholder={placeholder}
+						aria-expanded={isOpen}
+						aria-autocomplete="list"
+						role="combobox"
+						className="w-full border border-gray-300 rounded-lg pl-9 pr-10 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+					/>
+				</div>
 				{/* Clear button */}
 				{query && (
 					<button
@@ -119,12 +141,28 @@ export default function SearchDropdown({
 						onClick={handleClear}
 						className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-blue-600"
 						aria-label="Clear search">
-						×
+						<svg
+							className="shrink-0 size-4"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round">
+							<circle
+								cx="12"
+								cy="12"
+								r="10"
+							/>
+							<path d="m15 9-6 6" />
+							<path d="m9 9 6 6" />
+						</svg>
 					</button>
 				)}
 			</div>
-
-			{/* {isOpen && items?.length > 0 && ( */}
 			{shouldShowList && (
 				<ul
 					className="absolute z-50 w-full bg-white border border-gray-300 rounded mt-1 max-h-48 overflow-y-auto shadow-lg"
@@ -162,6 +200,9 @@ export default function SearchDropdown({
 									onSelect(item);
 									handleClear();
 								}}>
+								{isSelected && isSelected(item) && (
+									<Check className="size-4 mr-1 shrink-0" />
+								)}
 								{item.name}
 							</li>
 						))}

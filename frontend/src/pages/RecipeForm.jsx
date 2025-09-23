@@ -13,9 +13,9 @@ import { privatePostNewRecipe } from "@/utils/api_req";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { publicGetAllFoods, publicSearchFoods } from "@/utils/api_req";
-import { Search } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { X, Check } from "lucide-react";
+import { X } from "lucide-react";
+import SearchDropdown from "@/components/SearchDropdown";
 
 // Reducer for form state
 function formReducer(state, action) {
@@ -76,10 +76,6 @@ const RecipeForm = () => {
 
 	const [allFoods, setAllFoods] = useState([]);
 
-	// controls dropdown visibility
-	const [isModalOpen, setIsModalOpen] = useState(false);
-	const searchRef = useRef(null);
-
 	const form = useForm({
 		defaultValues: initialFormState
 	});
@@ -121,32 +117,6 @@ const RecipeForm = () => {
 		return () => clearTimeout(delayDebounceFn);
 	}, [searchFoodState.query]);
 
-	// Handle dropdown click outside
-	useEffect(() => {
-		const handleClickOutside = (event) => {
-			if (
-				searchRef.current &&
-				!searchRef.current.contains(event.target)
-			) {
-				setIsModalOpen(false);
-			}
-		};
-		document.addEventListener("mousedown", handleClickOutside);
-
-		return () => {
-			document.removeEventListener("mousedown", handleClickOutside);
-		};
-	}, []);
-
-	const handleInputFocus = () => setIsModalOpen(true);
-
-	const handleSearchOnClose = () => {
-		searchFoodDispatch({
-			type: "SET_QUERY",
-			value: ""
-		});
-	};
-
 	const handleOnSubmit = async () => {
 		console.log(state);
 		try {
@@ -170,7 +140,6 @@ const RecipeForm = () => {
 					FODMAP Community.
 				</p>
 			</div>
-			{/* <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 lg:mb-14"> */}
 			<div>
 				<Card>
 					<CardContent>
@@ -216,154 +185,29 @@ const RecipeForm = () => {
 									Add food tags
 								</FormLabel>
 								<div className="relative">
-									<div className="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
-										<Search className="size-4 shrink-0" />
-									</div>
-
-									{/* ||| */}
-									<div
-										className="relative"
-										ref={searchRef}>
-										<input
-											type="text"
-											className="py-2 ps-10 pe-16 block w-full bg-white border border-gray-200 rounded-lg text-sm focus:outline-hidden focus:border-blue-500 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder:text-neutral-400 dark:focus:ring-neutral-600"
-											placeholder="Search foods..."
-											value={
-												searchFoodState.query
-											}
-											onChange={(e) =>
-												searchFoodDispatch({
-													type: "SET_QUERY",
-													value: e.target
-														.value
-												})
-											}
-											onFocus={
-												handleInputFocus
-											}
-										/>
-										<div className="absolute inset-y-0 end-0 flex items-center z-20 pe-1">
-											<button
-												type="button"
-												className="cursor-pointer inline-flex shrink-0 justify-center items-center size-6 rounded-full text-gray-500 hover:text-blue-600 focus:outline-hidden focus:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500"
-												aria-label="Close"
-												onClick={
-													handleSearchOnClose
-												}>
-												<span className="sr-only">
-													{/* TODO: erase current value in searchbar */}
-													Close
-												</span>
-												<svg
-													className="shrink-0 size-4"
-													xmlns="http://www.w3.org/2000/svg"
-													width="24"
-													height="24"
-													viewBox="0 0 24 24"
-													fill="none"
-													stroke="currentColor"
-													strokeWidth="2"
-													strokeLinecap="round"
-													strokeLinejoin="round">
-													<circle
-														cx="12"
-														cy="12"
-														r="10"
-													/>
-													<path d="m15 9-6 6" />
-													<path d="m9 9 6 6" />
-												</svg>
-											</button>
-										</div>
-										{/* Modal is open for food tags */}
-										{isModalOpen &&
-											searchFoodState
-												?.filteredFoods
-												?.length > 0 && (
-												<div className="absolute z-50 w-full bg-white border border-gray-300 rounded mt-1 max-h-48 overflow-y-auto shadow-lg">
-													{searchFoodState.filteredFoods
-														.sort(
-															(
-																a,
-																b
-															) => {
-																const query =
-																	searchFoodState.query.toLowerCase();
-																const aName =
-																	a.name.toLowerCase();
-																const bName =
-																	b.name.toLowerCase();
-
-																const aStarts =
-																	aName.startsWith(
-																		query
-																	)
-																		? 0
-																		: 1;
-																const bStarts =
-																	bName.startsWith(
-																		query
-																	)
-																		? 0
-																		: 1;
-																if (
-																	aStarts !==
-																	bStarts
-																)
-																	return (
-																		aStarts -
-																		bStarts
-																	);
-
-																return aName.localeCompare(
-																	bName
-																); // alphabetic tie-breaker
-															}
-														)
-														/* Limit to 20 items in dropdown */
-														.slice(
-															0,
-															20
-														)
-														.map(
-															(
-																food
-															) => (
-																<FormControl
-																	className="cursor-pointer"
-																	onClick={() =>
-																		dispatch(
-																			{
-																				type: "TOGGLE_FOOD",
-																				food: food.id
-																			}
-																		)
-																	}>
-																	<FormItem
-																		key={
-																			food.id
-																		}
-																		className="flex items-center px-2 py-1 hover:bg-gray-100">
-																		<FormLabel className="text-sm cursor-pointer">
-																			{state.foods.includes(
-																				food.id
-																			) && (
-																				<>
-																					<Check className="size-4 mr-1 shrink-0 group-hover:visible" />
-																				</>
-																			)}
-																			{
-																				food.name
-																			}
-																		</FormLabel>
-																	</FormItem>
-																</FormControl>
-															)
-														)}
-												</div>
-											)}
-									</div>
-									{/* ||| */}
+									<SearchDropdown
+										isSelected={(item) =>
+											state.foods.includes(
+												item.id
+											)
+										}
+										query={searchFoodState.query}
+										items={
+											searchFoodState.filteredFoods
+										}
+										onQueryChange={(value) =>
+											searchFoodDispatch({
+												type: "SET_QUERY",
+												value
+											})
+										}
+										onSelect={(food) =>
+											dispatch({
+												type: "TOGGLE_FOOD",
+												food: food.id
+											})
+										}
+									/>
 								</div>
 								<div className="grid gap-2">
 									<p
