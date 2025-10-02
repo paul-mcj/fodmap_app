@@ -5,8 +5,7 @@ import {
 	FormControl,
 	FormField,
 	FormItem,
-	FormLabel,
-	FormMessage
+	FormLabel
 } from "@/components/ui/form";
 import { Card, CardContent } from "@/components/ui/card";
 import { privatePostNewDiscussion } from "@/utils/api_req";
@@ -177,7 +176,6 @@ const DiscussionForm = () => {
 													className="w-full border rounded px-2 py-1"
 												/>
 											</FormControl>
-											<FormMessage />
 										</FormItem>
 									)}
 								/>
@@ -283,7 +281,6 @@ const DiscussionForm = () => {
 													className="w-full border rounded px-2 py-1 h-40 resize-y"
 												/>
 											</FormControl>
-											<FormMessage />
 										</FormItem>
 									)}
 								/>

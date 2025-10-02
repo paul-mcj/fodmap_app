@@ -1,12 +1,11 @@
-import { useReducer, useEffect, useState, useRef } from "react";
+import { useReducer, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
 	Form,
 	FormControl,
 	FormField,
 	FormItem,
-	FormLabel,
-	FormMessage
+	FormLabel
 } from "@/components/ui/form";
 import { Card, CardContent } from "@/components/ui/card";
 import { privatePostNewRecipe } from "@/utils/api_req";
@@ -16,6 +15,7 @@ import { publicGetAllFoods, publicSearchFoods } from "@/utils/api_req";
 import { Badge } from "@/components/ui/badge";
 import { X } from "lucide-react";
 import SearchDropdown from "@/components/SearchDropdown";
+import { useNavigate } from "react-router-dom";
 
 // Reducer for form state
 function formReducer(state, action) {
@@ -34,7 +34,8 @@ function formReducer(state, action) {
 				...state,
 				foods: state.foods.filter((id) => id !== action.food)
 			};
-
+		case "RESET":
+			return { ...initialFormState };
 		default:
 			return state;
 	}
@@ -68,6 +69,8 @@ const initialSearchFoodState = {
 };
 
 const RecipeForm = () => {
+	const navigate = useNavigate();
+
 	const [state, dispatch] = useReducer(formReducer, initialFormState);
 	const [searchFoodState, searchFoodDispatch] = useReducer(
 		searchFoodReducer,
@@ -118,10 +121,12 @@ const RecipeForm = () => {
 	}, [searchFoodState.query]);
 
 	const handleOnSubmit = async () => {
-		console.log(state);
 		try {
-			await privatePostNewRecipe(state);
-			console.log("new recipe has been successfully added!!");
+			const res = await privatePostNewRecipe(state);
+			const recipeID = res.data.id;
+			console.log(recipeID);
+			dispatch({ type: "RESET" });
+			navigate(`/blogs/${recipeID}`);
 		} catch (err) {
 			console.error(
 				"ERROR with creating new recipe:",
@@ -177,7 +182,6 @@ const RecipeForm = () => {
 													className="w-full border rounded px-2 py-1"
 												/>
 											</FormControl>
-											<FormMessage />
 										</FormItem>
 									)}
 								/>
@@ -283,7 +287,6 @@ const RecipeForm = () => {
 													className="w-full border rounded px-2 py-1 h-40 resize-y"
 												/>
 											</FormControl>
-											<FormMessage />
 										</FormItem>
 									)}
 								/>

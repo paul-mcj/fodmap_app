@@ -6,7 +6,7 @@ export function formatPostDate(dateString) {
 	if (isNaN(diffInSeconds)) return "Invalid date";
 
 	// Under 1 minute
-	if (diffInSeconds < 60) return "Just now";
+	if (diffInSeconds < 60) return "just now";
 
 	const minutes = Math.floor(diffInSeconds / 60);
 	const hours = Math.floor(minutes / 60);
