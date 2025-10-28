@@ -106,3 +106,16 @@ export const publicSearchFoods = async (query) => {
 	return res.data;
 };
 // export const publicPostFoodData = (foodData) => PUBLIC_API.post("foods/", foodData);
+
+// Bio
+export const privatePatchUserBio = (bio) => {
+	return PRIVATE_API.patch(
+		"users/me/",
+		{ bio },
+		{
+			headers: {
+				"Content-Type": "application/json"
+			}
+		}
+	);
+};

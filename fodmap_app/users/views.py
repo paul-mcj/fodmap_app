@@ -15,13 +15,22 @@ class CustomUserListAPIView(generics.ListAPIView):
     serializer_class = CustomUserSerializer
     permission_classes = [AllowAny]
 
-# GET authenticated single user
+# GET authenticated single user / PATCH update user
 class CurrentUserView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, req):
         serializer = CustomUserSerializer(req.user)
         return Response(serializer.data)
+
+    def patch(self, req):
+        serializer = CustomUserSerializer(
+            req.user, data=req.data, partial=True
+        )
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # POST new user
 class RegisterNewUserView(APIView):

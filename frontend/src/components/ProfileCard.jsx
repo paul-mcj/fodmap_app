@@ -3,6 +3,7 @@ import { Focus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef } from "react";
 import BannerModal from "./banner/BannerModal";
+import BioModal from "./bio/BioModal";
 import { formatPostDate } from "@/utils/format";
 import { useLocation } from "react-router-dom";
 
@@ -10,12 +11,19 @@ const ProfileCard = () => {
 	const { user, isAuthenticated } = useAuth();
 	const location = useLocation();
 
-	const [isBannerModalOpen, setIsBannerModalOpen] = useState(false);
 	const [bannerSelection, setBannerSelection] = useState("bg-red-400");
+	const [isBannerModalOpen, setIsBannerModalOpen] = useState(false);
+	const [isBioModalOpen, setIsBioModalOpen] = useState(false);
+
 	const originalBannerSelection = useRef(bannerSelection);
+	const bioRef = useRef(user?.bio);
 
 	const handleBannerModal = () => {
 		setIsBannerModalOpen((prev) => !prev);
+	};
+
+	const handleBioModal = () => {
+		setIsBioModalOpen((prev) => !prev);
 	};
 
 	useEffect(() => {
@@ -89,11 +97,11 @@ const ProfileCard = () => {
 									href="#">
 									Change Avatar
 								</a>
-								<a
-									className="block text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-									href="#">
+								<button
+									className="inline text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400 cursor-pointer"
+									onClick={handleBioModal}>
 									Update Bio
-								</a>
+								</button>
 							</>
 						)}
 						<h1 className="text-2xl font-medium text-neutral-900">
@@ -105,33 +113,20 @@ const ProfileCard = () => {
 			{/* <div className="rounded-b-xl pt-32 px-4 pb-4 lg:pb-8 mb-0 md:px-8 lg:px-12 bg-neutral-100 text-left"> */}
 			<div className="rounded-b-xl pt-32 px-4 pb-4 lg:pb-8 mb-0 md:px-8 lg:px-12 text-left bg-white border border-t-0 border-gray-200 shadow-xl dark:bg-neutral-900 dark:border-neutral-800">
 				{isAuthenticated &&
-					(user.bio || (
+					(user?.bio || (
 						<p className="text-md text-gray-700 dark:text-neutral-400">
 							You do not have a bio filled out. Tell us
 							about yourself!&nbsp;
-							<a
-								className="inline text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-								href="#">
+							<button
+								className="inline text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400 cursor-pointer"
+								onClick={handleBioModal}>
 								Update Bio
-							</a>
+							</button>
 						</p>
 					))}
 				{!isAuthenticated &&
-					(user.bio ||
+					(user?.bio ||
 						`@${user.username} does not have a bio yet`)}
-				hello my name is he real alsim shady this is a sentence
-				about nothing its really just ryring to make sure that the
-				papraprhj donest overlfow and looks naturla when its really
-				long for some users, it needs to not overflow becaus rhen wt
-				wil look bad hello my name is he real alsim shady this is a
-				sentence about nothing its really just ryring to make sure
-				that the papraprhj donest overlfow and looks naturla when
-				its really long for some users, it needs to not overflow
-				becaus rhen wt wil look bad hello my name is he real alsim
-				shady this is a sentence about nothing its really just
-				ryring to make sure that the papraprhj donest overlfow and
-				looks naturla when its really long for some users, it needs
-				to not overflow becaus rhen wt wil look bad
 				{isAuthenticated && user.date_joined && (
 					<p className="text-[13px] text-gray-500 mt-8">
 						Joined on&nbsp;
@@ -149,6 +144,11 @@ const ProfileCard = () => {
 					</p>
 				)}
 			</div>
+			<BioModal
+				handleBioModal={handleBioModal}
+				isBioModalOpen={isBioModalOpen}
+				bioRef={bioRef.current}
+			/>
 		</>
 	);
 };
