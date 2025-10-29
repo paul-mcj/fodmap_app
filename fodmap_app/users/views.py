@@ -24,8 +24,9 @@ class CurrentUserView(APIView):
         return Response(serializer.data)
 
     def patch(self, req):
+        print(req.data)
         serializer = CustomUserSerializer(
-            req.user, data=req.data, partial=True
+            req.user, data=req.data, partial=True, context={'request': req}
         )
         if serializer.is_valid():
             serializer.save()
