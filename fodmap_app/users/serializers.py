@@ -1,13 +1,25 @@
+from django.conf import settings
 from django.contrib.auth.password_validation import validate_password
 from .models import CustomUser
 import re
 from rest_framework import serializers
 
 class CustomUserSerializer(serializers.ModelSerializer):
+    profile_image = serializers.SerializerMethodField()
+
     class Meta:
         model = CustomUser
         # for general API consumption -- does NOT expose password field
         fields = ['id', 'email', 'username', 'bio', 'profile_image', 'date_joined']
+
+    def get_profile_image(self, obj):
+        request = self.context.get('request')
+        if obj.profile_image and hasattr(obj.profile_image, 'url'):
+            return request.build_absolute_uri(obj.profile_image.url)
+        else:
+            # Use the new default in media/profile_pics/
+            default_path = '/media/profile_pics/default_user.svg'
+            return request.build_absolute_uri(default_path)
 
 class RegisterUserSerializer(serializers.ModelSerializer):
     class Meta:

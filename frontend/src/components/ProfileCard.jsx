@@ -83,10 +83,18 @@ const ProfileCard = () => {
 				)}
 				<div className="flex items-end gap-4 ml-4 md:ml-8 lg:ml-12 relative top-20">
 					<div className="shrink-0">
-						<img
+						{/* <img
 							className="shrink-0 size-32 rounded-full"
 							src="https://images.unsplash.com/photo-1510706019500-d23a509eecd4?q=80&w=2667&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 							alt="Avatar"
+						/> */}
+						<img
+							className="shrink-0 size-32 rounded-full bg-white border-1 border-gray-200 dark:bg-neutral-800 dark:border-neutral-700"
+							src={
+								user?.profile_image ||
+								"/profile_pics/default_user.svg"
+							}
+							alt="{{ user.username }}"
 						/>
 					</div>
 					<div>
