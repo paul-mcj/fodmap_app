@@ -20,12 +20,13 @@ class CurrentUserView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, req):
-        serializer = CustomUserSerializer(req.user)
+        serializer = CustomUserSerializer(req.user, context={'request': req}) # pass request context for absolute URL building
         return Response(serializer.data)
 
     def patch(self, req):
+        print(req.data)
         serializer = CustomUserSerializer(
-            req.user, data=req.data, partial=True
+            req.user, data=req.data, partial=True, context={'request': req}
         )
         if serializer.is_valid():
             serializer.save()

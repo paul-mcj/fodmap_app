@@ -119,3 +119,23 @@ export const privatePatchUserBio = (bio) => {
 		}
 	);
 };
+
+// Avatar
+export const privatePatchAvatar = (formData) => {
+	return PRIVATE_API.patch("users/me/", formData, {
+		headers: {
+			"Content-Type": "multipart/form-data"
+		}
+	});
+};
+
+// export const privatePatchAvatar = (imageFile) => {
+// 	const formData = new FormData();
+// 	formData.append("profile_image", imageFile);
+
+// 	return PRIVATE_API.patch("users/me/", formData, {
+// 		headers: {
+// 			"Content-Type": "multipart/form-data"
+// 		}
+// 	});
+// };

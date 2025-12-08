@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef } from "react";
 import BannerModal from "./banner/BannerModal";
 import BioModal from "./bio/BioModal";
+import AvatarModal from "./avatar/AvatarModal";
 import { formatPostDate } from "@/utils/format";
 import { useLocation } from "react-router-dom";
 
@@ -14,9 +15,11 @@ const ProfileCard = () => {
 	const [bannerSelection, setBannerSelection] = useState("bg-red-400");
 	const [isBannerModalOpen, setIsBannerModalOpen] = useState(false);
 	const [isBioModalOpen, setIsBioModalOpen] = useState(false);
+	const [isAvatarModalOpen, setIsAvatarModalOpen] = useState(false);
 
 	const originalBannerSelection = useRef(bannerSelection);
 	const bioRef = useRef(user?.bio);
+	const avatarRef = useRef(user?.profile_image);
 
 	const handleBannerModal = () => {
 		setIsBannerModalOpen((prev) => !prev);
@@ -24,6 +27,10 @@ const ProfileCard = () => {
 
 	const handleBioModal = () => {
 		setIsBioModalOpen((prev) => !prev);
+	};
+
+	const handleAvatarModal = () => {
+		setIsAvatarModalOpen((prev) => !prev);
 	};
 
 	useEffect(() => {
@@ -84,25 +91,28 @@ const ProfileCard = () => {
 				<div className="flex items-end gap-4 ml-4 md:ml-8 lg:ml-12 relative top-20">
 					<div className="shrink-0">
 						<img
-							className="shrink-0 size-32 rounded-full"
-							src="https://images.unsplash.com/photo-1510706019500-d23a509eecd4?q=80&w=2667&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-							alt="Avatar"
+							className="shrink-0 size-32 rounded-full bg-white border-1 border-gray-200 dark:bg-neutral-800 dark:border-neutral-700"
+							src={
+								user?.profile_image ||
+								"/profile_pics/default_user.svg"
+							}
+							alt="{{ user.username }}"
 						/>
 					</div>
 					<div>
 						{isAuthenticated && (
-							<>
-								<a
-									className="block text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-									href="#">
+							<div className="mb-2 flex flex-col items-start">
+								<button
+									className="inline text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400 cursor-pointer"
+									onClick={handleAvatarModal}>
 									Change Avatar
-								</a>
+								</button>
 								<button
 									className="inline text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400 cursor-pointer"
 									onClick={handleBioModal}>
 									Update Bio
 								</button>
-							</>
+							</div>
 						)}
 						<h1 className="text-2xl font-medium text-neutral-900">
 							@{user.username}
@@ -148,6 +158,11 @@ const ProfileCard = () => {
 				handleBioModal={handleBioModal}
 				isBioModalOpen={isBioModalOpen}
 				bioRef={bioRef.current}
+			/>
+			<AvatarModal
+				handleAvatarModal={handleAvatarModal}
+				isAvatarModalOpen={isAvatarModalOpen}
+				avatarRef={avatarRef.current}
 			/>
 		</>
 	);
