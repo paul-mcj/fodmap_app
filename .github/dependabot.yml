@@ -16,7 +16,7 @@ updates:
             frontend-js:
                  patterns: ["*"]
 
-     - package-ecosystem: "poetry"
+     - package-ecosystem: "pip"
        directory: "/"
        schedule:
             interval: "monthly"
