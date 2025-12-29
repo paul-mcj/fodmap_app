@@ -1,22 +1,25 @@
-# .github/dependabot.yml (Example)
-
 version: 2
 updates:
-     # 1. Frontend JavaScript (React/Next.js)
+     - package-ecosystem: "npm"
+       directory: "/"
+       schedule:
+            interval: "monthly"
+       groups:
+            root-js:
+                 patterns: ["*"]
+
      - package-ecosystem: "npm"
        directory: "/frontend"
        schedule:
-            interval: "weekly"
+            interval: "monthly"
+       groups:
+            frontend-js:
+                 patterns: ["*"]
 
-     # 2. Root JavaScript (Minimal/Tools)
-     - package-ecosystem: "npm"
-       directory: "/"
-       schedule:
-            interval: "weekly"
-
-     # 3. Primary Python Dependencies (Poetry)
      - package-ecosystem: "poetry"
-       # Poetry uses pyproject.toml, which pip can monitor
        directory: "/"
        schedule:
-            interval: "weekly"
+            interval: "monthly"
+       groups:
+            python-deps:
+                 patterns: ["*"]
