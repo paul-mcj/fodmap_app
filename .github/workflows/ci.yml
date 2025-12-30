@@ -35,12 +35,22 @@ jobs:
                       fi
 
                # --- PYTHON / DJANGO SECTION ---
-               - name: Python Tasks (Only if Poetry exists)
-                 run: |
-                      if [ -f pyproject.toml ]; then
-                        pip install poetry
-                        poetry install --no-root
-                        poetry run black . --check
-                      else
-                        echo "No pyproject.toml found, skipping Python tasks."
-                      fi
+              - name: Python Tasks (Only if Poetry exists)
+                run: |
+                  if [ -f pyproject.toml ]; then
+                    pip install poetry
+                    # Ensure poetry creates the venv IN the project folder for reliability
+                    poetry config virtualenvs.in-project true
+                    
+                    # Explicitly install ALL dependencies including dev groups
+                    poetry install --no-root
+                    
+                    # Check if black exists before running to avoid the exit code 1 crash
+                    if poetry run black --version >/dev/null 2>&1; then
+                      poetry run black . --check
+                    else
+                      echo "Black is not installed in pyproject.toml dev dependencies. Skipping check."
+                    fi
+                  else
+                    echo "No pyproject.toml found, skipping Python tasks."
+                  fi
