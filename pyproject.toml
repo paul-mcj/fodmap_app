@@ -30,4 +30,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.group.dev.dependencies]
 safety = "^3.7.0"
-
+black = "^25.12.0"
