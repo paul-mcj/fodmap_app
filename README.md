@@ -11,6 +11,8 @@ This project is a combination of personal need, clean design and modern tools.
 
 🚧 In active development!
 
+Run `poetry run python manage.py runserver`
+
 ## Features Coming Soon!
 
 -    ✅ User authentication and profile management
