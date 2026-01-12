@@ -23,3 +23,11 @@ updates:
        groups:
             python-deps:
                  patterns: ["*"]
+
+     - package-ecosystem: "poetry"
+       directory: "/"
+       schedule:
+            interval: "monthly"
+       groups:
+            python-deps:
+                 patterns: ["*"]
