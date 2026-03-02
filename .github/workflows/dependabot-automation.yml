@@ -20,10 +20,11 @@ jobs:
                - name: Python Audit
                  if: hashFiles('**/pyproject.toml') != ''
                  run: |
-                      pip install poetry
-                      poetry install --no-root # Install your project dependencies into the runner
-                      pip install poetry-audit-plugin
-                      poetry audit --level=high
+                   pip install poetry
+                   poetry install --no-root
+                   pip install poetry-audit-plugin
+                   # Use --min-severity instead of --level
+                   poetry audit --min-severity=high
 
                - name: Fetch Metadata
                  id: metadata
